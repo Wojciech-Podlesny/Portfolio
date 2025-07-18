@@ -1,21 +1,33 @@
 'use client';
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { HiCodeBracket } from "react-icons/hi2";
 import Link from "next/link";
 import { menuLinks } from "@/data/menuLinks";
 import { usePathname } from "next/navigation";
 import { MenuMobile } from "@/components/MenuMobile";
+import { useState } from "react";
 
 export const Navbar = () => {
     const pathname = usePathname();
+    const [showNavbar, setShowNavbar] = useState(true);
+    const { scrollY } = useScroll();
+    const [lastY, setLastY] = useState(0);
+
+    useMotionValueEvent(scrollY, "change", (current) => {
+        if (current < 100 || current < lastY) {
+            setShowNavbar(true);
+        } else {
+            setShowNavbar(false);
+        }
+        setLastY(current);
+    });
 
     return (
         <motion.nav
-            initial={{ y: 0 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="fixed top-4 left-4 right-4 z-50 flex items-center justify-between rounded-full border border-[#3f3cbb]/30 bg-[#0f0f0f]/90 backdrop-blur-md px-6 py-4 md:px-12 shadow-[0_0_40px_10px_rgba(168,85,247,0.3)]"
+            animate={{ y: showNavbar ? 0 : -100 }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            className="fixed top-4 left-4 right-4 z-50 flex items-center justify-between rounded-full border bg-[#0f0f0f]/90 backdrop-blur-md px-6 py-4 md:px-12 shadow-[0_0_40px_10px_rgba(168,85,247,0.3)]"
         >
             <div className="flex items-center gap-2">
                 <HiCodeBracket size={35} className="text-lime-500" />

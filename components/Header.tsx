@@ -11,7 +11,7 @@ import {Profile} from "@/components/Profile";
 
 export const Header = () => {
     return (
-        <div className="relative flex flex-col h-screen w-full overflow-hidden bg-gradient-to-b from-black via-gray-900 to-black text-white antialiased">
+        <div className="relative flex flex-col  h-screen w-full overflow-hidden bg-gradient-to-b from-black via-gray-900 to-black text-white antialiased">
             <div className="absolute inset-0 pointer-events-none select-none bg-[size:40px_40px] bg-[linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]" />
             <Spotlight className="absolute -top-40 left-0 md:-top-20 md:left-60" fill="white" />
             <div className="relative flex flex-col items-center justify-center gap-6 px-5 py-64 md:py-10 md:flex-row md:justify-around md:h-full">
