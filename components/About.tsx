@@ -14,7 +14,6 @@ const qualities = [
     "Optimized for Speed & Scalability",
 ];
 
-
 export const About = () => {
     return (
         <section
@@ -26,6 +25,9 @@ export const About = () => {
                 <h1 className="text-white px-12 text-4xl">ABOUT ME</h1>
                 <div className="flex-grow h-px bg-indigo-500 max-w-[500px]" />
             </div>
+            <h1 className="text-gray-300 p-12 text-2xl text-center" >I believe that continuous learning is key to staying relevant. Here is a selection of academic and
+                professional courses that shaped my skills.</h1>
+
 
             <div className="flex flex-col md:flex-row justify-center md:justify-between gap-12 m-16">
                 <div className="md:w-1/2 w-full text-center md:text-left space-y-6">

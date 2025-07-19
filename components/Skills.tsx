@@ -14,6 +14,8 @@ export const Skills = () => {
                 <h1 className="text-white px-6 sm:px-12 text-3xl sm:text-4xl">SKILLS</h1>
                 <div className="flex-grow h-px bg-indigo-500 max-w-[200px] sm:max-w-[500px] mt-4 sm:mt-0"/>
             </div>
+            <h1 className="text-gray-300 p-12 text-2xl text-center" >I believe that continuous learning is key to staying relevant. Here is a selection of academic and
+                professional courses that shaped my skills.</h1>
 
             <Tabs defaultValue="FRONTEND" className="w-full max-w-6xl mx-auto pb-12">
                 <TabsList className="flex flex-wrap justify-center gap-2 sm:gap-4 bg-transparent border-none mb-8 sm:mb-12">

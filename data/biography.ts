@@ -1,6 +1,7 @@
 import profilePhoto from "@/assets/images/profilePhoto.webp"
+import {Biography} from "@/types/biography";
 
-export const biography = {
+export const biography : Biography = {
    image: profilePhoto,
     name: "Wojciech Podleśny",
     roles: ["Fullstack Developer", "Enthusiast React", "Creative Coder"],

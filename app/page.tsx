@@ -1,8 +1,10 @@
 import {Header} from "@/components/Header";
 import {About} from "@/components/About";
 import {StatsCounter} from "@/components/StatsCounter";
-import {Footer} from "@/components/Footer";
 import {Skills} from "@/components/Skills";
+import {Experience} from "@/components/Experience";
+import {Services} from "@/components/Services";
+import {Education} from "@/components/Education";
 
 
 const  Home = () =>  {
@@ -12,7 +14,10 @@ const  Home = () =>  {
          <About />
          <StatsCounter />
          <Skills />
-         <Footer />
+         <Experience />
+         <Education />
+         <Services />
+
      </>
 
   )

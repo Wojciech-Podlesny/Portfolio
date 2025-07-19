@@ -19,7 +19,6 @@ export const StatsCounter = () => {
                     priority
                 />
             </div>
-          {/*  <div className="absolute inset-0 bg-black bg-opacity-50"></div>*/}
             <div className="relative max-w-4xl w-full flex flex-col md:flex-row justify-around text-center gap-6 px-4">
                 <StatItem
                     icon={<FaClock className="text-yellow-400 text-5xl mb-2" />}
