@@ -8,7 +8,7 @@ import photo from "@/assets/images/counterHero.jpg";
 
 export const StatsCounter = () => {
     return (
-        <div className="relative w-full py-16  flex justify-center mb-12">
+        <div className="relative w-full py-16  flex justify-center">
             <div className="absolute inset-0 w-full h-full">
                 <Image
                     src={photo}

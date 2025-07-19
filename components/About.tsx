@@ -27,7 +27,7 @@ export const About = () => {
                 <div className="flex-grow h-px bg-indigo-500 max-w-[500px]" />
             </div>
 
-            <div className="flex flex-col md:flex-row justify-center md:justify-between gap-12">
+            <div className="flex flex-col md:flex-row justify-center md:justify-between gap-12 m-16">
                 <div className="md:w-1/2 w-full text-center md:text-left space-y-6">
                     <p className="text-lg leading-relaxed">
                         I am a <strong>Full-Stack Developer</strong> with expertise in{" "}

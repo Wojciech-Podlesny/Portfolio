@@ -2,7 +2,7 @@ import profilePhoto from "@/assets/images/profilePhoto.webp"
 
 export const biography = {
    image: profilePhoto,
-    name: "Wojciech Developer",
+    name: "Wojciech Podleśny",
     roles: ["Fullstack Developer", "Enthusiast React", "Creative Coder"],
     description:
         "I’m a passionate and versatile developer, always ready to take on new challenges. " +
