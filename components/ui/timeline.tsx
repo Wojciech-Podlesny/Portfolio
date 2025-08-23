@@ -79,7 +79,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                         key={index}
                         className="timeline-row flex justify-start pt-8 md:gap-10"
                     >
-                        {/* lewa kolumna */}
                         <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
                             <div className="timeline-icon h-10 absolute left-3 md:left-3 w-10 rounded-full dark:bg-black flex items-center justify-center">
                                 <Image
@@ -100,7 +99,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                             </div>
                         </div>
 
-                        {/* prawa kolumna */}
                         <div className="relative pl-20 pr-4 md:pl-4 w-full">
                             <h3 className="md:hidden block text-2xl mb-2 font-bold text-white">
                                 {item.title}
@@ -111,7 +109,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                     </div>
                 ))}
 
-                {/* pionowa linia */}
                 <div
                     style={{ height: `${height}px`, top: `${lineOffset}px` }}
                     className="absolute left-8 w-[2px] bg-gray-400/60 dark:bg-neutral-700"

@@ -21,7 +21,6 @@ export const Header = () => {
             <div
                 className="absolute inset-0 pointer-events-none select-none
           bg-[size:40px_40px]
-          bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)]
           dark:bg-[linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]"
             />
             <Spotlight className="absolute -top-40 left-0 md:-top-20 md:left-60" fill="white" />
