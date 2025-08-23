@@ -18,7 +18,7 @@ export default function ProjectGallery({ images, title = "Screenshot" }: Props) 
     if (!images?.length) return null;
 
     const slides = images.map((img, i) => ({
-        src: (img as any).src,
+        src: img.src,
         alt: `${title} ${i + 1}`,
     }));
 
@@ -78,8 +78,6 @@ export default function ProjectGallery({ images, title = "Screenshot" }: Props) 
                     )}
                 </div>
             </section>
-
-            {/* Lightbox: z marginesem, nie na full-screen */}
             <Lightbox
                 open={index >= 0}
                 close={() => setIndex(-1)}
