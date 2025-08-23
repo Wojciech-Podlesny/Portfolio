@@ -2,6 +2,8 @@ import {StaticImageData} from "next/image";
 import {IconType} from "react-icons";
 
 
+export type Img = string | StaticImageData;
+
 export type ProjectStatus = "in-progress" | "completed" | "paused";
 
 export type ProjectSection = {

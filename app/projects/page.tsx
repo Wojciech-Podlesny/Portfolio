@@ -55,7 +55,6 @@ const Projects = () => {
 
     return (
         <section className="py-16 px-6 mt-24 bg-gray-900 text-white">
-            {/*<h1 className="text-white p-12 text-2xl text-center mt-24">My Projects</h1>*/}
             <SectionHeading title="All Projects" />
             <TextAnimate className="text-gray-300 px-4 md:px-12 text-2xl text-center mb-16">
                 Explore a collection of my recent work across various technologies and domains.

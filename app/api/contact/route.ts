@@ -1,7 +1,7 @@
 import {EmailTemplate} from "@/utils/email-template";
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend('123456543');
 
 export async function POST() {
     try {
