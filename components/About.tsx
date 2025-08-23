@@ -1,68 +1,71 @@
-'use client';
-import Link from "next/link";
-import React from "react";
-import { MagicButton } from "@/components/MagicButton";
-import { CodeBlock } from "@/components/CodeBlock";
-import { code } from "@/data/code";
-import {HiCheck} from "react-icons/hi";
+"use client";
 
 
-const qualities = [
-    "Problem-Solving Mindset",
-    "Continuous Learning & Growth",
-    "User-Centric Approach",
-    "Optimized for Speed & Scalability",
-];
+import { motion, useReducedMotion } from "framer-motion";
+import { CodeBlocks } from "@/components/CodeBlock";
+import { TextAnimate } from "@/components/magicui/text-animate";
+import { SectionHeading } from "@/components/SectionHeading";
+import { fadeUp } from "@/lib/animations";
+import { CounterGrid } from "@/components/CounterCard";
 
 export const About = () => {
+    const shouldReduceMotion = useReducedMotion();
+
     return (
         <section
-            className="p-12 bg-gradient-to-b from-black via-gray-900 to-black text-white antialiased"
             id="about"
+            aria-labelledby="about-heading"
+            className="px-4 py-12 md:px-12 bg-gradient-to-b from-[#0c0f14] to-[#151a23] text-white antialiased relative"
         >
-            <div className="flex items-center justify-center my-8">
-                <div className="flex-grow h-px bg-indigo-500 max-w-[500px]" />
-                <h1 className="text-white px-12 text-4xl">ABOUT ME</h1>
-                <div className="flex-grow h-px bg-indigo-500 max-w-[500px]" />
-            </div>
-            <h1 className="text-gray-300 p-12 text-2xl text-center" >I believe that continuous learning is key to staying relevant. Here is a selection of academic and
-                professional courses that shaped my skills.</h1>
+            <SectionHeading title="ABOUT ME" />
 
+            <motion.div
+                variants={shouldReduceMotion ? undefined : fadeUp}
+                initial={shouldReduceMotion ? undefined : "hidden"}
+                whileInView={shouldReduceMotion ? undefined : "show"}
+                viewport={shouldReduceMotion ? undefined : { once: true, amount: 0.2 }}
+            >
+                <TextAnimate className="text-gray-200 px-2 md:px-12 text-2xl text-center mb-16">
+                    I am a Computer Science student specializing in web development.
+                    Passionate about programming, AI integration, and building innovative web applications!
+                </TextAnimate>
+            </motion.div>
 
-            <div className="flex flex-col md:flex-row justify-center md:justify-between gap-12 m-16">
-                <div className="md:w-1/2 w-full text-center md:text-left space-y-6">
-                    <p className="text-lg leading-relaxed">
-                        I am a <strong>Full-Stack Developer</strong> with expertise in{" "}
-                        <strong>Next.js, TypeScript, and Tailwind CSS</strong>. I love solving problems, building
-                        dynamic applications, and creating seamless user experiences. My goal is to turn innovative ideas into
-                        real-world solutions.
-                    </p>
+            <div className="flex flex-col md:flex-row md:justify-between gap-12 md:mx-16">
+                {/* Left column */}
+                <div className="md:w-1/2 w-full space-y-6">
+                    <blockquote className="text-base md:text-lg italic text-zinc-400/90 mb-4 border-l border-zinc-700 pl-4">
+                        “Great apps don’t just look good — they load fast, work everywhere, and feel intuitive.”
+                    </blockquote>
 
-                    <ul className="text-lg flex flex-col justify-center items-start md:items-start
-                 space-y-2 mt-12">
-                        {qualities.map((item, index) => (
-                            <li key={index} className="flex items-center gap-2">
-                                <HiCheck className="text-green-500" />
-                                {item}
-                            </li>
-                        ))}
-                    </ul>
+                    <motion.p
+                        variants={shouldReduceMotion ? undefined : fadeUp}
+                        initial={shouldReduceMotion ? undefined : "hidden"}
+                        whileInView={shouldReduceMotion ? undefined : "show"}
+                        viewport={shouldReduceMotion ? undefined : { once: true, amount: 0.2 }}
+                        className="text-lg leading-relaxed text-gray-200"
+                    >
+                        I’m a <strong>Frontend Developer</strong> focused on building fast, accessible and maintainable web apps with{" "}
+                        <strong>Next.js, TypeScript and Tailwind CSS</strong>. I enjoy turning ideas into products by combining clean UI with solid backend logic.
+                        <br /><br />
+                        My long-term goal is to grow as a <strong>Full-Stack Engineer</strong>, owning features from design to deployment.
+                        <br /><br />
+                        Outside of coding, I enjoy <strong>model building</strong> — it keeps me detail-oriented and reminds me of the joy of creating.
+                    </motion.p>
 
-                    <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 mt-12">
-                        <Link href="/#services" target="_blank" rel="noopener noreferrer">
-                            <MagicButton title="Services" position="center" />
-                        </Link>
-                        <Link href="/#projects">
-                            <MagicButton title="View My Projects" position="center" />
-                        </Link>
-                    </div>
+                    <CounterGrid />
                 </div>
-                <div className="w-full md:w-1/2 flex justify-center mt-8 md:mt-0">
-                    <div className="rounded-xl shadow-lg overflow-hidden max-w-full">
-                        <CodeBlock code={code} language="javascript" />
+
+                <motion.div
+                    whileHover={shouldReduceMotion ? undefined : { scale: 1.01 }}
+                    className="w-full md:w-1/2 flex justify-center"
+                >
+                    <div className="rounded-xl shadow-lg overflow-hidden max-w-full border border-gray-700 h-fit">
+                        <CodeBlocks />
                     </div>
-                </div>
+                </motion.div>
             </div>
+            <div className="mt-16 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         </section>
     );
 };

@@ -2,14 +2,13 @@ import {StaticImageData} from "next/image";
 
 export type EducationItem = {
     id: number;
-    type: string;
-    img: StaticImageData;
+    type: 'university' | 'course';
     title?: string;
+    image?:StaticImageData,
+    degree?: string;
     school?: string;
     date: string;
     description: string;
-    degree?: string;
-    modules?: { name: string }[];
-    technologies?: { name: string }[];
     certificateUrl?: string;
+    technologies?: { name: string }[];
 };

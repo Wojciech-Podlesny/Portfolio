@@ -76,7 +76,7 @@ export const InfiniteMovingCards = ({
                 {items.map((item, idx) => (
                     <li
                         key={idx}
-                        className="relative shrink-0  rounded-xl bg-muted/10 dark:bg-muted/20 "
+                        className="relative shrink-0"
                     >
                         {item}
                     </li>

@@ -1,69 +1,97 @@
-'use client'
+'use client';
+
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiBars3BottomRight } from "react-icons/hi2";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { menuLinks } from "@/data/menuLinks";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import {usePathname} from "next/navigation";
-
+import { usePathname } from "next/navigation";
+import { Separator } from "@/components/ui/separator";
+import { GithubIcon, LinkedinIcon } from "@/data/icon";
+import {MagicButton} from "@/components/MagicButton";
 
 export const MenuMobile = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const pathname = usePathname()
+    const pathname = usePathname();
+    const prefersReducedMotion = useReducedMotion();
+
+    useEffect(() => {
+        setIsOpen(false);
+    }, [pathname]);
 
     return (
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            {/* Trigger */}
             <SheetTrigger
                 className="md:hidden text-white border-none focus:outline-none"
-                onClick={() => setIsOpen(true)}
+                aria-label="Open navigation menu"
+                aria-expanded={isOpen}
             >
                 <HiBars3BottomRight size={35} />
-                
             </SheetTrigger>
 
+            {/* Content */}
             <SheetContent
-                side="right"
+                side="left"
                 className="flex flex-col items-center space-y-6 p-6 w-full bg-gray-900 z-[50] overflow-y-auto max-h-screen"
+                aria-labelledby="mobile-menu-title"
             >
+                <h2 id="mobile-menu-title" className="sr-only">
+                    Main menu
+                </h2>
 
-            <nav className="mt-24 flex-col space-y-6 text-center">
-                    {menuLinks.map((link) => (
-                        <motion.div key={link.id} whileHover={{scale: 1.1}}>
-                            <Link href={link.route} onClick={() => setIsOpen(false)} className={`relative uppercase transition-colors duration-500 ${pathname === link.route? "text-lime-500 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:bg-lime-500 after:transition-all after:duration-300"
-                                : 'text-white hover:text-lime-500' }`} aria-label={`Link to ${link.name}`}>{link.name}</Link>
-                        </motion.div>
-                    ))}
-
+                <nav role="navigation" aria-label="Main menu" className="mt-24 w-full max-w-xs">
+                    <ul className="flex flex-col space-y-4 text-center">
+                        {menuLinks.map((link) => {
+                            const isActive = pathname === link.route;
+                            return (
+                                <li key={link.id}>
+                                    <motion.div whileHover={prefersReducedMotion ? {} : { scale: 1.06 }}>
+                                        <Link
+                                            href={link.route}
+                                            onClick={() => setIsOpen(false)}
+                                            aria-current={isActive ? "page" : undefined}
+                                            className={`relative block px-4 py-3 uppercase transition-colors duration-300 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-lime-400
+                        ${isActive
+                                                ? "text-lime-500 after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:w-24 after:h-0.5 after:bg-lime-500"
+                                                : "text-white hover:text-lime-500"}`}
+                                            aria-label={`Go to ${link.name}`}
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    </motion.div>
+                                </li>
+                            );
+                        })}
+                    </ul>
                 </nav>
-                <div className="flex flex-row gap-4 justify-center items-center w-full">
+                <Link href="/#contact" aria-label="Contact">
+                    <MagicButton title="Hire Me" position="center" />
+                </Link>
+                <Separator className="bg-white/20 w-full max-w-xs" />
+
+                {/* Social media */}
+                <div className="flex flex-row gap-5 justify-center items-center w-full max-w-xs">
                     <Link
                         href="https://github.com/yourprofile"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="GitHub"
+                        className="transition-transform hover:scale-110 focus:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-lime-400 rounded-full p-1.5"
                     >
-                        <FaGithub
-                            className="text-gray-400 hover:text-white transition-transform transform hover:scale-125"
-                            size={24}
-                        />
+                        <GithubIcon />
                     </Link>
                     <Link
                         href="https://linkedin.com/in/yourprofile"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn"
+                        className="transition-transform hover:scale-110 focus:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-lime-400 rounded-full p-1.5"
                     >
-                        <FaLinkedin
-                            className="text-gray-400 hover:text-blue-500 transition-transform transform hover:scale-125"
-                            size={24}
-                        />
+                        <LinkedinIcon />
                     </Link>
                 </div>
-
-
-
             </SheetContent>
         </Sheet>
     );

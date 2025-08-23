@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import photo from "../assets/images/profilePhoto.webp";
+import photo from "../assets/images/profile/profilePhoto.webp";
 
 export const Profile = () => {
     return (
@@ -18,9 +18,8 @@ export const Profile = () => {
                     <Image
                         src={photo}
                         alt="photo"
-                        loading="lazy"
                         quality={100}
-                        layout="fill"
+                        loading="lazy"
                     />
                 </div>
             </motion.div>

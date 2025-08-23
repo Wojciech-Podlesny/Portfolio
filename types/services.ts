@@ -1,9 +1,14 @@
+import {StaticImageData} from "next/image";
 import {IconType} from "react-icons";
 
-export type Services = {
-    id:number,
+export interface Service {
+    id: number;
     title: string;
     description: string;
-    icon: IconType;
+    details: string;
+    features: string[];
+    images: StaticImageData[];
+    icon: IconType
 
 }
+

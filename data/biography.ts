@@ -1,4 +1,4 @@
-import profilePhoto from "@/assets/images/profilePhoto.webp"
+import profilePhoto from "@/assets/images/profile/profilePhoto.webp"
 import {Biography} from "@/types/biography";
 
 export const biography : Biography = {

@@ -1,50 +1,77 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Button } from '@/components/ui/moving-border';
-import {services} from "@/data/services";
-import {SectionUseTechnologies} from "@/components/SectionUseTechnologies";
+import React, { useState, useCallback } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { servicesData } from "@/data/services";
+import { SectionUseTechnologies } from "@/components/SectionUseTechnologies";
+import { SectionHeading } from "@/components/SectionHeading";
+import { Service } from "@/types/services";
+import { ServiceModal } from "@/components/ServicesModal";
+import ServiceCard from "@/components/ServicesCard";
+
 
 export const Services = () => {
+    const [selectedService, setSelectedService] = useState<Service | null>(null);
+    const shouldReduceMotion = useReducedMotion();
+
+    const handleSelect = useCallback((svc: Service) => setSelectedService(svc), []);
+    const handleClose = useCallback(() => setSelectedService(null), []);
+
     return (
-        <div className="py-20 w-full px-4 md:px-10 bg-gray-900">
-            <div className="flex items-center justify-center my-8">
-                <div className="flex-grow h-px bg-indigo-500 max-w-[500px]"/>
-                <h1 className="text-white px-12 text-4xl">SERVICES</h1>
-                <div className="flex-grow h-px bg-indigo-500 max-w-[500px]"/>
-            </div>
-            <h1 className="text-gray-300 p-12 text-2xl text-center">I offer a range of services
-                to help you build and maintain your web applications</h1>
+        <section id="services" className="relative bg-[#141a23] bg-grid-white/[0.03]">
+            <div className="px-4 md:px-10 py-20 relative">
+                <SectionHeading title="SERVICES" />
 
+                <motion.h2
+                    className="text-gray-300 pb-12 md:pb-20 text-2xl text-center max-w-3xl mx-auto"
+                    initial={shouldReduceMotion ? undefined : { opacity: 0, y: 16 }}
+                    whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+                    transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
+                    viewport={{ once: true, amount: 0.25 }}
+                >
+                    I offer a range of services to help you build and maintain your web applications!
+                </motion.h2>
 
-            <div className="flex justify-center items-center flex-wrap mt-12 gap-10">
-                {services.map((service) => (
-                    <Button
-                        key={service.id}
-                        duration={Math.floor(Math.random() * 10000) + 10000}
-                        borderRadius="1.75rem"
-                        style={{
-                            background:
-                                'linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)',
-                            borderRadius: '1.68rem',
-                        }}
-                        className="w-full h-full text-white border-neutral-200 dark:border-slate-800 transition-transform hover:scale-[1.02] flex items-center justify-start text-left"
-                    >
-                        <div className="flex items-center p-6 w-full h-full">
-                            <div className="flex flex-col gap-2 justify-center items-center">
-                                <h2 className="flex text-lg font-semibold mb-1r">
-                                    {service.title}
-                                </h2>
-                                <p className="text-sm text-gray-400 leading-relaxed">
-                                    {service.description}
-                                </p>
-                            </div>
+                <motion.div
+                    role="list"
+                    className="flex flex-col items-center md:flex-row md:flex-wrap md:justify-center gap-6 md:gap-8 max-w-7xl mx-auto"
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={
+                        shouldReduceMotion ? undefined : { hidden: {}, show: { transition: { staggerChildren: 0.12 } } }
+                    }
+                >
+                    {servicesData.map((service, index) => (
+                        <div key={service.id} className="w-full max-w-xs md:w-1/3 flex justify-center">
+                            <ServiceCard service={service} index={index} onSelect={handleSelect} />
                         </div>
-                    </Button>
-                ))}
+                    ))}
+                </motion.div>
+
+                {/* Modal z detalami usług */}
+                <ServiceModal selected={selectedService} onClose={handleClose} />
             </div>
-            <h2 className="text-center text-4xl text-white mt-12">Technologies whose I used in projects</h2>
-           <SectionUseTechnologies />
-        </div>
+
+            <div className="px-4">
+                <motion.h2
+                    className="text-center text-3xl md:text-4xl font-semibold pt-4 md:pt-0"
+                    initial={shouldReduceMotion ? undefined : { opacity: 0, y: 16 }}
+                    whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+                    transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
+                    viewport={{ once: true, amount: 0.25 }}
+                >
+                    <span className="bg-gradient-to-r from-indigo-300 via-sky-300 to-teal-300 bg-clip-text text-transparent">
+                        Technologies I’ve used in projects
+                    </span>
+                </motion.h2>
+
+                <div className="mx-auto mt-4 mb-8 h-px w-24 bg-gradient-to-r from-transparent via-indigo-500/60 to-transparent" />
+
+                <div className="mx-auto max-w-6xl pb-24">
+                    <SectionUseTechnologies />
+                </div>
+            </div>
+        </section>
     );
 };

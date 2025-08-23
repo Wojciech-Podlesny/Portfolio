@@ -1,35 +1,32 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import {Timeline} from "@/components/ui/timeline";
-import {experience} from "@/data/experience";
+import { Timeline } from '@/components/ui/timeline';
+import { TextAnimate } from '@/components/magicui/text-animate';
+import { SectionHeading } from '@/components/SectionHeading';
+import { ExperienceCard } from '@/components/ExperienceCard';
+import { experience } from '@/data/experience';
 
 export const Experience = () => {
-    const timelineData = experience.map((exp) => ({
-        title: exp.role,
-        content: (
-            <Card className="bg-black text-white border-zinc-700 rounded-xl shadow-md px-6 py-8">
-                <CardContent className="p-0">
-                    <h3 className="text-2xl font-semibold mb-2">{exp.role}</h3>
-                    <p className="text-sm text-gray-400 flex items-center mb-4">
-                        📅 {exp.date}
-                    </p>
-                    <p className="italic text-gray-400 mb-3">Responsibilities</p>
-                    <ul className="list-disc list-inside space-y-2 text-gray-300">
-                        {exp.highlights.slice(0, 3).map((point, idx) => (
-                            <li key={idx}>{point}</li>
-                        ))}
-                    </ul>
-                </CardContent>
-            </Card>
-        ),
-
+    const timelineData = (experience ?? []).map((exp) => ({
+        title: exp.company ?? exp.role,
+        icon: exp.icon?.src,
+        date: exp.date,
+        content: <ExperienceCard exp={exp} />,
     }));
+
     return (
-        <section id="experience" className="w-full bg-black py-20">
+        <section className="w-full bg-[#0f1319] py-16 px-4 relative">
+            <SectionHeading title="EXPERIENCE" />
+
+            <TextAnimate className="text-gray-300 p-8 text-2xl text-center">
+                Companies and projects where I contributed my skills
+            </TextAnimate>
+
             <Timeline data={timelineData} />
+
+            {/* 🔹 Separator */}
+            <div className="mt-16 h-[2px] w-full opacity-80
+  bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
         </section>
     );
 };
-

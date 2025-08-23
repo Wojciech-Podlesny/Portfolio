@@ -64,7 +64,7 @@ const SheetContent = React.forwardRef<
           {...props}
       >
         <SheetPrimitive.Close className="absolute right-4 top-4 opacity-70 ring-offset-background transition-opacity hover:opacity-100 disabled:pointer-events-none data-[state=open]:bg-white">
-          <MdClose size={35} className="text-white" />
+          <MdClose size={35} className="text-gray-900 dark:text-white" />
           <span className="sr-only">Close</span>
         </SheetPrimitive.Close>
         {children}

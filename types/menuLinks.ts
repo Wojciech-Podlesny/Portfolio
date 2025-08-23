@@ -4,7 +4,3 @@ export type NavItem = {
     route: string;
     children?: NavItem[];
 };
-
-export type Props = {
-    item: NavItem;
-}

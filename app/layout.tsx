@@ -1,37 +1,32 @@
+// app/layout.tsx
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import {Navbar} from "@/components/Navbar";
+import { Navbar } from "@/components/Navbar";
 import React from "react";
-import {Footer} from "@/components/Footer";
+import { Footer } from "@/components/Footer";
+import { ToastContainer } from "react-toastify";
+import ThemeProvider from "@/app/ThemeProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portfolio App",
-  description: "Portfolio develop by Wojciech Podleśny",
+    title: "Portfolio App",
+    description: "Portfolio develop by Wojciech Podleśny",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <Navbar />
-        {children}
-      <Footer />
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+    return (
+        <html lang="en">
+        <body className={inter.className}>
+        <ThemeProvider>
+                <Navbar />
+                {children}
+                <ToastContainer position="bottom-right" autoClose={3000} />
+                <Footer />
+
+        </ThemeProvider>
+        </body>
+        </html>
+    );
 }

@@ -1,93 +1,83 @@
-'use client'
-import { motion } from "framer-motion";
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { Profile } from "./Profile";
 import { Spotlight } from "./ui/Spotlight";
 import { biography } from "@/data/biography";
-import {FaGithub, FaLinkedin} from "react-icons/fa";
-import {TypewriterEffect} from "@/components/ui/typewriter-effect";
-import {MagicButton} from "@/components/MagicButton";
-import {Profile} from "@/components/Profile";
+import { MagicButton } from "@/components/MagicButton";
+import { Highlight } from "@/components/ui/hero-highlight";
+import { AuroraText } from "@/components/magicui/aurora-text";
+import { GithubIcon, LinkedinIcon } from "@/data/icon";
 
 export const Header = () => {
+    const prefersReducedMotion = useReducedMotion();
+
     return (
-        <div className="relative flex flex-col  h-screen w-full overflow-hidden bg-gradient-to-b from-black via-gray-900 to-black text-white antialiased">
-            <div className="absolute inset-0 pointer-events-none select-none bg-[size:40px_40px] bg-[linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]" />
+        <div
+            className="relative flex flex-col items-center justify-center h-screen w-full overflow-hidden
+      bg-[#0c0f14] bg-grid-white/[0.04] text-center px-4"
+        >
+            <div
+                className="absolute inset-0 pointer-events-none select-none
+          bg-[size:40px_40px]
+          bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)]
+          dark:bg-[linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]"
+            />
+
+            {/* Spotlight */}
             <Spotlight className="absolute -top-40 left-0 md:-top-20 md:left-60" fill="white" />
-            <div className="relative flex flex-col items-center justify-center gap-6 px-5 py-64 md:py-10 md:flex-row md:justify-around md:h-full">
-                <motion.div
-                    initial={{opacity: 0, y: 30}}
-                    animate={{opacity: 1, y: 0}}
-                    transition={{duration: 1}}
-                    className="text-center md:text-left text-lg sm:text-xl md:text-4xl order-2 xl:order-none"
-                >
-                    <p className="font-bold text-4xl md:text-5xl transition-all duration-500 shadow-text-green"
-                       style={{textShadow: "0px 0px 10px rgba(0, 255, 0, 0.8)"}}>Hi, I am  </p>
-                    <span
-                        className="font-bold text-4xl md:text-5xl transition-all duration-500 shadow-text-green"
-                        style={{textShadow: "0px 0px 10px rgba(0, 255, 0, 0.8)"}}>
-                        {biography.name}
-                    </span>
-                    <div className="text-4xl mt-2">
-                        I am a {" "}
-                        <TypewriterEffect words={biography.roles.map((role, index) => ({
-                            text: role,
-                            className: `font-bold transition-all duration-500 ${index % 2 === 0 ? "text-blue-400" : "text-pink-400"}`
-                        }))}/>
-                    </div>
-                    <h3 className="pt-4 text-3xl">I build, clean, creative code with NextJS, <br/>React, Typescript, Tailwind
-                        CSS.</h3>
 
-                    <div className="flex justify-center md:justify-start items-center gap-6 mt-12">
-                        <Link href="#contact" className="flex items-center">
-                            <MagicButton title="CONTACT ME"  position="center"/>
-                        </Link>
+            {/* Treść główna */}
+            <motion.div
+                initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: prefersReducedMotion ? 0 : 1 }}
+                className="z-10 flex flex-col gap-4 items-center max-w-4xl"
+            >
+                <Profile />
 
-                        <div className="flex justify-start gap-6 mb-6 pt-6 text-2xl">
-                            <Link
-                                href="https://linkedin.com/in/wojciech-podlesny"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Linkedin"
-                                className="hover:text-purple-400 transition-transform transform hover:scale-110"
-                            >
-                                <FaLinkedin size={40}/>
-                            </Link>
-                            <Link
-                                href="https://github.com/wojciech-podlesny"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="GitHub"
-                                className="hover:text-purple-400 transition-transform transform hover:scale-110"
-                            >
-                                <FaGithub size={40}/>
-                            </Link>
-                        </div>
-                    </div>
-                </motion.div>
+                <p className="text-2xl mt-8 mb-4 text-gray-700 dark:text-gray-300">Hello,</p>
 
+                <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl mb-4 text-black dark:text-white">
+                    I am {biography.name}
+                </h1>
 
-                <motion.div
-                    initial={{opacity: 0, scale: 0.8}}
-                    animate={{opacity: 1, scale: 1}}
-                    transition={{duration: 1.2, delay: 0.2}}
-                    className="order-1 xl:order-none mb-6 md:mb-0"
-                >
-                    <Profile />
-                </motion.div>
+                <h2 className="text-xl md:text-3xl text-gray-700 dark:text-gray-300 mb-8 max-w-2xl leading-snug">
+                    <AuroraText>Frontend Developer</AuroraText> building clean, creative apps with{" "}
+                    <Highlight>Next.js</Highlight> and <Highlight>React</Highlight>
+                </h2>
 
-
-                <motion.div
-                    initial={{opacity: 0, y: 10}}
-                    animate={{opacity: 1, y: 0}}
-                    transition={{duration: 1.2, delay: 0.5}}
-                    className="absolute bottom-6 flex justify-center w-full"
-                >
-                    <Link href="/public#about" aria-label="Scroll to About">
-                        <MdOutlineKeyboardArrowDown size={35} className="animate-bounce cursor-pointer text-white"/>
+                <nav className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+                    <Link href="/#contact" aria-label="Contact">
+                        <MagicButton title="Contact me" position="center" />
                     </Link>
-                </motion.div>
-            </div>
+                    <Link href="/projects" aria-label="Contact">
+                        <MagicButton title="View my projects" position="center" />
+                    </Link>
+                </nav>
+
+                <div className="flex justify-center gap-6 text-2xl mb-6">
+                    <Link
+                        href="https://linkedin.com/in/wojciech-podlesny"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn – profil"
+                        className="transition-transform hover:scale-110 focus:scale-110 focus:outline-none"
+                    >
+                        <LinkedinIcon />
+                    </Link>
+                    <Link
+                        href="https://github.com/wojciech-podlesny"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub – profil"
+                        className="transition-transform hover:scale-110 focus:scale-110 focus:outline-none"
+                    >
+                        <GithubIcon />
+                    </Link>
+                </div>
+            </motion.div>
         </div>
     );
 };
