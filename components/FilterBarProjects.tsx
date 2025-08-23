@@ -1,7 +1,7 @@
 import React from "react";
 import { FiFilter, FiSearch } from "react-icons/fi";
 
-interface FilterBarProps {
+interface FilterBarProjectsProps {
     allTechnologies: string[];
     selectedFilter: string;
     setSelectedFilter: (tech: string) => void;
@@ -10,14 +10,14 @@ interface FilterBarProps {
     setPage: (page: number) => void;
 }
 
-export const FilterBar: React.FC<FilterBarProps> = ({
+export const FilterBarProjects = ({
                                                         allTechnologies,
                                                         selectedFilter,
                                                         setSelectedFilter,
                                                         searchTerm,
                                                         setSearchTerm,
                                                         setPage,
-                                                    }) => {
+                                                    }: FilterBarProjectsProps) => {
     return (
         <div className="flex flex-wrap items-center justify-between bg-[#1F1F2E] px-6 py-4 rounded-xl border border-gray-700 mb-12">
             <div className="flex items-center gap-3 flex-wrap">

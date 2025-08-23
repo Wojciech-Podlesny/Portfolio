@@ -12,7 +12,16 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Portfolio App",
-    description: "Portfolio develop by Wojciech Podleśny",
+    description: "Portfolio developed by Wojciech Podleśny",
+    keywords: ["portfolio","web developer",'Frontend Developer'],
+    authors: [{name: "Wojciech Podleśny"}],
+    creator: "Wojciech Podleśny",
+    publisher: "Wojciech Podleśny",
+
+    robots: {
+        index: true,
+        follow: true,
+    },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

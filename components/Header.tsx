@@ -9,12 +9,13 @@ import { MagicButton } from "@/components/MagicButton";
 import { Highlight } from "@/components/ui/hero-highlight";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { GithubIcon, LinkedinIcon } from "@/data/icon";
+import {Button} from "@/components/ui/button";
 
 export const Header = () => {
     const prefersReducedMotion = useReducedMotion();
 
     return (
-        <div
+        <header
             className="relative flex flex-col items-center justify-center h-screen w-full overflow-hidden
       bg-[#0c0f14] bg-grid-white/[0.04] text-center px-4"
         >
@@ -24,11 +25,8 @@ export const Header = () => {
           bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)]
           dark:bg-[linear-gradient(to_right,#171717_1px,transparent_1px),linear-gradient(to_bottom,#171717_1px,transparent_1px)]"
             />
-
-            {/* Spotlight */}
             <Spotlight className="absolute -top-40 left-0 md:-top-20 md:left-60" fill="white" />
 
-            {/* Treść główna */}
             <motion.div
                 initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -49,12 +47,20 @@ export const Header = () => {
                 </h2>
 
                 <nav className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-                    <Link href="/#contact" aria-label="Contact">
-                        <MagicButton title="Contact me" position="center" />
-                    </Link>
-                    <Link href="/projects" aria-label="Contact">
-                        <MagicButton title="View my projects" position="center" />
-                    </Link>
+                    <Button
+                        asChild
+                        variant="magic"
+                        className="border border-white text-white font-semibold px-6 py-2 rounded-full transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2"
+                    >
+                        <Link href="/#contact" aria-label="Kontakt">Contact me</Link>
+                    </Button>
+                    <Button
+                        asChild
+                        variant="magic"
+                        className="border border-white text-white font-semibold px-6 py-2 rounded-full transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2"
+                    >
+                        <Link href="/projects" aria-label="Kontakt">View my projects</Link>
+                    </Button>
                 </nav>
 
                 <div className="flex justify-center gap-6 text-2xl mb-6">
@@ -78,6 +84,6 @@ export const Header = () => {
                     </Link>
                 </div>
             </motion.div>
-        </div>
+        </header>
     );
 };

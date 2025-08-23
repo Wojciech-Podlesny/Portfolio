@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import type { Project } from "@/types/projects";
 
-const ModalCard: React.FC<Project> = ({
+export const ProjectModal= ({
                                           title,
                                           date,
                                           description,
@@ -21,7 +21,7 @@ const ModalCard: React.FC<Project> = ({
                                           github,
                                           preview,
                                           slug,
-                                      }) => {
+                                      }: Project) => {
     return (
         <DialogContent className="max-w-2xl sm:max-w-3xl bg-[#0B0B12] text-white border border-white/10">
             <DialogHeader>
@@ -41,7 +41,8 @@ const ModalCard: React.FC<Project> = ({
                     alt={`${title} preview`}
                     className="object-cover"
                     sizes="(max-width: 768px) 90vw, 900px"
-                    priority
+
+
                 />
             </div>
 
@@ -77,10 +78,10 @@ const ModalCard: React.FC<Project> = ({
 
                 <div className="flex items-center gap-2 sm:gap-3">
                     {preview && (
-                        <a
+                        <Link
                             href={preview}
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white text-sm font-medium"
                             aria-label="Open live demo"
                         >
@@ -92,13 +93,13 @@ const ModalCard: React.FC<Project> = ({
                                 <path d="M8 5v14l11-7-11-7z" />
                             </svg>
                             Live Demo
-                        </a>
+                        </Link>
                     )}
                     {github && (
-                        <a
+                        <Link
                             href={github}
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white text-gray-900 hover:bg-gray-100 text-sm font-medium"
                             aria-label="Open GitHub repository"
                         >
@@ -114,7 +115,7 @@ const ModalCard: React.FC<Project> = ({
                                 />
                             </svg>
                             GitHub
-                        </a>
+                        </Link>
                     )}
                 </div>
             </DialogFooter>
@@ -122,4 +123,3 @@ const ModalCard: React.FC<Project> = ({
     );
 };
 
-export default ModalCard;

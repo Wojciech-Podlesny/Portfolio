@@ -16,29 +16,11 @@ import { z } from "zod";
 import { motion, AnimatePresence } from "framer-motion";
 import { showErrorToast, showSuccessToast } from "@/components/ErrorToast";
 import {SectionHeading} from "@/components/SectionHeading";
+import {ContactFormData, contactFormSchema} from "@/lib/validation";
+import {Button} from "@/components/ui/button";
+import Link from "next/link";
 
-const contactFormSchema = z.object({
-    firstName: z.string()
-        .trim()
-        .min(2, "Enter your first name")
-        .regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, "Invalid first name"),
-    lastName: z.string()
-        .trim()
-        .min(2, "Enter your last name")
-        .regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, "Invalid last name"),
-    subject: z.string()
-        .trim()
-        .min(3, "Enter a subject"),
-    email: z.string()
-        .trim()
-        .email("Invalid email address"),
-    message: z.string()
-        .trim()
-        .min(10, "Message must be at least 10 characters")
-        .max(1000, "Message must be under 1000 characters"),
-});
 
-type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export const Contact = () => {
     const form = useForm<ContactFormData>({
@@ -62,8 +44,9 @@ export const Contact = () => {
             console.error("Submission error:", err);
             showErrorToast("Something went wrong");
         }
-    });
+    }); //symulacja//
 
+    // @ts-ignore
     return (
         <section
             className="w-full py-24 bg-gradient-to-b from-black via-gray-900 to-black text-white"
@@ -207,16 +190,20 @@ export const Contact = () => {
                             )}
                         />
 
-                        {/* Submit */}
                         <div className="pt-4 flex justify-center items-center text-center">
-                            <button
+                            <Button
+                                asChild
+                                variant="magic"
                                 type="submit"
                                 disabled={form.formState.isSubmitting}
-                                className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300 disabled:opacity-50"
+                                className="border border-white text-white font-semibold px-6
+            py-2 rounded-full transition-transform hover:scale-105 focus:outline-none
+            focus:ring-2 focus:ring-lime-500 focus:ring-offset-2"
                             >
-                                {form.formState.isSubmitting ? "Sending..." : "Send Message"}
-                            </button>
+                                <span>{form.formState.isSubmitting ? "Sending..." : "Send Message"}</span>
+                            </Button>
                         </div>
+
                     </form>
                 </Form>
             </div>

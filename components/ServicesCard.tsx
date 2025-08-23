@@ -4,52 +4,60 @@ import * as React from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/moving-border";
 import { Service } from "@/types/services";
+import clsx from "clsx";
 
-type Props = {
+type ServicesCardProps = {
     service: Service;
     index: number;
     onSelect: (service: Service) => void;
     className?: string;
-    role?: React.AriaRole; // np. "listitem"
+    disableHover?: boolean;
 };
 
-export default function ServiceCard ({
-                                service,
-                                index,
-                                onSelect,
-                                className = "",
-                                role,
-                            }: Props) {
+export const ServiceCard = ({
+                                        service,
+                                        index,
+                                        onSelect,
+                                        className = "",
+                                        disableHover,
+                                    }: ServicesCardProps) => {
     const prefersReducedMotion = useReducedMotion();
     const Icon = service.icon;
-    const headingId = React.useId();
 
-    const open = () => onSelect(service);
+    const open = React.useCallback(() => onSelect(service), [onSelect, service]);
 
-    const onKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
-        if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            open();
+    const motionConfig = React.useMemo(() => {
+        if (prefersReducedMotion) {
+            return {
+                initial: undefined,
+                animate: undefined,
+                transition: { duration: 0 },
+            } as const;
         }
-    };
+        return {
+            initial: { opacity: 0, y: 16 },
+            animate: { opacity: 1, y: 0 },
+            transition: { duration: 0.4, delay: index * 0.08 },
+        } as const;
+    }, [prefersReducedMotion, index]);
+
+    const hoverClass = React.useMemo(
+        () => (!(disableHover || prefersReducedMotion) ? "hover:scale-[1.02]" : ""),
+        [disableHover, prefersReducedMotion]
+    );
 
     return (
         <motion.div
-            role={role}
-            initial={prefersReducedMotion ? undefined : { opacity: 0, y: 16 }}
-            whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+            initial={motionConfig.initial}
+            whileInView={motionConfig.animate}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{
-                duration: prefersReducedMotion ? 0 : 0.4,
-                delay: prefersReducedMotion ? 0 : index * 0.08,
-            }}
+            transition={motionConfig.transition}
             className="w-full"
         >
             <Button
+                type="button"
                 onClick={open}
-                onKeyDown={onKeyDown}
                 aria-haspopup="dialog"
-                aria-labelledby={headingId}
                 duration={12000 + index * 500}
                 borderRadius="1.75rem"
                 style={{
@@ -57,19 +65,26 @@ export default function ServiceCard ({
                         "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
                     borderRadius: "1.68rem",
                 }}
-                className={`w-full max-w-xs mx-auto text-white border-neutral-200 dark:border-slate-800 
-          transition-transform hover:scale-[1.02] focus-visible:outline-none 
-          focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 
-          flex items-stretch text-left ${className}`}
+                className={clsx(
+                    "w-full max-w-xs mx-auto text-white border-neutral-200 dark:border-slate-800",
+                    "transition-transform focus-visible:outline-none",
+                    "focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2",
+                    "flex items-stretch text-left",
+                    hoverClass,
+                    className
+                )}
             >
                 <div className="flex items-center p-6 w-full">
                     <div className="flex flex-col items-center text-center gap-2">
                         {Icon ? (
-                            <Icon size={32} className="text-blue-600 mb-1" aria-hidden="true" />
+                            <Icon
+                                size={32}
+                                className="text-blue-600 mb-1"
+                                aria-hidden="true"
+                                focusable="false"
+                            />
                         ) : null}
-                        <h3 id={headingId} className="text-lg font-semibold">
-                            {service.title}
-                        </h3>
+                        <h3 className="text-lg font-semibold">{service.title}</h3>
                         <p className="text-sm text-gray-400 leading-relaxed line-clamp-4">
                             {service.description}
                         </p>
@@ -78,4 +93,4 @@ export default function ServiceCard ({
             </Button>
         </motion.div>
     );
-};
+}

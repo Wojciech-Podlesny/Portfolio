@@ -1,6 +1,4 @@
 "use client";
-
-
 import { motion, useReducedMotion } from "framer-motion";
 import { CodeBlocks } from "@/components/CodeBlock";
 import { TextAnimate } from "@/components/magicui/text-animate";
@@ -10,11 +8,9 @@ import { CounterGrid } from "@/components/CounterCard";
 
 export const About = () => {
     const shouldReduceMotion = useReducedMotion();
-
     return (
         <section
             id="about"
-            aria-labelledby="about-heading"
             className="px-4 py-12 md:px-12 bg-gradient-to-b from-[#0c0f14] to-[#151a23] text-white antialiased relative"
         >
             <SectionHeading title="ABOUT ME" />
@@ -32,12 +28,10 @@ export const About = () => {
             </motion.div>
 
             <div className="flex flex-col md:flex-row md:justify-between gap-12 md:mx-16">
-                {/* Left column */}
                 <div className="md:w-1/2 w-full space-y-6">
                     <blockquote className="text-base md:text-lg italic text-zinc-400/90 mb-4 border-l border-zinc-700 pl-4">
                         “Great apps don’t just look good — they load fast, work everywhere, and feel intuitive.”
                     </blockquote>
-
                     <motion.p
                         variants={shouldReduceMotion ? undefined : fadeUp}
                         initial={shouldReduceMotion ? undefined : "hidden"}

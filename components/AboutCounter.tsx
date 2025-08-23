@@ -1,5 +1,5 @@
 'use client';
-import React from "react";
+import React, {useRef} from "react";
 import { animate, useMotionValue, useReducedMotion, useInView } from "framer-motion";
 
 type AnimatedCounterProps = {
@@ -16,7 +16,7 @@ type AnimatedCounterProps = {
     onComplete?: () => void;
 };
 
-export function AnimatedCounter({
+export const AnimatedCounter = ({
                                     to,
                                     duration = 1.2,
                                     delay = 0,
@@ -28,8 +28,8 @@ export function AnimatedCounter({
                                     formatOptions,
                                     decimals,
                                     onComplete,
-                                }: AnimatedCounterProps) {
-    const ref = React.useRef<HTMLSpanElement | null>(null);
+                                }: AnimatedCounterProps) => {
+    const ref = useRef<HTMLSpanElement | null>(null);
     const mv = useMotionValue(0);
     const [value, setValue] = React.useState(0);
     const prefersReducedMotion = useReducedMotion();

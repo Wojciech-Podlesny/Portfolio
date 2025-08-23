@@ -24,7 +24,6 @@ export const Experience = () => {
 
             <Timeline data={timelineData} />
 
-            {/* 🔹 Separator */}
             <div className="mt-16 h-[2px] w-full opacity-80
   bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
         </section>

@@ -7,7 +7,7 @@ interface ProjectsListProps {
     projects: Project[];
 }
 
-export const ProjectsList: React.FC<ProjectsListProps> = ({ projects }) => {
+export const ProjectsList = ({ projects } :ProjectsListProps) => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-16 max-w-7xl mx-auto">
             {projects.map((project) => (

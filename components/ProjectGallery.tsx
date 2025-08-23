@@ -7,7 +7,7 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 
 type Props = {
-    images: StaticImageData[];   // np. project.image (tablica screenów)
+    images: StaticImageData[];
     title?: string;
 };
 
@@ -26,7 +26,6 @@ export default function ProjectGallery({ images, title = "Screenshot" }: Props) 
         <>
             <section aria-label="Screenshots" className="max-w-6xl mx-auto px-6">
                 <div className="grid gap-4">
-                    {/* Lead: niski, 16:9, nie dominuje strony */}
                     <button
                         type="button"
                         onClick={() => setIndex(0)}
@@ -47,8 +46,6 @@ export default function ProjectGallery({ images, title = "Screenshot" }: Props) 
                             />
                         </div>
                     </button>
-
-                    {/* Miniatury: małe, równe, 4:3 */}
                     {images.length > 1 && (
                         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
                             {images.slice(1).map((img, i) => (

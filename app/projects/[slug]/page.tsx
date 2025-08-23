@@ -17,7 +17,7 @@ type Img = string | StaticImageData;
 const toArray = (img?: Img | Img[]): Img[] =>
     Array.isArray(img) ? img : img ? [img] : [];
 
-export default  function ProjectPage ({ params }: { params: { slug: string } }) {
+export default  function ProjectDetails ({ params }: { params: { slug: string } }) {
     const project = projects.find((p) => p.slug === params.slug);
 
     const laptopImages = toArray(project?.imageLaptop as Img | Img[] | undefined);

@@ -115,15 +115,7 @@ export const EducationCard = (item: EducationItem) => {
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.04 * idx, duration: 0.2, ease: "easeOut" }}
                                     >
-                                        <Badge
-                                            role="listitem"
-                                            className="
-                        relative z-10 bg-white text-black
-                        hover:bg-lime-300 transition-colors duration-200
-                        whitespace-nowrap
-                        will-change-transform
-                      "
-                                        >
+                                        <Badge className="bg-white text-black hover:bg-neutral-200 transition-colors duration-200">
                                             {tech.name}
                                         </Badge>
                                     </motion.div>

@@ -15,7 +15,6 @@ export const SkillsCard = ({ name, image }: SkillCardProps) => {
 
     return (
         <motion.div
-            role="listitem"
             variants={shouldReduceMotion ? undefined : fadeUp}
             initial="hidden"
             whileInView="show"

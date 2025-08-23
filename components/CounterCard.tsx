@@ -11,16 +11,8 @@ export const aboutStats = [
     { value: 12, label: "Technologies", delay: 0.16 },
 ] as const;
 
-export function CounterCard({
-                                value,
-                                label,
-                                delay = 0,
-                                duration = 1.2,
-                                prefix = "",
-                                suffix = "+",
-                                locale,
-                                className = "",
-                            }: {
+
+interface CounterCardProps {
     value: number;
     label: string;
     delay?: number;
@@ -29,7 +21,18 @@ export function CounterCard({
     suffix?: string;
     locale?: string;
     className?: string;
-}) {
+}
+
+export const CounterCard = ({
+                                value,
+                                label,
+                                delay = 0,
+                                duration = 1.2,
+                                prefix = "",
+                                suffix = "+",
+                                locale,
+                                className = "",
+                            }: CounterCardProps)=> {
     const shouldReduceMotion = useReducedMotion();
 
     return (
@@ -60,7 +63,7 @@ export function CounterCard({
     );
 }
 
-export function CounterGrid() {
+export const CounterGrid = () => {
     const shouldReduceMotion = useReducedMotion();
 
     return (

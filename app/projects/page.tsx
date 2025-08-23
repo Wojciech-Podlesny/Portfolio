@@ -1,47 +1,72 @@
 "use client";
 
-import  { useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { TextAnimate } from "@/components/magicui/text-animate";
-import { FilterBar } from "@/components/FilterBar";
-import { Pagination } from "@/components/Pagination";
+import { FilterBarProjects } from "@/components/FilterBarProjects";
 import { useProjectFilter } from "@/hooks/useProjectFilter";
-import {ProjectsList} from "@/components/ProjectList";
+import { ProjectsList } from "@/components/ProjectList";
+import { ProjectsPagination } from "@/components/ProjectsPagination";
+import {useDebouncedValue} from "@/hooks/useDebounceSearch";
+import {SectionHeading} from "@/components/SectionHeading";
 
-const ProjectsPage = () => {
+const ALL_TECHNOLOGIES = [
+    "All Projects",
+    "React",
+    "NextJS",
+    "Tailwind CSS",
+    "MongoDB",
+    "ExpressJS",
+];
+
+const Projects = () => {
     const [selectedFilter, setSelectedFilter] = useState("All Projects");
     const [searchTerm, setSearchTerm] = useState("");
     const [page, setPage] = useState(1);
     const projectsPerPage = 6;
 
-    const allTechnologies = [
-        "All Projects",
-        "React",
-        "NextJS",
-        "Tailwind CSS",
-        "MongoDB",
-        "ExpressJS",
-    ];
+    const debouncedSearch = useDebouncedValue(searchTerm, 300);
 
     const { filteredProjects, paginatedProjects } = useProjectFilter(
         selectedFilter,
-        searchTerm,
+        debouncedSearch,
         page,
         projectsPerPage
     );
 
+    const totalPages = useMemo(
+        () => Math.max(1, Math.ceil(filteredProjects.length / projectsPerPage)),
+        [filteredProjects.length, projectsPerPage]
+    );
+
+    useEffect(() => {
+        if (page > totalPages) setPage(totalPages);
+        if (page < 1) setPage(1);
+    }, [totalPages, page]);
+
+    const handleFilterChange = useCallback((v: string) => {
+        setSelectedFilter(v);
+        setPage(1);
+    }, []);
+
+    const handleSearchChange = useCallback((v: string) => {
+        setSearchTerm(v);
+        setPage(1);
+    }, []);
+
     return (
-        <section className="py-16 px-6 bg-gray-900 text-white">
-            <h2 className="text-4xl font-bold mb-12 text-center mt-24">My Projects</h2>
+        <section className="py-16 px-6 mt-24 bg-gray-900 text-white">
+            {/*<h1 className="text-white p-12 text-2xl text-center mt-24">My Projects</h1>*/}
+            <SectionHeading title="All Projects" />
             <TextAnimate className="text-gray-300 px-4 md:px-12 text-2xl text-center mb-16">
                 Explore a collection of my recent work across various technologies and domains.
             </TextAnimate>
 
-            <FilterBar
-                allTechnologies={allTechnologies}
+            <FilterBarProjects
+                allTechnologies={ALL_TECHNOLOGIES}
                 selectedFilter={selectedFilter}
-                setSelectedFilter={setSelectedFilter}
+                setSelectedFilter={handleFilterChange}
                 searchTerm={searchTerm}
-                setSearchTerm={setSearchTerm}
+                setSearchTerm={handleSearchChange}
                 setPage={setPage}
             />
 
@@ -53,16 +78,14 @@ const ProjectsPage = () => {
                 <ProjectsList projects={paginatedProjects} />
             )}
 
-
-                <Pagination
-                    totalItems={filteredProjects.length}
-                    itemsPerPage={projectsPerPage}
-                    currentPage={page}
-                    onPageChange={setPage}
-                />
-
+            <ProjectsPagination
+                totalItems={filteredProjects.length}
+                itemsPerPage={projectsPerPage}
+                currentPage={page}
+                onPageChange={setPage}
+            />
         </section>
     );
-}
+};
 
-export default ProjectsPage;
+export default Projects;

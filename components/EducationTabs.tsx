@@ -28,7 +28,7 @@ export const EducationTabs = ({ education }: { education: EducationItem[] }) => 
           snap-x snap-mandatory
           mb-6 sm:mb-12
         "
-                aria-label="Kategoria edukacji"
+                aria-label="Category education"
             >
                 <TabsTrigger
                     value="university"
