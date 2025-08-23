@@ -12,13 +12,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { motion, AnimatePresence } from "framer-motion";
 import { showErrorToast, showSuccessToast } from "@/components/ErrorToast";
 import {SectionHeading} from "@/components/SectionHeading";
 import {ContactFormData, contactFormSchema} from "@/lib/validation";
 import {Button} from "@/components/ui/button";
-import Link from "next/link";
+
 
 
 
@@ -46,7 +45,6 @@ export const Contact = () => {
         }
     }); //symulacja//
 
-    // @ts-ignore
     return (
         <section
             className="w-full py-24 bg-gradient-to-b from-black via-gray-900 to-black text-white"

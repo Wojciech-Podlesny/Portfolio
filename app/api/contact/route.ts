@@ -13,7 +13,7 @@ export async function POST() {
         });
 
         if (error) {
-            return Response.json({ error }, { status: 500 });
+            return Response.json({  }, { status: 500 });
         }
 
         return Response.json(data);

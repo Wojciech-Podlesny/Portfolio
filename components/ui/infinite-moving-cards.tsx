@@ -21,11 +21,8 @@ export const InfiniteMovingCards = ({
 
     const [start, setStart] = useState(false);
 
+    // 🔹 klonowanie elementów — tylko raz, przy montażu
     useEffect(() => {
-        addAnimation();
-    }, []);
-
-    function addAnimation() {
         if (containerRef.current && scrollerRef.current) {
             const scrollerContent = Array.from(scrollerRef.current.children);
 
@@ -34,28 +31,23 @@ export const InfiniteMovingCards = ({
                 scrollerRef.current?.appendChild(duplicatedItem);
             });
 
-            getDirection();
-            getSpeed();
             setStart(true);
         }
-    }
+    }, []);
 
-    const getDirection = () => {
+    // 🔹 aktualizacja direction i speed gdy się zmieniają
+    useEffect(() => {
         if (containerRef.current) {
             containerRef.current.style.setProperty(
                 "--animation-direction",
                 direction === "left" ? "forwards" : "reverse"
             );
-        }
-    };
 
-    const getSpeed = () => {
-        if (containerRef.current) {
             const duration =
                 speed === "fast" ? "20s" : speed === "normal" ? "40s" : "80s";
             containerRef.current.style.setProperty("--animation-duration", duration);
         }
-    };
+    }, [direction, speed]);
 
     return (
         <div
@@ -74,10 +66,7 @@ export const InfiniteMovingCards = ({
                 )}
             >
                 {items.map((item, idx) => (
-                    <li
-                        key={idx}
-                        className="relative shrink-0"
-                    >
+                    <li key={idx} className="relative shrink-0">
                         {item}
                     </li>
                 ))}

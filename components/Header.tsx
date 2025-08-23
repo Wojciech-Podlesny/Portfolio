@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Profile } from "./Profile";
 import { Spotlight } from "./ui/Spotlight";
 import { biography } from "@/data/biography";
-import { MagicButton } from "@/components/MagicButton";
 import { Highlight } from "@/components/ui/hero-highlight";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { GithubIcon, LinkedinIcon } from "@/data/icon";

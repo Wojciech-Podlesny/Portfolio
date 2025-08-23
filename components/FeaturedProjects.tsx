@@ -2,7 +2,6 @@
 
 import React, { useMemo } from "react";
 import { projects } from "@/data/projects";
-import { MagicButton } from "@/components/MagicButton";
 import Link from "next/link";
 import { ProjectCard } from "@/components/ProjectsCard";
 import { TextAnimate } from "@/components/magicui/text-animate";
