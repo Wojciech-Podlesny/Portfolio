@@ -1,188 +1,67 @@
+//
+//
 // import { notFound } from "next/navigation";
-// import Link from "next/link";
-// import Image, { StaticImageData } from "next/image";
-// import { FaGithub, FaExternalLinkAlt, FaCheckCircle } from "react-icons/fa";
-// import { projects } from "@/data/projects";
-// import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-// import ProjectGallery from "@/components/ProjectGallery";
-// import { ProjectCard } from "@/components/ProjectsCard";
 // import MotionSection from "@/components/MotionSection";
+// import { ProjectCard } from "@/components/ProjectsCard";
+// import ProjectGallery from "@/components/ProjectGallery";
+// import { Card } from "@/components/ui/card";
+// import { getProjectBySlug, getSimilarProjects, getMockupSrc } from "@/utils/project-helpers";
+// import {ProjectDetailsHeader} from "@/components/ProjectDetails/ProejctDetailsHeader";
+// import {HeroMockup} from "@/components/ProjectDetails/HeroMockup";
+// import {FeaturesGrid} from "@/components/ProjectDetails/FeaturesGrid";
 //
 // type RouteParams = { slug: string };
-// type Img = string | StaticImageData;
-// function toArray(img?: Img | Img[]): Img[] {
-//     return Array.isArray(img) ? img : img ? [img] : [];
-// }
 //
-//
-// export default async function ProjectDetailsPage({
-//                                                      params,
-//                                                  }: {
-//     params: Promise<RouteParams>;
-// }) {
-//     const { slug } = await params; // <-- Next 15 wymaga await
-//     const project = projects.find((p) => p.slug === slug);
+// export default async function ProjectDetailsPage({ params }: { params: Promise<RouteParams> }) {
+//     const { slug } = await params;
+//     const project = getProjectBySlug(slug);
 //     if (!project) notFound();
 //
-//     const laptopImages = toArray(project.imageLaptop as Img | Img[] | undefined);
-//     const galleryImages = toArray(project.image as Img | Img[] | undefined);
-//     const mockupSrc = (laptopImages[0] ?? galleryImages[0]) as Img | undefined;
-//
-//     const similarProjects =
-//         projects
-//             .filter(
-//                 (p) =>
-//                     p.slug !== project.slug &&
-//                     p.technologies?.some((tech) => project.technologies?.includes(tech))
-//             )
-//             .slice(0, 3) ?? [];
+//     const similarProjects = getSimilarProjects(project);
+//     const mockupSrc = getMockupSrc(project);
 //
 //     return (
 //         <MotionSection className="bg-gray-900 text-white min-h-screen">
-//             {/* HEADER */}
-//             <header className="flex flex-col items-center text-center px-4 pt-24 pb-8">
-//                 <h1 id="project-title" className="text-3xl md:text-5xl font-bold">
-//                     {project.title}
-//                 </h1>
+//             <ProjectDetailsHeader
+//                 title={project.title}
+//                 date={project.date}
+//                 status={project.status}
+//                 preview={project.preview}
+//                 github={project.github}
+//             />
 //
-//                 {project.date && (
-//                     <p className="mt-2 text-gray-400 text-base md:text-lg">{project.date}</p>
-//                 )}
-//
-//                 {project.status && (
-//                     <div className="mt-3">
-//             <span
-//                 className={`px-3 py-1 rounded-full text-xs font-semibold ${
-//                     project.status === "in-progress"
-//                         ? "bg-yellow-400 text-black"
-//                         : project.status === "completed"
-//                             ? "bg-emerald-500 text-white"
-//                             : "bg-gray-500 text-white"
-//                 }`}
-//             >
-//               {project.status === "in-progress"
-//                   ? "In Progress"
-//                   : project.status === "completed"
-//                       ? "Completed"
-//                       : "Paused"}
-//             </span>
-//                     </div>
-//                 )}
-//
-//                 {(project.preview || project.github) && (
-//                     <div className="mt-6 flex flex-wrap justify-center gap-3">
-//                         {project.preview && (
-//                             <Link
-//                                 href={project.preview}
-//                                 target="_blank"
-//                                 rel="noopener noreferrer"
-//                                 className="inline-flex items-center gap-2 rounded-lg bg-blue-600 hover:bg-blue-700 px-5 py-3 font-semibold"
-//                                 aria-label={`${project.title} — Live Demo`}
-//                             >
-//                                 <FaExternalLinkAlt aria-hidden /> Live Demo
-//                             </Link>
-//                         )}
-//                         {project.github && (
-//                             <Link
-//                                 href={project.github}
-//                                 target="_blank"
-//                                 rel="noopener noreferrer"
-//                                 className="inline-flex items-center gap-2 rounded-lg bg-gray-700 hover:bg-gray-800 px-5 py-3 font-semibold"
-//                                 aria-label={`${project.title} — GitHub Repository`}
-//                             >
-//                                 <FaGithub aria-hidden /> GitHub
-//                             </Link>
-//                         )}
-//                     </div>
-//                 )}
-//             </header>
-//
-//             {mockupSrc && (
-//                 <div className="max-w-5xl mx-auto px-6 mb-16">
-//                     <div className="relative mx-auto w-full rounded-2xl overflow-hidden h-[28rem] md:h-[40rem] bg-gray-900 ring-1 ring-white/10">
-//                         <Image
-//                             src={mockupSrc}
-//                             alt={`${project.title} main preview`}
-//                             fill
-//                             className="object-contain p-3 md:p-4"
-//                             sizes="(max-width: 768px) 100vw, 1280px"
-//                             priority
-//                         />
-//                     </div>
-//                 </div>
-//             )}
+//             <HeroMockup src={mockupSrc} alt={`${project.title} main preview`} />
 //
 //             <div className="max-w-6xl mx-auto px-6 py-12 space-y-16">
 //                 {project.description && (
 //                     <section>
 //                         <h3 className="text-2xl font-semibold mb-4">Description:</h3>
-//                         <p className="text-gray-300 text-lg leading-relaxed text-center">
-//                             {project.description}
-//                         </p>
+//                         <p className="text-gray-300 text-lg leading-relaxed text-center">{project.description}</p>
 //                     </section>
 //                 )}
 //
-//                 {project.keyFeatures?.length > 0 && (
-//                     <section>
-//                         <h3 className="text-2xl font-semibold mb-6">Key Features</h3>
-//                         <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
-//                             {project.keyFeatures.map((feature, i) => (
-//                                 <Card
-//                                     key={i}
-//                                     className="bg-gray-800/60 border border-gray-700 hover:bg-gray-800 transition"
-//                                 >
-//                                     <CardHeader className="p-5 flex items-start gap-3">
-//                                         <div className="h-10 w-10 rounded-full bg-emerald-500/15 border border-emerald-500/40 flex items-center justify-center shrink-0">
-//                                             <FaCheckCircle className="text-emerald-400" />
-//                                         </div>
-//                                         <CardTitle className="text-white leading-relaxed break-words">
-//                                             {feature}
-//                                         </CardTitle>
-//                                     </CardHeader>
-//                                 </Card>
-//                             ))}
-//                         </div>
-//                     </section>
-//                 )}
+//                 {!!project.keyFeatures?.length && <FeaturesGrid features={project.keyFeatures} />}
 //
-//                 {Array.isArray(project.image) && (
+//                 {!!project.image?.length && (
 //                     <section className="max-w-6xl mx-auto px-6 py-10">
 //                         <ProjectGallery images={project.image} />
 //                     </section>
 //                 )}
 //
-//                 {project.technologies?.length > 0 && (
+//                 {!!project.technologies?.length && (
 //                     <section aria-labelledby="stack-heading">
 //                         <Card className="bg-gray-900/70 border border-white/10 overflow-hidden">
-//                             <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
-//                                 <h3 id="stack-heading" className="text-sm font-semibold text-white/80">
-//                                     Tech Stack
-//                                 </h3>
-//                             </div>
-//                             <div className="p-4">
-//                                 <ul className="flex flex-wrap gap-3">
-//                                     {project.technologies.map((tech) => (
-//                                         <li
-//                                             key={tech}
-//                                             className="rounded-full px-4 py-2 text-sm font-medium bg-white/5 hover:bg-white/10 text-white/90 ring-1 ring-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition-colors"
-//                                         >
-//                                             {tech}
-//                                         </li>
-//                                     ))}
-//                                 </ul>
-//                             </div>
+//                             {/* ...TechStackChips jeśli chcesz jeszcze wydzielić... */}
 //                         </Card>
 //                     </section>
 //                 )}
 //             </div>
 //
-//             {similarProjects.length > 0 && (
+//             {!!similarProjects.length && (
 //                 <div className="pt-16 pb-12">
 //                     <h3 className="text-2xl font-semibold text-center mb-10">Similar Projects</h3>
 //                     <div className="flex flex-col md:flex-row justify-center items-center gap-12">
-//                         {similarProjects.map((simProject) => (
-//                             <ProjectCard key={simProject.slug} {...simProject} />
-//                         ))}
+//                         {similarProjects.map(p => <ProjectCard key={p.slug} {...p} />)}
 //                     </div>
 //                 </div>
 //             )}
@@ -190,20 +69,31 @@
 //     );
 // }
 
+
+//dark
 import { notFound } from "next/navigation";
 import MotionSection from "@/components/MotionSection";
 import { ProjectCard } from "@/components/ProjectsCard";
 import ProjectGallery from "@/components/ProjectGallery";
 import { Card } from "@/components/ui/card";
-import { getProjectBySlug, getSimilarProjects, getMockupSrc } from "@/utils/project-helpers";
-import {ProjectDetailsHeader} from "@/components/ProjectDetails/ProejctDetailsHeader";
-import {HeroMockup} from "@/components/ProjectDetails/HeroMockup";
-import {FeaturesGrid} from "@/components/ProjectDetails/FeaturesGrid";
+import {
+    getProjectBySlug,
+    getSimilarProjects,
+    getMockupSrc,
+} from "@/utils/project-helpers";
+import { HeroMockup } from "@/components/ProjectDetails/HeroMockup";
+import { FeaturesGrid } from "@/components/ProjectDetails/FeaturesGrid";
+import { ProjectDetailsHeader } from "@/components/ProjectDetails/ProjectDetailsHeader";
 
 type RouteParams = { slug: string };
 
-export default async function ProjectDetailsPage({ params }: { params: Promise<RouteParams> }) {
+export default async function ProjectDetailsPage({
+                                                     params,
+                                                 }: {
+    params: Promise<RouteParams>;
+}) {
     const { slug } = await params;
+
     const project = getProjectBySlug(slug);
     if (!project) notFound();
 
@@ -211,7 +101,7 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<R
     const mockupSrc = getMockupSrc(project);
 
     return (
-        <MotionSection className="bg-gray-900 text-white min-h-screen">
+        <MotionSection className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen">
             <ProjectDetailsHeader
                 title={project.title}
                 date={project.date}
@@ -226,11 +116,15 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<R
                 {project.description && (
                     <section>
                         <h3 className="text-2xl font-semibold mb-4">Description:</h3>
-                        <p className="text-gray-300 text-lg leading-relaxed text-center">{project.description}</p>
+                        <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed text-center">
+                            {project.description}
+                        </p>
                     </section>
                 )}
 
-                {!!project.keyFeatures?.length && <FeaturesGrid features={project.keyFeatures} />}
+                {!!project.keyFeatures?.length && (
+                    <FeaturesGrid features={project.keyFeatures} />
+                )}
 
                 {!!project.image?.length && (
                     <section className="max-w-6xl mx-auto px-6 py-10">
@@ -240,8 +134,25 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<R
 
                 {!!project.technologies?.length && (
                     <section aria-labelledby="stack-heading">
-                        <Card className="bg-gray-900/70 border border-white/10 overflow-hidden">
-                            {/* ...TechStackChips jeśli chcesz jeszcze wydzielić... */}
+                        <Card className="bg-gray-100 dark:bg-gray-900/70 border border-gray-200 dark:border-white/10 overflow-hidden">
+                            <div className="px-4 py-5">
+                                <h3
+                                    id="stack-heading"
+                                    className="text-gray-900 dark:text-white text-lg font-semibold mb-4"
+                                >
+                                    Tech Stack
+                                </h3>
+                                <div className="flex flex-wrap gap-3">
+                                    {project.technologies.map((tech) => (
+                                        <span
+                                            key={tech}
+                                            className="rounded-full px-4 py-2 text-sm font-medium bg-gray-200 dark:bg-white/5 text-gray-900 dark:text-white hover:bg-gray-300 dark:hover:bg-white/10 transition"
+                                        >
+                      {tech}
+                    </span>
+                                    ))}
+                                </div>
+                            </div>
                         </Card>
                     </section>
                 )}
@@ -249,9 +160,13 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<R
 
             {!!similarProjects.length && (
                 <div className="pt-16 pb-12">
-                    <h3 className="text-2xl font-semibold text-center mb-10">Similar Projects</h3>
+                    <h3 className="text-2xl font-semibold text-center mb-10">
+                        Similar Projects
+                    </h3>
                     <div className="flex flex-col md:flex-row justify-center items-center gap-12">
-                        {similarProjects.map(p => <ProjectCard key={p.slug} {...p} />)}
+                        {similarProjects.map((p) => (
+                            <ProjectCard key={p.slug} {...p} />
+                        ))}
                     </div>
                 </div>
             )}
