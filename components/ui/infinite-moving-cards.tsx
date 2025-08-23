@@ -21,7 +21,6 @@ export const InfiniteMovingCards = ({
 
     const [start, setStart] = useState(false);
 
-    // 🔹 klonowanie elementów — tylko raz, przy montażu
     useEffect(() => {
         if (containerRef.current && scrollerRef.current) {
             const scrollerContent = Array.from(scrollerRef.current.children);
@@ -35,7 +34,6 @@ export const InfiniteMovingCards = ({
         }
     }, []);
 
-    // 🔹 aktualizacja direction i speed gdy się zmieniają
     useEffect(() => {
         if (containerRef.current) {
             containerRef.current.style.setProperty(

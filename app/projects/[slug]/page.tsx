@@ -7,17 +7,23 @@ import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt, FaCheckCircle } from "react-icons/fa";
 import { projects } from "@/data/projects";
-import { ProjectCard } from "@/components/ProjectsCard";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import ProjectGallery from "@/components/ProjectGallery";
+import {ProjectCard} from "@/components/ProjectsCard";
 
 
 type Img = string | StaticImageData;
 
-const toArray = (img?: Img | Img[]): Img[] =>
-    Array.isArray(img) ? img : img ? [img] : [];
+type PageProps = {
+    params: { slug: string };
+};
 
-export default  function ProjectDetails ({ params }: { params: { slug: string } }) {
+
+const ProjectDetails  = ({ params }: PageProps ) => {
+
+    const toArray = (img?: Img | Img[]): Img[] =>
+        Array.isArray(img) ? img : img ? [img] : [];
+
     const project = projects.find((p) => p.slug === params.slug);
 
     const laptopImages = toArray(project?.imageLaptop as Img | Img[] | undefined);
@@ -201,3 +207,4 @@ export default  function ProjectDetails ({ params }: { params: { slug: string } 
         </motion.section>
     );
 }
+export default ProjectDetails
