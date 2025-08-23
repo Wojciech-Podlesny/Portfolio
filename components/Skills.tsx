@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { SkillsTabs } from "@/components/SkillsTabs";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -18,8 +17,6 @@ export const Skills = () => {
             </TextAnimate>
 
             <SkillsTabs />
-
-            {/* 🔹 Separator */}
             <div className="mt-16 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         </section>
     );

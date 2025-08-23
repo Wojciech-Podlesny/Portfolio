@@ -4,7 +4,6 @@ export type Biography =  {
     image: StaticImageData;
     name: string;
     roles: string[];
-    description: string;
     github: string;
     linkedin: string;
 }

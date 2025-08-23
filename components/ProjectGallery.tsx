@@ -17,7 +17,6 @@ export default function ProjectGallery({ images, title = "Screenshot" }: Props) 
 
     if (!images?.length) return null;
 
-    // lightbox slides
     const slides = images.map((img, i) => ({
         src: (img as any).src,
         alt: `${title} ${i + 1}`,
@@ -25,7 +24,6 @@ export default function ProjectGallery({ images, title = "Screenshot" }: Props) 
 
     return (
         <>
-            {/* lead + miniatury */}
             <section aria-label="Screenshots" className="max-w-6xl mx-auto px-6">
                 <div className="grid gap-4">
                     {/* Lead: niski, 16:9, nie dominuje strony */}

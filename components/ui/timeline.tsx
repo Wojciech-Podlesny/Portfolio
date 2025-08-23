@@ -33,8 +33,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             const lastRowRect = lastRow.getBoundingClientRect();
 
             const offset = firstIconRect.top - rect.top;
-            // wysokość od pierwszej ikony do DOLNEJ krawędzi ostatniej karty
-            let newHeight = lastRowRect.bottom - firstIconRect.top;
+            const newHeight = lastRowRect.bottom - firstIconRect.top;
 
             setLineOffset(Math.max(0, offset));
             setHeight(Math.max(0, newHeight));
