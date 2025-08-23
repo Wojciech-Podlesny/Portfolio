@@ -1,4 +1,3 @@
-
 "use client";
 
 import { notFound } from "next/navigation";
@@ -9,26 +8,24 @@ import { FaGithub, FaExternalLinkAlt, FaCheckCircle } from "react-icons/fa";
 import { projects } from "@/data/projects";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import ProjectGallery from "@/components/ProjectGallery";
-import {ProjectCard} from "@/components/ProjectsCard";
-
+import { ProjectCard } from "@/components/ProjectsCard";
 
 type Img = string | StaticImageData;
 
-type PageProps = {
+// ✅ Zmienione z PageProps na Props, żeby uniknąć konfliktu z .next/types
+type Props = {
     params: { slug: string };
 };
 
+function toArray(img?: Img | Img[]): Img[] {
+    return Array.isArray(img) ? img : img ? [img] : [];
+}
 
-const ProjectDetails  = ({ params }: PageProps ) => {
-
-    const toArray = (img?: Img | Img[]): Img[] =>
-        Array.isArray(img) ? img : img ? [img] : [];
-
+const ProjectDetails = ({ params }: Props) => {
     const project = projects.find((p) => p.slug === params.slug);
 
     const laptopImages = toArray(project?.imageLaptop as Img | Img[] | undefined);
     const galleryImages = toArray(project?.image as Img | Img[] | undefined);
-
     const mockupSrc = (laptopImages[0] ?? galleryImages[0]) as Img | undefined;
 
     if (!project) return notFound();
@@ -44,9 +41,9 @@ const ProjectDetails  = ({ params }: PageProps ) => {
 
     return (
         <motion.section
-            initial={{opacity: 0, y: 30}}
-            animate={{opacity: 1, y: 0}}
-            transition={{duration: 0.5}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
             className="bg-gray-900 text-white min-h-screen"
         >
             {/* HEADER */}
@@ -56,7 +53,9 @@ const ProjectDetails  = ({ params }: PageProps ) => {
                 </h1>
 
                 {project.date && (
-                    <p className="mt-2 text-gray-400 text-base md:text-lg">{project.date}</p>
+                    <p className="mt-2 text-gray-400 text-base md:text-lg">
+                        {project.date}
+                    </p>
                 )}
 
                 {project.status && (
@@ -89,7 +88,7 @@ const ProjectDetails  = ({ params }: PageProps ) => {
                                 className="inline-flex items-center gap-2 rounded-lg bg-blue-600 hover:bg-blue-700 px-5 py-3 font-semibold"
                                 aria-label={`${project.title} — Live Demo`}
                             >
-                                <FaExternalLinkAlt aria-hidden/> Live Demo
+                                <FaExternalLinkAlt aria-hidden /> Live Demo
                             </Link>
                         )}
                         {project.github && (
@@ -100,7 +99,7 @@ const ProjectDetails  = ({ params }: PageProps ) => {
                                 className="inline-flex items-center gap-2 rounded-lg bg-gray-700 hover:bg-gray-800 px-5 py-3 font-semibold"
                                 aria-label={`${project.title} — GitHub Repository`}
                             >
-                                <FaGithub aria-hidden/> GitHub
+                                <FaGithub aria-hidden /> GitHub
                             </Link>
                         )}
                     </div>
@@ -109,8 +108,7 @@ const ProjectDetails  = ({ params }: PageProps ) => {
 
             {mockupSrc && (
                 <div className="max-w-5xl mx-auto px-6 mb-16">
-                    <div
-                        className="relative mx-auto w-full rounded-2xl overflow-hidden h-[28rem] md:h-[40rem] bg-gray-900 ring-1 ring-white/10">
+                    <div className="relative mx-auto w-full rounded-2xl overflow-hidden h-[28rem] md:h-[40rem] bg-gray-900 ring-1 ring-white/10">
                         <Image
                             src={mockupSrc}
                             alt={`${project.title} main preview`}
@@ -123,8 +121,6 @@ const ProjectDetails  = ({ params }: PageProps ) => {
                 </div>
             )}
 
-
-
             <div className="max-w-6xl mx-auto px-6 py-12 space-y-16">
                 {project.description && (
                     <section>
@@ -134,7 +130,6 @@ const ProjectDetails  = ({ params }: PageProps ) => {
                         </p>
                     </section>
                 )}
-
 
                 {project.keyFeatures?.length > 0 && (
                     <section>
@@ -146,9 +141,8 @@ const ProjectDetails  = ({ params }: PageProps ) => {
                                     className="bg-gray-800/60 border border-gray-700 hover:bg-gray-800 transition"
                                 >
                                     <CardHeader className="p-5 flex items-start gap-3">
-                                        <div
-                                            className="h-10 w-10 rounded-full bg-emerald-500/15 border border-emerald-500/40 flex items-center justify-center shrink-0">
-                                            <FaCheckCircle className="text-emerald-400"/>
+                                        <div className="h-10 w-10 rounded-full bg-emerald-500/15 border border-emerald-500/40 flex items-center justify-center shrink-0">
+                                            <FaCheckCircle className="text-emerald-400" />
                                         </div>
                                         <CardTitle className="text-white leading-relaxed break-words">
                                             {feature}
@@ -160,13 +154,12 @@ const ProjectDetails  = ({ params }: PageProps ) => {
                     </section>
                 )}
 
-
-
                 {Array.isArray(project.image) && (
                     <section className="max-w-6xl mx-auto px-6 py-10">
                         <ProjectGallery images={project.image} />
                     </section>
                 )}
+
                 {/* Tech Stack */}
                 {project.technologies?.length > 0 && (
                     <section aria-labelledby="stack-heading">
@@ -191,12 +184,13 @@ const ProjectDetails  = ({ params }: PageProps ) => {
                         </Card>
                     </section>
                 )}
-
             </div>
 
             {similarProjects.length > 0 && (
                 <div className="pt-16 pb-12">
-                    <h3 className="text-2xl font-semibold text-center mb-10">Similar Projects</h3>
+                    <h3 className="text-2xl font-semibold text-center mb-10">
+                        Similar Projects
+                    </h3>
                     <div className="flex flex-col md:flex-row justify-center items-center gap-12">
                         {similarProjects.map((simProject) => (
                             <ProjectCard key={simProject.slug} {...simProject} />
@@ -206,5 +200,6 @@ const ProjectDetails  = ({ params }: PageProps ) => {
             )}
         </motion.section>
     );
-}
-export default ProjectDetails
+};
+
+export default ProjectDetails;
