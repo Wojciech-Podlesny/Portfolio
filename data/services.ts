@@ -4,11 +4,9 @@ import photo3 from "../assets/images/services/seoOptimization.webp";
 import photo4 from "../assets/images/services/performanceOptimilization.webp";
 import photo5 from "../assets/images/services/apiIntegration.webp";
 import photo6 from "../assets/images/services/accessibity.webp";
-import movieApp from "../assets/images/projects/movie-stream-dashboard/MovieApp.png";
-import weatherApp from "../assets/images/projects/weather-app/WeatherApp.png";
 import {FaCode, FaMobileAlt, FaSearch, FaTachometerAlt, FaServer, FaUniversalAccess} from 'react-icons/fa';
 import {Service} from "@/types/services";
-import weatherAppMobile from "@/assets/images/projects/weather-app/weatherApp.png";
+
 
 
 
@@ -29,7 +27,6 @@ export const servicesData: Service[] = [
         ],
         images: [
             photo1,
-            movieApp,
         ],
         icon: FaCode
     },
@@ -48,8 +45,6 @@ export const servicesData: Service[] = [
         ],
         images: [
             photo2,
-            weatherAppMobile
-
         ],
         icon: FaMobileAlt
     },
@@ -68,7 +63,6 @@ export const servicesData: Service[] = [
         ],
         images: [
             photo3,
-            movieApp
         ],
         icon: FaSearch
     },
@@ -87,7 +81,6 @@ export const servicesData: Service[] = [
         ],
         images: [
             photo4,
-            weatherApp
         ],
         icon: FaTachometerAlt
     },
@@ -106,7 +99,6 @@ export const servicesData: Service[] = [
         ],
         images: [
             photo5,
-            weatherApp
         ],
         icon: FaServer
     },
@@ -125,7 +117,6 @@ export const servicesData: Service[] = [
         ],
         images: [
             photo6,
-            movieApp
         ],
         icon: FaUniversalAccess
     }
