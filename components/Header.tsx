@@ -103,7 +103,6 @@ import { Highlight } from "@/components/ui/hero-highlight";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { GithubIcon, LinkedinIcon } from "@/data/icon";
 import { Button } from "@/components/ui/button";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 export const Header = () => {
     const prefersReducedMotion = useReducedMotion();
