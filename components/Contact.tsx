@@ -226,10 +226,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, AnimatePresence } from "framer-motion";
-import { showErrorToast, showSuccessToast } from "@/components/ErrorToast";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ContactFormData, contactFormSchema } from "@/lib/validation";
 import { Button } from "@/components/ui/button";
+import {showErrorToast, showSuccessToast} from "@/components/ErrorToast";
+
 
 export const Contact = () => {
     const form = useForm<ContactFormData>({
@@ -243,17 +244,33 @@ export const Contact = () => {
         },
     });
 
-    const handleFormSubmit = form.handleSubmit(async (data) => {
-        try {
-            console.log("Submitted data:", data);
-            await new Promise((res) => setTimeout(res, 1500));
-            form.reset();
-            showSuccessToast("Message sent successfully!");
-        } catch (err) {
-            console.error("Submission error:", err);
-            showErrorToast("Something went wrong");
-        }
+    const handleFormSubmit =
+        form.handleSubmit(async (data: ContactFormData) => {
+
+            try {
+                const response = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify(data),
+                })
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    console.error("Server error:", errorData);
+                    showErrorToast("Message not sent");
+                    return;
+                }
+
+                showSuccessToast("Message sent successfully")
+                form.reset();
+
+            } catch(error) {
+                console.error("Submission error:", error);
+                showErrorToast("Something went wrong");
+            }
+
     });
+
 
     return (
         <section
@@ -467,22 +484,16 @@ export const Contact = () => {
                                 </FormItem>
                             )}
                         />
-
-                        {/* Submit Button */}
                         <div className="pt-4 flex justify-center items-center text-center">
                             <Button
                                 type="submit"
-                                variant="magic"
                                 disabled={form.formState.isSubmitting}
-                                className="border border-black dark:border-white
-                                text-black dark:text-white font-semibold px-6 py-2 rounded-full
-                                transition-transform hover:scale-105 focus:outline-none
-                                focus:ring-2 focus:ring-lime-500 focus:ring-offset-2"
                             >
                                 <span>{form.formState.isSubmitting ? "Sending..." : "Send Message"}</span>
                             </Button>
                         </div>
                     </form>
+
                 </Form>
             </div>
         </section>

@@ -1,15 +1,15 @@
 export const code = `const profile = {
   name: 'Wojciech Podleśny',
-  title: 'FullStack Developer | Creative Coder | Problem Solver',
+  title: 'Frontend Developer | Creative Coder | Problem Solver',
   skills: [
     'React', 'NextJS', 'Typescript', 'Javascript',
-    'MySQL', 'MongoDB', 'Docker', 'AWS',
-    'GraphQL', 'Git',
+    'Node,js','Tailwind CSS',
+    'Docker', 'Git',
   ],
   hardWorker: true,
   quickLearner: true,
   problemSolver: true,
-  yearsOfExperience: 2,
+  yearsOfExperience: 3,
   hireable: function() {
     return (
       this.hardWorker &&

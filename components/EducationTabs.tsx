@@ -97,6 +97,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { EducationItem } from "@/types/education";
 import { EducationCard } from "@/components/EducationCard";
+import {compareEducationByDate} from "@/lib/sortDate";
 
 const TAB_TYPES = ["university", "course"] as const;
 
@@ -154,6 +155,7 @@ export const EducationTabs = ({ education }: { education: EducationItem[] }) => 
                                 className="space-y-4 sm:space-y-6 max-w-6xl mx-auto"
                             >
                                 {education
+                                    .sort(compareEducationByDate)
                                     .filter((entry) => entry.type === type)
                                     .map((entry) => (
                                         <EducationCard key={entry.id} {...entry} />

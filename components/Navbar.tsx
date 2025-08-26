@@ -88,13 +88,13 @@
 'use client';
 
 import { motion, useScroll, useMotionValueEvent, useReducedMotion } from "framer-motion";
-import { HiCodeBracket } from "react-icons/hi2";
+import { Code2 } from "lucide-react";
 import Link from "next/link";
 import { menuLinks } from "@/data/menuLinks";
 import { usePathname } from "next/navigation";
 import { MenuMobile } from "@/components/MenuMobile";
 import { useState, useRef } from "react";
-import { Button } from "@/components/ui/button";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 const MotionLink = motion(Link);
 
@@ -118,23 +118,24 @@ export const Navbar = () => {
             transition={{ duration: prefersReducedMotion ? 0 : 0.5, ease: "easeInOut" }}
             className="fixed top-4 w-full z-50 px-4 will-change-transform"
         >
-            <div className="flex items-center justify-between max-w-7xl mx-auto rounded-full border
-                bg-white/80 dark:bg-[#0f0f0f]/90
-                backdrop-blur-md px-6 py-4 md:px-12
-                shadow-[0_0_40px_10px_rgba(168,85,247,0.3)] border-gray-200 dark:border-gray-700"
+            <div
+                className="flex items-center justify-between max-w-7xl mx-auto rounded-full border
+          bg-white/80 dark:bg-[#0f0f0f]/90
+          backdrop-blur-md px-6 py-4 md:px-12
+          shadow-[0_0_40px_10px_rgba(168,85,247,0.3)] border-gray-200 dark:border-gray-700"
             >
                 {/* Logo */}
                 <div className="flex items-center gap-2">
-                    <HiCodeBracket size={35} className="text-lime-500" aria-hidden="true" />
+                    <Code2 size={35} className="text-lime-500" aria-hidden="true" />
                     <Link href="/" className="text-2xl font-bold text-black dark:text-white rounded" aria-label="Main page">
                         Dev .
                     </Link>
                 </div>
 
-                {/* Menu + Button */}
                 <div className="flex items-center">
-                    {/* Mobile menu */}
-                    <div className="block md:hidden">
+                    {/* Mobile: ThemeSwitcher on the left, MenuMobile next to it */}
+                    <div className="flex md:hidden items-center gap-3" aria-label="Mobile controls">
+                        <ThemeSwitcher />
                         <MenuMobile />
                     </div>
 
@@ -142,40 +143,34 @@ export const Navbar = () => {
                     <ul className="hidden md:flex items-center gap-12 ml-8">
                         {menuLinks.map((link) => {
                             const isActive =
-                                pathname === link.route ||
-                                (link.route !== "/" && pathname?.startsWith(link.route));
+                                pathname === link.route || (link.route !== "/" && pathname?.startsWith(link.route));
+
+                            const isContact = link.name?.toLowerCase() === "contact" || link.route === "/contact";
 
                             return (
-                                <li key={link.id}>
+                                <li key={link.id} className="flex items-center">
                                     <MotionLink
                                         href={link.route}
                                         aria-label={`Go to: ${link.name}`}
                                         aria-current={isActive ? "page" : undefined}
                                         whileHover={prefersReducedMotion ? undefined : { scale: 1.06 }}
                                         className={`relative uppercase transition-colors duration-500 rounded
-                                            focus:outline-none focus-visible:ring-2 focus-visible:ring-lime-500 focus-visible:ring-offset-2
-                                            ${isActive
-                                            ? "text-lime-500 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:bg-lime-500"
-                                            : "text-black dark:text-white hover:text-lime-500"}`}
+                      focus:outline-none focus-visible:ring-2 focus-visible:ring-lime-500 focus-visible:ring-offset-2
+                      ${
+                                            isActive
+                                                ? "text-lime-500 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:bg-lime-500"
+                                                : "text-black dark:text-white hover:text-lime-500"
+                                        }`}
                                     >
                                         {link.name}
                                     </MotionLink>
+                                    {isContact && (
+                                        <span className="ml-4 inline-flex"><ThemeSwitcher /></span>
+                                    )}
                                 </li>
                             );
                         })}
                     </ul>
-
-                    {/* CTA Button */}
-                    <div className="hidden md:flex items-center gap-4 ml-8">
-                        <Button
-                            asChild
-                            variant="magic"
-                            className="border border-black dark:border-white text-black dark:text-white font-semibold px-6 py-2 rounded-full
-                            transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2"
-                        >
-                            <Link href="/#contact" aria-label="Hire me">Hire Me</Link>
-                        </Button>
-                    </div>
                 </div>
             </div>
         </motion.nav>

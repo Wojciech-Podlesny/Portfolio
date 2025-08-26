@@ -10,7 +10,7 @@ export const experience: Experience[] = [
         img: logoDevsMentoring,
         role: 'Frontend Developer Internship',
         company: 'Devs-Mentoring',
-        date: 'Aug 2023 - present',
+        date: 'July 2023 - present',
         description:
             'Contributed to hands-on commercial projects using HTML, CSS, JavaScript, TypeScript, React, and Next.js. Focused on building modern, responsive interfaces with robust test coverage. Collaborated closely with a Senior Frontend Developer and participated in Agile ceremonies including code reviews and sprint planning.',
         skills: [

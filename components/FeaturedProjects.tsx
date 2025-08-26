@@ -128,12 +128,8 @@ export const FeaturedProjects = () => {
             </motion.div>
 
             <div className="flex justify-center items-center mt-8">
-                <Button
-                    asChild
-                    variant="magic"
-                    className="border border-black dark:border-white text-black dark:text-white font-semibold px-6 py-2 rounded-full transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2"
-                >
-                    <Link href="/projects" aria-label="See more projects">View more projects</Link>
+                <Button asChild>
+                    <Link href="/projects">View my projects</Link>
                 </Button>
             </div>
 

@@ -84,16 +84,32 @@ import {
 import { HeroMockup } from "@/components/ProjectDetails/HeroMockup";
 import { FeaturesGrid } from "@/components/ProjectDetails/FeaturesGrid";
 import { ProjectDetailsHeader } from "@/components/ProjectDetails/ProjectDetailsHeader";
+import {Metadata} from "next";
 
 type RouteParams = { slug: string };
 
-export default async function ProjectDetailsPage({
-                                                     params,
-                                                 }: {
-    params: Promise<RouteParams>;
-}) {
-    const { slug } = await params;
+export const generateMetadata = ({params}: {params:{slug: string}}): Metadata => {
+    const project = getProjectBySlug(params.slug);
+    return {
+        title:`${project?.title}`,
+        description:project?.description,
+        alternates: { canonical: `/projects/${project?.slug}`},
+        openGraph: {
+            title: project?.title,
+            description: project?.description,
+        },
+        twitter: {
+            card: "summary",
+            title: project?.title,
+            description: project?.description,
+        }
+    }
+}
 
+
+
+const ProjectDetails =  ({params}: { params: RouteParams }) => {
+    const { slug } = params;
     const project = getProjectBySlug(slug);
     if (!project) notFound();
 
@@ -173,3 +189,4 @@ export default async function ProjectDetailsPage({
         </MotionSection>
     );
 }
+export default ProjectDetails

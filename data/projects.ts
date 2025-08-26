@@ -109,7 +109,7 @@ export const projects: Project[] = [
         image: projectImages.personalPortfolio,
         imageLaptop: [mockupLaptopImages.personalPortfolio],
         github: "https://github.com/Wojciech-Podlesny/Portfolio",
-        preview: "https://wojciechpodlesny.com",
+        preview: "https://wojciechpodlesny.pl",
         keyFeatures: [
             "Modern, responsive design optimized for all devices",
             "Projects section with previews and links to GitHub/live demos",

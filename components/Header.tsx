@@ -129,7 +129,7 @@ export const Header = () => {
                 initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: prefersReducedMotion ? 0 : 1 }}
-                className="z-10 flex flex-col gap-4 items-center max-w-4xl"
+                className="z-10 flex flex-col gap-4 mt-100 items-center max-w-4xl"
             >
                 <Profile />
 
@@ -145,25 +145,14 @@ export const Header = () => {
                 </h2>
 
                 <nav className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-                    <Button
-                        asChild
-                        variant="magic"
-                        className="border border-black dark:border-white text-black dark:text-white
-                        font-semibold px-6 py-2 rounded-full transition-transform
-                        hover:scale-105 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2"
-                    >
-                        <Link href="/#contact" aria-label="Kontakt">Contact me</Link>
+                    <Button asChild>
+                        <Link href="/#contact">Contact me</Link>
                     </Button>
 
-                    <Button
-                        asChild
-                        variant="magic"
-                        className="border border-black dark:border-white text-black dark:text-white
-                        font-semibold px-6 py-2 rounded-full transition-transform
-                        hover:scale-105 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2"
-                    >
-                        <Link href="/projects" aria-label="Projekty">View my projects</Link>
+                    <Button asChild>
+                        <Link href="/projects">View my projects</Link>
                     </Button>
+
                 </nav>
 
                 <div className="flex justify-center gap-6 text-2xl mb-6 text-black dark:text-white">
@@ -187,8 +176,6 @@ export const Header = () => {
                         <GithubIcon  />
                     </Link>
                 </div>
-
-                <ThemeSwitcher />
             </motion.div>
         </header>
     );

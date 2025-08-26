@@ -24,7 +24,7 @@
 
 //dark
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-import { FaCheckCircle } from "react-icons/fa";
+import { CheckCircle } from "lucide-react";
 
 export function FeaturesGrid({ features }: { features: string[] }) {
     if (!features?.length) return null;
@@ -43,7 +43,7 @@ export function FeaturesGrid({ features }: { features: string[] }) {
                     >
                         <CardHeader className="p-5 flex items-start gap-3">
                             <div className="h-10 w-10 rounded-full bg-emerald-100 dark:bg-emerald-500/15 border border-emerald-300 dark:border-emerald-500/40 flex items-center justify-center shrink-0">
-                                <FaCheckCircle className="text-emerald-500 dark:text-emerald-400" />
+                                <CheckCircle className="text-emerald-500 dark:text-emerald-400" />
                             </div>
 
                             <CardTitle className="text-gray-900 dark:text-white leading-relaxed break-words">

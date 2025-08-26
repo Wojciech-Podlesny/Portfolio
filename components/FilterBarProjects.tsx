@@ -64,7 +64,7 @@
 //dark
 
 import React from "react";
-import { FiFilter, FiSearch } from "react-icons/fi";
+import { Filter, Search } from "lucide-react";
 
 interface FilterBarProjectsProps {
     allTechnologies: string[];
@@ -85,10 +85,9 @@ export const FilterBarProjects = ({
                                   }: FilterBarProjectsProps) => {
     return (
         <div className="flex flex-wrap items-center justify-between gap-4 bg-white dark:bg-[#1F1F2E] px-6 py-4 rounded-xl border border-gray-300 dark:border-gray-700 mb-12 transition-colors duration-300">
-            {/* Filters */}
             <div className="flex items-center gap-3 flex-wrap">
         <span className="flex items-center text-gray-600 dark:text-gray-400 font-medium text-sm mr-2">
-          <FiFilter className="mr-2" /> Filter:
+          <Filter className="mr-2" /> Filter:
         </span>
                 {allTechnologies.map((tech) => (
                     <button
@@ -109,9 +108,8 @@ export const FilterBarProjects = ({
                 ))}
             </div>
 
-            {/* Search */}
             <div className="relative w-full sm:w-auto">
-                <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400" />
                 <input
                     type="text"
                     placeholder="Search projects..."

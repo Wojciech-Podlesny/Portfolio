@@ -1,5 +1,5 @@
 import {StaticImageData} from "next/image";
-import {IconType} from "react-icons";
+import {LucideIcon} from "lucide-react";
 
 export interface Service {
     id: number;
@@ -8,7 +8,7 @@ export interface Service {
     details: string;
     features: string[];
     images: StaticImageData[];
-    icon: IconType
+    icon: LucideIcon
 
 }
 

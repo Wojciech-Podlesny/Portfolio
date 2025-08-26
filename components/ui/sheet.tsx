@@ -4,7 +4,7 @@ import * as React from "react"
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
-import {MdClose} from "react-icons/md";
+import {X} from "lucide-react";
 
 const Sheet = SheetPrimitive.Root
 
@@ -64,7 +64,7 @@ const SheetContent = React.forwardRef<
           {...props}
       >
         <SheetPrimitive.Close className="absolute right-4 top-4 opacity-70 ring-offset-background transition-opacity hover:opacity-100 disabled:pointer-events-none data-[state=open]:bg-white">
-          <MdClose size={35} className="text-gray-900 dark:text-white" />
+          <X size={35} className="text-gray-900 dark:text-white" />
           <span className="sr-only">Close</span>
         </SheetPrimitive.Close>
         {children}

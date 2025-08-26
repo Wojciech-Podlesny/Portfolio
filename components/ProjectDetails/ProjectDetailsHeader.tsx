@@ -40,7 +40,7 @@
 "use client";
 
 import Link from "next/link";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import {ExternalLink} from "lucide-react";
 import StatusBadge from "./StatusBadge";
 
 type Props = {
@@ -89,7 +89,7 @@ export const ProjectDetailsHeader: React.FC<Props> = ({
                             aria-label={`${title} — Live Demo`}
                             className="inline-flex items-center gap-2 rounded-lg bg-blue-500 hover:bg-blue-600 px-5 py-3 font-semibold text-white transition-colors"
                         >
-                            <FaExternalLinkAlt aria-hidden /> Live Demo
+                            <ExternalLink aria-hidden /> Live Demo
                         </Link>
                     )}
 
@@ -101,7 +101,7 @@ export const ProjectDetailsHeader: React.FC<Props> = ({
                             aria-label={`${title} — GitHub Repository`}
                             className="inline-flex items-center gap-2 rounded-lg bg-gray-200 hover:bg-gray-300 px-5 py-3 font-semibold text-gray-900 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white transition-colors"
                         >
-                            <FaGithub aria-hidden /> GitHub
+                            <ExternalLink aria-hidden /> GitHub
                         </Link>
                     )}
                 </div>

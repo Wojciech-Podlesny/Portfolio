@@ -1,23 +1,28 @@
-import {EmailTemplate} from "@/utils/email-template";
 import { Resend } from 'resend';
+import {NextRequest, NextResponse} from "next/server";
+import EmailTemplate from "@/emails/email-template";
 
-const resend = new Resend('123456543');
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST() {
+export async function POST(request: NextRequest) {
     try {
-        const { data, error } = await resend.emails.send({
-            from: 'Wojtek <wojtekwp@wp.pl>',
-            to: ['wojtek@wp.pl'],
-            subject: 'Hello world',
-            react: EmailTemplate({ firstName: 'John' }),
+        const body = await request.json();
+        const {email, name} = body
+
+        const data = await resend.emails.send({
+            from: `${process.env.EMAIL_FROM_NAME} <${process.env.RESEND_FROM_EMAIL}>`,
+            to: [email],
+            subject: `Hello ${name}`,
+            react: EmailTemplate({ name, email }),
         });
 
-        if (error) {
-            return Response.json({  }, { status: 500 });
-        }
 
-        return Response.json(data);
+        return NextResponse.json({message: "Email sent successfully", data: data.data?.id});
     } catch (error) {
-        return Response.json({ error }, { status: 500 });
+        console.log("Resend error", error);
+        return NextResponse.json({
+            message: "Email not sent",
+            error: error instanceof Error ? error.message : "Unknown error"},
+        { status: 500 });
     }
 }

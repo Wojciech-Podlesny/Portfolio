@@ -248,7 +248,6 @@ function ClickableCard(props: Props) {
                 >
                     <Card
                         className={clsx(
-                            // dark mode aware background
                             "bg-white dark:bg-[#1E1E2A] rounded-2xl shadow-md transition-all duration-300 cursor-pointer",
                             liftClass,
                             "focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2",
