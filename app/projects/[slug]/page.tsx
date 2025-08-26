@@ -86,7 +86,7 @@ import { FeaturesGrid } from "@/components/ProjectDetails/FeaturesGrid";
 import { ProjectDetailsHeader } from "@/components/ProjectDetails/ProjectDetailsHeader";
 import {Metadata} from "next";
 
-type RouteParams = { slug: string };
+type props = { slug: string };
 
 export const generateMetadata = ({params}: {params:{slug: string}}): Metadata => {
     const project = getProjectBySlug(params.slug);
@@ -106,9 +106,11 @@ export const generateMetadata = ({params}: {params:{slug: string}}): Metadata =>
     }
 }
 
+type Props = {
+    slug: string
+}
 
-
-const ProjectDetails =  ({params}: { params: RouteParams }) => {
+const ProjectDetails =  ({params}: { params: Props }) => {
     const { slug } = params;
     const project = getProjectBySlug(slug);
     if (!project) notFound();
