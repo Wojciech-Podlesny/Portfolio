@@ -154,7 +154,7 @@ export const Header = () => {
 
                 </nav>
 
-                <div className="flex justify-center gap-6 text-2xl mb-6 text-black dark:text-white">
+                <div className="flex justify-center gap-6 text-2xl mb-96 text-black dark:text-white">
                     <Link
                         href="https://linkedin.com/in/wojciech-podlesny"
                         target="_blank"

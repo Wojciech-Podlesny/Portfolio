@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ToastContainer } from "react-toastify";
 import ThemeProvider from "@/app/ThemeProvider";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
         <body className={inter.className}>
+        <GoogleAnalytics gaId="G-H9LB2KDP9P" />
         <ThemeProvider>
                 <Navbar />
                 {children}
