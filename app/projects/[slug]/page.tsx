@@ -84,34 +84,34 @@ import {
 import { HeroMockup } from "@/components/ProjectDetails/HeroMockup";
 import { FeaturesGrid } from "@/components/ProjectDetails/FeaturesGrid";
 import { ProjectDetailsHeader } from "@/components/ProjectDetails/ProjectDetailsHeader";
-import {Metadata} from "next";
+import type { Metadata } from "next";
 
-type props = { slug: string };
-
-export const generateMetadata = ({params}: {params:{slug: string}}): Metadata => {
-    const project = getProjectBySlug(params.slug);
+// Next 15: params is a Promise
+export async function generateMetadata(
+    { params }: { params: Promise<{ slug: string }> }
+): Promise<Metadata> {
+    const { slug } = await params;
+    const project = getProjectBySlug(slug);
     return {
-        title:`${project?.title}`,
-        description:project?.description,
-        alternates: { canonical: `/projects/${project?.slug}`},
+        title: project?.title,
+        description: project?.description,
+        alternates: { canonical: `/projects/${project?.slug}` },
         openGraph: {
             title: project?.title,
             description: project?.description,
         },
         twitter: {
             card: "summary",
-            title: project?.title,
-            description: project?.description,
-        }
-    }
+            title: project?.title ?? "",
+            description: project?.description ?? "",
+        },
+    };
 }
 
-type Props = {
-    slug: string
-}
-
-const ProjectDetails =  ({params}: { params: Props }) => {
-    const { slug } = params;
+export default async function ProjectDetails(
+    { params }: { params: Promise<{ slug: string }> }
+) {
+    const { slug } = await params;
     const project = getProjectBySlug(slug);
     if (!project) notFound();
 
@@ -191,4 +191,3 @@ const ProjectDetails =  ({params}: { params: Props }) => {
         </MotionSection>
     );
 }
-export default ProjectDetails

@@ -1,5 +1,4 @@
 import {StaticImageData} from "next/image";
-import {IconType} from "react-icons";
 
 
 export type Img = string | StaticImageData;
@@ -24,7 +23,6 @@ export interface Project {
     imageLaptop: StaticImageData[];
     github?: string;
     preview?: string;
-    iconList?: IconType[];
     keyFeatures: string[];
     shortDescription:string;
     status: ProjectStatus;

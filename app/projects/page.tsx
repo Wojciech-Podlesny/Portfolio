@@ -179,29 +179,33 @@
 //
 // export default Projects;
 //
-
-import {SectionHeading} from "@/components/SectionHeading";
-import {projects as allProjects} from "@/data/projects";;
-import {Metadata} from "next";
+import { SectionHeading } from "@/components/SectionHeading";
+import { projects as allProjects } from "@/data/projects";
+import type { Metadata } from "next";
 import ProjectsSection from "@/components/ProjectsSection";
 
 export const metadata: Metadata = {
     title: "All Projects",
-    description: "Browse projects including Next.js, React, Tailwind CSS, MongoDB, Express and more"
-}
+    description:
+        "Browse projects including Next.js, React, Tailwind CSS, MongoDB, Express and more",
+};
 
-const Projects = ({searchParams}: { searchParams?: { q?: string; tech?: string; page?: string }; }) => {
+export default async function Projects({
+                                           searchParams,
+                                       }: {
+    searchParams?: Promise<{ q?: string; tech?: string; page?: string }>;
+}) {
+    const sp = (await searchParams) ?? {};
 
     const projects = allProjects;
 
-    const initialSearch = searchParams?.q ?? "";
-    const initialFilter = searchParams?.tech ?? "All Projects";
-    const initialPage = Number(searchParams?.page ?? 1);
+    const initialSearch = sp.q ?? "";
+    const initialFilter = sp.tech ?? "All Projects";
+    const initialPage = Number(sp.page ?? 1);
 
     return (
-        <section
-            className="py-16 px-6 mt-24 bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
-            <SectionHeading title="All Projects"/>
+        <section className="py-16 px-6 mt-24 bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
+            <SectionHeading title="All Projects" />
             <ProjectsSection
                 initialProjects={projects}
                 initialFilter={initialFilter}
@@ -211,5 +215,3 @@ const Projects = ({searchParams}: { searchParams?: { q?: string; tech?: string; 
         </section>
     );
 }
-
-export default Projects;
