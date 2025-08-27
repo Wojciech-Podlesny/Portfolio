@@ -45,7 +45,7 @@ export const Skills = () => {
         >
             <SectionHeading title="Skills" />
 
-            <TextAnimate className="text-gray-800 dark:text-gray-300 px-4 sm:px-12 text-2xl text-center mb-12">
+            <TextAnimate as="h2" className="text-gray-800 dark:text-gray-300 px-4 sm:px-12 text-2xl text-center mb-12">
                 Technologies and tools I use to build efficient, scalable, and innovative solutions!
             </TextAnimate>
 

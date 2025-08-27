@@ -111,7 +111,6 @@ export const ExperienceCard = ({ exp }: { exp: Experience }) => {
                 </CardHeader>
 
                 <CardContent className="flex flex-col gap-y-6 mt-2">
-                    {/* Description */}
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -120,8 +119,6 @@ export const ExperienceCard = ({ exp }: { exp: Experience }) => {
                     >
                         {exp.description}
                     </motion.p>
-
-                    {/* Highlights */}
                     {exp.highlights.length > 0 && (
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}

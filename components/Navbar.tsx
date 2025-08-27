@@ -124,7 +124,6 @@ export const Navbar = () => {
           backdrop-blur-md px-6 py-4 md:px-12
           shadow-[0_0_40px_10px_rgba(168,85,247,0.3)] border-gray-200 dark:border-gray-700"
             >
-                {/* Logo */}
                 <div className="flex items-center gap-2">
                     <Code2 size={35} className="text-lime-500" aria-hidden="true" />
                     <Link href="/" className="text-2xl font-bold text-black dark:text-white rounded" aria-label="Main page">
@@ -133,13 +132,10 @@ export const Navbar = () => {
                 </div>
 
                 <div className="flex items-center">
-                    {/* Mobile: ThemeSwitcher on the left, MenuMobile next to it */}
                     <div className="flex md:hidden items-center gap-3" aria-label="Mobile controls">
                         <ThemeSwitcher />
                         <MenuMobile />
                     </div>
-
-                    {/* Desktop links */}
                     <ul className="hidden md:flex items-center gap-12 ml-8">
                         {menuLinks.map((link) => {
                             const isActive =

@@ -94,14 +94,13 @@ export const About = () => {
                 whileInView={shouldReduceMotion ? undefined : "show"}
                 viewport={shouldReduceMotion ? undefined : { once: true, amount: 0.2 }}
             >
-                <TextAnimate className="text-gray-800 dark:text-gray-200 px-2 md:px-12 text-2xl text-center mb-16">
+                <TextAnimate as="h2" className="text-gray-800 dark:text-gray-200 px-2 md:px-12 text-2xl text-center mb-16">
                     I am a Computer Science student specializing in web development.
                     Passionate about programming, AI integration, and building innovative web applications!
                 </TextAnimate>
             </motion.div>
 
             <div className="flex flex-col md:flex-row md:justify-between gap-12 md:mx-16">
-                {/* LEFT TEXT CONTENT */}
                 <div className="md:w-1/2 w-full space-y-6">
                     <blockquote className="text-base md:text-lg italic text-zinc-600 dark:text-zinc-400 mb-4 border-l border-zinc-300 dark:border-zinc-700 pl-4">
                         “Great apps don’t just look good — they load fast, work everywhere, and feel intuitive.”
@@ -124,8 +123,6 @@ export const About = () => {
 
                     <CounterGrid />
                 </div>
-
-                {/* RIGHT CODE BLOCK */}
                 <motion.div
                     whileHover={shouldReduceMotion ? undefined : { scale: 1.01 }}
                     className="w-full md:w-1/2 flex justify-center"
@@ -135,8 +132,6 @@ export const About = () => {
                     </div>
                 </motion.div>
             </div>
-
-            {/* GRADIENT LINE */}
             <div className="mt-16 h-px w-full bg-gradient-to-r from-transparent via-zinc-400/30 to-transparent dark:via-white/10"></div>
         </section>
     );

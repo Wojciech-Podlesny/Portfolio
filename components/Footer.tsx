@@ -92,7 +92,6 @@ export const Footer = () => {
             className="bg-gradient-to-r from-zinc-100 to-zinc-200 dark:from-[#1b2140] dark:to-[#111723]
             text-gray-700 dark:text-gray-400 py-6 sm:py-8"
         >
-            {/* MENU LINKS */}
             <nav aria-label="Footer navigation" className="mx-auto mb-4 sm:mb-6 max-w-5xl">
                 <ul className="flex flex-wrap justify-center gap-x-4 gap-y-2 sm:gap-6 text-sm sm:text-lg font-medium">
                     {menuLinks.map((link) => (

@@ -296,9 +296,7 @@ export const Contact = () => {
 
                 <Form<ContactFormData> {...form}>
                     <form className="space-y-6" onSubmit={handleFormSubmit}>
-                        {/* First + Last Name */}
                         <div className="flex flex-col md:flex-row gap-6">
-                            {/* First Name */}
                             <div className="w-full md:w-1/2">
                                 <FormField
                                     control={form.control}
@@ -486,6 +484,7 @@ export const Contact = () => {
                         />
                         <div className="pt-4 flex justify-center items-center text-center">
                             <Button
+                                aria-label="Contact me"
                                 type="submit"
                                 disabled={form.formState.isSubmitting}
                             >

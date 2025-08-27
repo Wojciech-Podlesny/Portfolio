@@ -114,7 +114,6 @@ export const Header = () => {
             bg-grid-black/[0.05] dark:bg-grid-white/[0.04]
             text-center px-4"
         >
-            {/* Siatka tła */}
             <div
                 className="absolute inset-0 pointer-events-none select-none
                 bg-[size:40px_40px]

@@ -148,7 +148,7 @@ export const CounterCard = ({
                 shadow-md hover:shadow-xl transition-shadow ${className}`}
             >
                 <CardContent className="p-6 text-center">
-                    <h2 className="text-3xl font-bold font-mono tracking-tight text-indigo-600 dark:text-indigo-400">
+                    <p className="text-3xl font-bold font-mono tracking-tight text-indigo-600 dark:text-indigo-400">
                         <AnimatedCounter
                             to={value}
                             suffix={suffix}
@@ -157,7 +157,7 @@ export const CounterCard = ({
                             delay={delay}
                             locale={locale}
                         />
-                    </h2>
+                    </p>
                     <p className="mt-2 text-gray-600 dark:text-gray-300">{label}</p>
                 </CardContent>
             </Card>

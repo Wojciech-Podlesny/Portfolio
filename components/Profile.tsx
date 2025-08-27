@@ -17,7 +17,7 @@ export const Profile = () => {
                 <div className="w-[260px] h-[260px] xl:w-[450px] xl:h-[450px] overflow-hidden rounded-full relative">
                     <Image
                         src={photo}
-                        alt="photo"
+                        alt="Personal Image"
                         quality={100}
                         loading="lazy"
                     />

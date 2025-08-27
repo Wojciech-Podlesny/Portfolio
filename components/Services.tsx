@@ -101,6 +101,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Service } from "@/types/services";
 import { ServiceModal } from "@/components/ServicesModal";
 import { ServiceCard } from "@/components/ServicesCard";
+import {TextAnimate} from "@/components/magicui/text-animate";
 
 export const Services = () => {
     const [selectedService, setSelectedService] = useState<Service | null>(null);
@@ -133,15 +134,9 @@ export const Services = () => {
             <div className="px-4 md:px-10 py-20 relative">
                 <SectionHeading title="SERVICES" />
 
-                <motion.h2
-                    className="text-gray-800 dark:text-gray-300 pb-12 md:pb-20 text-2xl text-center max-w-3xl mx-auto"
-                    initial={fadeUp?.initial}
-                    whileInView={fadeUp?.animate}
-                    transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
-                    viewport={{ once: true, amount: 0.25 }}
-                >
+                <TextAnimate as="h2" className="text-gray-800 dark:text-gray-300 mb-12 text-2xl text-center px-4">
                     I offer a range of services to help you build and maintain your web applications!
-                </motion.h2>
+                </TextAnimate>
 
                 <motion.ul
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto"
@@ -165,7 +160,7 @@ export const Services = () => {
             </div>
 
             <div className="px-4">
-                <motion.h2
+                <motion.h3
                     className="text-center text-3xl md:text-4xl font-semibold pt-4 md:pt-0 text-gray-800 dark:text-white"
                     initial={fadeUp?.initial}
                     whileInView={fadeUp?.animate}
@@ -175,7 +170,7 @@ export const Services = () => {
           <span className="bg-gradient-to-r from-indigo-400 via-sky-300 to-teal-300 bg-clip-text text-transparent">
             Technologies I’ve used in projects
           </span>
-                </motion.h2>
+                </motion.h3>
 
                 <div className="mx-auto mt-4 mb-8 h-px w-24 bg-gradient-to-r from-transparent via-indigo-500/60 to-transparent" />
 

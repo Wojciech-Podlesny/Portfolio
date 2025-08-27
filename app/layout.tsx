@@ -11,42 +11,54 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: {
-        default:"Wojciech Podleśny",
-        template:"Wojciech Podleśny"
+        default: "Wojciech Podleśny | Frontend Developer Portfolio",
+        template: "%s | Wojciech Podleśny",
     },
     metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_URL}`),
-    description: "Wojciech Podleśny - Front-end Developer. I specialize " +
-        "in creating responsive and user-friendly applications. ",
-    keywords: ["Web Developer",'Frontend Developer',"Programming","React","Next.js","Javascript","Node.js"],
-    authors: [{name: "Wojciech Podleśny"}],
+    description:
+        "Portfolio Wojciecha Podleśnego – Frontend Developer specjalizujący się w React, Next.js i Tailwind CSS. Tworzę nowoczesne, responsywne strony WWW i aplikacje.",
+    keywords: [
+        "Frontend Developer",
+        "Web Developer",
+        "Portfolio",
+        "React",
+        "Next.js",
+        "JavaScript",
+        "Node.js",
+        "Tworzenie stron WWW",
+        "Programista Frontend",
+    ],
+    authors: [{ name: "Wojciech Podleśny" }],
     openGraph: {
         images: "/opengraph-image.png",
-        description: "Open Graph",
-        type:"website",
-        locale: "en-US",
-        title: "Open Graph",
-        siteName: "OpenGraph",
-        url: `${process.env.NEXT_PUBLIC_URL}`,
+        description:
+            "Portfolio Frontend Developera – Wojciech Podleśny. Nowoczesne strony internetowe i aplikacje w React, Next.js i JavaScript.",
+        type: "website",
+        locale: "pl-PL",
+        title: "Wojciech Podleśny | Frontend Developer",
+        siteName: "Portfolio Wojciecha Podleśnego",
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
     },
     robots: {
         index: true,
         follow: true,
     },
     twitter: {
-        card: "summary",
+        card: "summary_large_image",
         site: "@wojtekp90",
-        creator:"@wojtekp90",
-        title:"Wojciech Podleśny",
-        description:"Wojciech Podleśny - Front-end Developer. I specialize " +
-            "in creating responsive and user-friendly applications. ",
-    }
+        creator: "@wojtekp90",
+        title: "Wojciech Podleśny | Frontend Developer Portfolio",
+        description:
+            "Frontend Developer – Wojciech Podleśny. Specjalizacja: React, Next.js, JavaScript. Tworzę nowoczesne strony www i responsywne aplikacje webowe.",
+        images: ["/opengraph-image.png"],
+    },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
         <body className={inter.className}>
-        <GoogleAnalytics gaId="G-H9LB2KDP9P" />
+        <GoogleAnalytics gaId={`${process.env.GOOGLE_ANALYTICS_ID}`} />
         <ThemeProvider>
                 <Navbar />
                 {children}

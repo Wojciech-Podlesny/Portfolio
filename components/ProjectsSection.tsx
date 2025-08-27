@@ -66,7 +66,7 @@ export default function ProjectsSection({
 
     return (
         <>
-            <TextAnimate className="text-gray-600 dark:text-gray-300 px-4 md:px-12 text-2xl text-center mb-16">
+            <TextAnimate as="h2" className="text-gray-600 dark:text-gray-300 px-4 md:px-12 text-2xl text-center mb-16">
                 Explore a collection of my recent work across various technologies and domains.
             </TextAnimate>
 

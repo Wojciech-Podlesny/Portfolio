@@ -105,7 +105,7 @@ export const FeaturedProjects = () => {
         <section className="bg-white dark:bg-[#12161d] py-16" id="projects">
             <SectionHeading title="FEATURED PROJECTS" />
 
-            <TextAnimate className="text-gray-800 dark:text-gray-300 mb-12 text-2xl text-center px-4">
+            <TextAnimate as="h2" className="text-gray-800 dark:text-gray-300 mb-12 text-2xl text-center px-4">
                 A selection of my recent web development and programming projects.
             </TextAnimate>
 

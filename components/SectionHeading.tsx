@@ -17,7 +17,7 @@ export const SectionHeading = ({ title, className }: SectionHeadingProps) => (
             transition={{ duration: 0.5 }}
             className="h-px bg-indigo-500 w-full max-w-[500px] origin-left"
         />
-        <TextAnimate as="h2" className="px-6 text-4xl text-center">
+        <TextAnimate as="h1" className="px-6 text-4xl text-center">
             {title}
         </TextAnimate>
         <motion.div
