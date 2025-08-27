@@ -29,7 +29,7 @@ export const SkillsCard = ({ name, image }: SkillCardProps) => {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center transition-transform duration-300">
                     {image}
                 </div>
-                <p className="mt-2 sm:mt-3 text-sm font-medium text-white">{name}</p>
+                <p className="mt-2 sm:mt-3 text-sm font-medium text-black dark:text-white">{name}</p>
             </GlareCard>
         </motion.div>
     );

@@ -76,20 +76,35 @@ export const SkillsTabs = () => {
             aria-label="Skills Categories Tabs"
         >
             <TabsList
-                className="flex flex-wrap justify-center gap-4 bg-transparent border-none mb-8"
                 role="tablist"
+                className="
+    flex flex-wrap justify-center gap-4 bg-transparent border-none mb-8
+  "
             >
                 {skills.map(({ title }) => (
                     <TabsTrigger
                         key={title}
                         value={title}
                         aria-label={`${formatTitle(title)} tab`}
-                        className="snap-start flex-shrink-0
-                            px-4 py-2 sm:px-5 sm:py-2.5
-                            text-sm sm:text-base font-medium rounded-md border
-                            transition-all
-                            data-[state=inactive]:bg-gray-800 data-[state=inactive]:text-gray-400
-                            hover:text-white"
+                        className="
+        snap-start flex-shrink-0 px-4 py-2 sm:px-5 sm:py-2.5
+        text-sm sm:text-base font-medium rounded-md border transition-all
+        border-gray-200 dark:border-gray-700
+        data-[state=inactive]:bg-gray-100
+        data-[state=inactive]:text-gray-600
+        hover:data-[state=inactive]:text-gray-900
+        dark:data-[state=inactive]:bg-gray-800
+        dark:data-[state=inactive]:text-gray-400
+        dark:hover:data-[state=inactive]:text-white
+        data-[state=active]:bg-white
+        data-[state=active]:text-gray-900
+        dark:data-[state=active]:bg-white/10
+        dark:data-[state=active]:text-white
+        focus:outline-none
+        focus-visible:ring-2
+        focus-visible:ring-gray-300
+        dark:focus-visible:ring-gray-600
+      "
                     >
                         {formatTitle(title)}
                     </TabsTrigger>
