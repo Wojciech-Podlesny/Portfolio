@@ -283,7 +283,7 @@ export const Contact = () => {
         >
             <SectionHeading title="CONTACT" />
 
-            <TextAnimate as="h2" className="px-12 text-2xl text-center text-gray-800 dark:text-gray-100">
+            <TextAnimate as="p" className="px-12 text-2xl text-center text-gray-800 dark:text-gray-100">
                 Have a project in mind? Let’s connect and build something great together!
             </TextAnimate>
 
@@ -291,9 +291,9 @@ export const Contact = () => {
                 border border-gray-200 dark:border-gray-700
                 backdrop-blur-md p-10 rounded-2xl shadow-xl mt-12"
             >
-                <h3 className="text-center text-lg font-medium mb-8 text-gray-900 dark:text-white">
+                <p className="text-center text-lg font-medium mb-8 text-gray-900 dark:text-white">
                     Do You Have A Project? Let’s Talk.
-                </h3>
+                </p>
 
                 <Form<ContactFormData> {...form}>
                     <form className="space-y-6" onSubmit={handleFormSubmit}>

@@ -37,7 +37,7 @@ export const Education = () => {
             <div className="max-w-6xl mx-auto">
                 <SectionHeading title="EDUCATION" />
 
-                <TextAnimate as="h2" className="text-gray-800 dark:text-gray-300 mt-3 sm:mt-4 mb-6 sm:mb-8 text-base sm:text-xl text-center px-2 sm:px-8">
+                <TextAnimate as="p" className="text-gray-800 dark:text-gray-300 mt-3 sm:mt-4 mb-6 sm:mb-8 text-base sm:text-xl text-center px-2 sm:px-8">
                     My academic journey, courses, and educational achievements that have shaped my technical expertise.
                 </TextAnimate>
 

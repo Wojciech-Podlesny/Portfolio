@@ -56,7 +56,7 @@ export const Experience = () => {
         >
             <SectionHeading title="EXPERIENCE" />
 
-            <TextAnimate as="h2" className="text-gray-700 dark:text-gray-300 p-8 text-2xl text-center">
+            <TextAnimate as="p" className="text-gray-700 dark:text-gray-300 p-8 text-2xl text-center">
                 Companies and projects where I contributed my skills
             </TextAnimate>
 

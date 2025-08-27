@@ -134,7 +134,7 @@ export const Services = () => {
             <div className="px-4 md:px-10 py-20 relative">
                 <SectionHeading title="SERVICES" />
 
-                <TextAnimate as="h2" className="text-gray-800 dark:text-gray-300 mb-12 text-2xl text-center px-4">
+                <TextAnimate as="p" className="text-gray-800 dark:text-gray-300 mb-12 text-2xl text-center px-4">
                     I offer a range of services to help you build and maintain your web applications!
                 </TextAnimate>
 

@@ -94,7 +94,7 @@ export const About = () => {
                 whileInView={shouldReduceMotion ? undefined : "show"}
                 viewport={shouldReduceMotion ? undefined : { once: true, amount: 0.2 }}
             >
-                <TextAnimate as="h2" className="text-gray-800 dark:text-gray-200 px-2 md:px-12 text-2xl text-center mb-16">
+                <TextAnimate as="p" className="text-gray-800 dark:text-gray-200 px-2 md:px-12 text-2xl text-center mb-16">
                     I am a Computer Science student specializing in web development.
                     Passionate about programming, AI integration, and building innovative web applications!
                 </TextAnimate>
