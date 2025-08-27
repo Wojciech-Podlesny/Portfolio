@@ -230,6 +230,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ContactFormData, contactFormSchema } from "@/lib/validation";
 import { Button } from "@/components/ui/button";
 import {showErrorToast, showSuccessToast} from "@/components/ErrorToast";
+import {TextAnimate} from "@/components/magicui/text-animate";
 
 
 export const Contact = () => {
@@ -282,9 +283,9 @@ export const Contact = () => {
         >
             <SectionHeading title="CONTACT" />
 
-            <h1 className="px-12 text-2xl text-center text-gray-800 dark:text-gray-100">
+            <TextAnimate as="h2" className="px-12 text-2xl text-center text-gray-800 dark:text-gray-100">
                 Have a project in mind? Let’s connect and build something great together!
-            </h1>
+            </TextAnimate>
 
             <div className="max-w-3xl mx-auto bg-white/90 dark:bg-gray-900/50
                 border border-gray-200 dark:border-gray-700
