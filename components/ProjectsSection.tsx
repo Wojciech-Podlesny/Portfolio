@@ -2,33 +2,30 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { Project } from "@/types/projects";
-import { TextAnimate } from "@/components/magicui/text-animate";
-import { FilterBarProjects } from "@/components/FilterBarProjects";
 import { useProjectFilter } from "@/hooks/useProjectFilter";
 import { ProjectsList } from "@/components/ProjectList";
 import { ProjectsPagination } from "@/components/ProjectsPagination";
 import { useDebouncedValue } from "@/hooks/useDebounceSearch";
+import {FilterBarProjects} from "@/components/FilterBarProjects";
 
 const ALL_TECHNOLOGIES = [
     "All Projects",
     "React",
+    "TypeScript",
+    "JavaScript",
     "NextJS",
     "Tailwind CSS",
-    "MongoDB",
-    "ExpressJS",
 ];
 
-export default function ProjectsSection({
-                                           initialProjects,
-                                           initialFilter = "All Projects",
-                                           initialSearch = "",
-                                           initialPage = 1,
-                                       }: {
+export type ProjectsSectionProps = {
     initialProjects: Project[];
     initialFilter?: string;
     initialSearch?: string;
     initialPage?: number;
-}) {
+}
+
+export const ProjectsSection = ({initialProjects, initialFilter = "All Projects", initialSearch = "", initialPage = 1}:
+                                ProjectsSectionProps) =>  {
     const [selectedFilter, setSelectedFilter] = useState(initialFilter);
     const [searchTerm, setSearchTerm] = useState(initialSearch);
     const [page, setPage] = useState(initialPage);
@@ -66,10 +63,6 @@ export default function ProjectsSection({
 
     return (
         <>
-            <TextAnimate as="h2" className="text-gray-600 dark:text-gray-300 px-4 md:px-12 text-2xl text-center mb-16">
-                Explore a collection of my recent work across various technologies and domains.
-            </TextAnimate>
-
             <FilterBarProjects
                 allTechnologies={ALL_TECHNOLOGIES}
                 selectedFilter={selectedFilter}

@@ -1,0 +1,494 @@
+{
+  "metadata": {
+    "layout": {
+      "titleDefault": "Wojciech Podleśny | Frontend Developer",
+      "titleTemplate": "%s | Wojciech Podleśny",
+      "description": "Portfolio of Wojciech Podleśny – Frontend Developer specializing in React, Next.js, and Tailwind CSS. Modern, responsive websites and web apps focused on performance and accessibility.",
+      "keywords": "Frontend Developer, React, Next.js, Tailwind CSS, portfolio, web development, websites, web applications, Wojciech Podleśny, JavaScript, TypeScript",
+      "ogTitle": "Wojciech P | Frontend Developer",
+      "ogDescription": "Frontend Developer Portfolio – Wojciech Podleśny. Modern websites and apps built with React, Next.js, and JavaScript.",
+      "twitterTitle": "Wojciech P | Frontend Developer Portfolio",
+      "twitterDescription": "Frontend Developer – Wojciech P. Specializing in React, Next.js, JavaScript."
+    },
+    "about": {
+      "title": "About Me – ",
+      "description": "Discover my experience, skills, and career path. I specialize in modern frontend technologies, focusing on performance, accessibility, and code quality.",
+      "keywords": "About me, experience, skills, frontend, React, Next.js, Wojciech Podleśny"
+    },
+    "projects": {
+      "title": "Projects – ",
+      "description": "Browse projects built with React, Next.js, TypeScript, and more. See examples of deployed web apps and websites.",
+      "keywords": "projects, portfolio, React, Next.js, web applications, TypeScript, JavaScript"
+    },
+    "services": {
+      "title": "Services – ",
+      "description": "Modern website and web app development, performance optimization, SEO, and API integrations. Comprehensive support for your online business.",
+      "keywords": "services, web development, optimization, SEO, API integration, websites, Wojciech Podleśny"
+    },
+    "contact": {
+      "title": "Contact – ",
+      "description": "Get in touch for collaboration, project quotes, or consultations. I respond to all inquiries about web development and app creation.",
+      "keywords": "contact, collaboration, quote, frontend developer, Wojciech Podleśny, websites"
+    },
+    "projectsSlug": {
+      "weather-app": {
+        "title": "Weather App",
+        "description": "An interactive weather application with forecasts and charts."
+      },
+      "movie-stream-dashboard": {
+        "title": "Movie Stream Dashboard",
+        "description": "A platform for managing and discovering movies."
+      },
+      "personal-portfolio": {
+        "title": "Portfolio",
+        "description": "A modern portfolio showcasing projects and skills."
+      },
+      "url-shortener": {
+        "title": "URL Shortener",
+        "description": "A fast and secure tool for shortening links with real-time analytics."
+      }
+    }
+  },
+  "navbar": {
+    "ariaNav": "Main navigation",
+    "ariaLogo": "Main page",
+    "menu": {
+      "home": "Home",
+      "about": "About me",
+      "services": "Services",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "linkedinAria": "Profil LinkedIn",
+    "githubAria": "Profil GitHub"
+  },
+  "header": {
+    "hello": "Hello,",
+    "iam": "I am {name}",
+    "role": "<aurora>Frontend Developer</aurora> building clean, creative apps with <next>Next.js</next> and <react>React</react>",
+    "contact": "Contact me",
+    "projects": "View my projects",
+    "linkedinAria": "LinkedIn – profile",
+    "githubAria": "GitHub – profile"
+  },
+  "about": {
+    "title": "ABOUT ME",
+    "intro": "I am a Computer Science student specializing in web development. Passionate about programming, AI integration, and building innovative web applications!",
+    "quote": "“Great apps don’t just look good — they load fast, work everywhere, and feel intuitive.”",
+    "description": "I’m a Frontend Developer focused on building fast, accessible, and maintainable web applications using Next.js, TypeScript, and Tailwind CSS. From the very beginning of my coding journey, I’ve been fascinated by how code directly shapes user experiences. Over time, I’ve learned that great applications are not only about technology — performance, accessibility, usability, and testing are equally important to ensure reliability and long-term quality. I enjoy turning ideas into products, combining clean interfaces with solid backend logic, always keeping the end user in mind. My long-term goal is to grow into a Full-Stack Engineer, so I can deliver features from concept to deployment and contribute to large-scale applications. Outside of coding, I’m passionate about model building — a hobby that teaches me attention to detail and reminds me of the joy of creating.",
+    "counter": {
+      "projects": "Projects",
+      "experience": "Experience",
+      "technologies": "Technologies"
+    }
+  },
+  "whoIam": {
+    "title": "WHO I AM",
+    "description": "I’m a <strong>Frontend Developer</strong> specializing in <strong>React</strong> and <strong>Next.js</strong>. I build fast, modern, and user-friendly web applications with a focus on performance and clean code. I’m passionate about turning ideas into products by combining clean UI with solid backend logic. Currently, I’m growing my expertise in full-stack development while keeping accessibility and user experience at the center of my work.",
+    "readMore": "Explore more"
+  },
+  "skills": {
+    "title": "SKILLS & TECHNOLOGIES",
+    "intro": "Technologies and tools I use to build efficient, scalable, and innovative solutions!"
+  },
+  "experience": {
+    "title": "EXPERIENCE",
+    "intro": "Companies and projects where I contributed my skills",
+    "experienceCard": {
+      "contributions": "Key Contributions:",
+      "technologies": "Technologies:",
+      "devs": {
+        "role": "Frontend Developer Internship",
+        "date": "July 2023 - present",
+        "description": "Contributed to hands-on commercial projects using HTML, CSS, JavaScript, TypeScript, React, and Next.js. Focused on building modern, responsive interfaces with robust test coverage. Collaborated closely with a Senior Frontend Developer and participated in Agile ceremonies including code reviews and sprint planning.",
+        "highlights": [
+          "Built and optimized scalable web applications used by over 1,000 users",
+          "Improved performance of key components, reducing load time by 30%",
+          "Developed features in a modern frontend stack with 85% test coverage using RTL",
+          "Actively participated in daily stand-ups and pair programming sessions"
+        ]
+      },
+      "alan": {
+        "role": "Junior Software Tester",
+        "date": "03/2022 - 05/2022",
+        "description": "Developed and maintained automated end-to-end tests using CodeceptJS and JavaScript. Conducted functional and regression testing of web applications. Worked in a SCRUM team to ensure product quality and timely delivery. Reported bugs and collaborated with developers to ensure fast resolution.",
+        "highlights": [
+          "Automated over 100 regression test cases using CodeceptJS",
+          "Reduced manual testing time by 60% through test automation",
+          "Tested core production features including login and payment flows"
+        ]
+      }
+    }
+  },
+  "education": {
+    "title": "EDUCATION",
+    "intro": "My academic journey, courses, and educational achievements that have shaped my technical expertise.",
+    "viewCertificate": "View Certificates",
+    "highlights": "Highlights",
+    "opole": {
+      "school": "Opole University of Technology",
+      "degree": "Bachelor's Degree - Computer Science",
+      "date": "10/2025 - present",
+      "description": "Currently pursuing a Computer Science degree at Opole University of Technology. The curriculum covers algorithms, data structures, object-oriented programming, databases, operating systems, and computer networks, with a strong focus on software engineering and low-level programming.",
+      "technologies": [
+        "Data Structures",
+        "Algorithms",
+        "Software Engineering",
+        "Low-level programming"
+      ],
+      "highlights": [
+        "Engineering studies in Computer Science",
+        "Focus on algorithms, data structures, and low-level programming"
+      ]
+    },
+    "wsiz": {
+      "school": "University of Information Technology and Management, Rzeszów",
+      "degree": "Bachelor's Degree - Computer Science",
+      "date": "10/2024 - 06/2025",
+      "description": "One-year engineering program in Computer Science, covering the fundamentals of programming: algorithms, data structures, OOP, databases, operating systems, and computer networks.",
+      "technologies": [
+        "Data Structures",
+        "Algorithms",
+        "Software Engineering",
+        "Low-level programming"
+      ],
+      "highlights": [
+        "One-year Computer Science engineering program",
+        "Covered fundamentals of algorithms, OOP, databases, and operating systems"
+      ]
+    },
+    "webamigosFullstack": {
+      "title": "Web Amigos - Modern and Efficient Web Applications (MEWA)",
+      "date": "10/2024 - present",
+      "description": "An advanced programming course covering eight thematic tracks: TypeScript, NX.dev, React, Next.js, NestJS, AI-powered automations, and deployment with Docker and Kubernetes. The program emphasizes best practices, clean code architecture, and the complete process of building modern web applications – from frontend to backend to deployment.",
+      "technologies": [
+        "TypeScript",
+        "React",
+        "NextJS",
+        "NestJS",
+        "NX.dev",
+        "Docker",
+        "Kubernetes",
+        "AI workflows"
+      ],
+      "highlights": [
+        "Advanced technologies: React, Next.js, NestJS, NX.dev",
+        "Deployment with Docker and Kubernetes",
+        "AI-powered automations and integrations"
+      ]
+    },
+    "webamigosReact": {
+      "title": "Web Amigos - School of React",
+      "date": "05/2024 - 09/2024",
+      "description": "An intensive course focused on React and modern frontend practices. Topics included React with TypeScript, Tailwind CSS, Redux Toolkit, React Hook Form, API communication, and component testing. The program also emphasized application optimization and best practices in frontend development.",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Redux Toolkit",
+        "React Hook Form",
+        "API Communication",
+        "Testing"
+      ],
+      "certificateUrl": "https://credsverse.com/credentials/ccd66be0-b4f3-4ef9-9fc7-625131dcf054",
+      "highlights": [
+        "Hands-on practice with React, TypeScript, and Tailwind CSS",
+        "State management with Redux Toolkit and forms with React Hook Form",
+        "Component testing and performance optimization",
+        "Completed course confirmed with certificate"
+      ]
+    },
+    "megak": {
+      "title": "MEGAK - Full-Stack Development Journey",
+      "date": "05/2023 - 10/2024",
+      "description": "A one-year full-stack bootcamp covering JavaScript, TypeScript, React, Node.js, Express, NestJS, and MongoDB. The program included building complete web applications with REST APIs, CRUD operations, authentication, design patterns, and testing fundamentals.",
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "TypeScript",
+        "React",
+        "NestJS"
+      ],
+      "highlights": [
+        "Full-stack learning: frontend, backend, and databases",
+        "Implementation of REST APIs, CRUD operations, and authentication",
+        "Introduction to design patterns and testing"
+      ]
+    },
+    "sda": {
+      "title": "Software Development Academy - Software Tester",
+      "date": "02/2021 - 05/2021",
+      "description": "Comprehensive introduction to software testing, covering manual and automated testing, REST API testing, SQL, and Agile methodologies, with preparation for the ISTQB Foundation exam.",
+      "technologies": [
+        "Testing applications",
+        "Testing REST API",
+        "Automation Testing",
+        "SQL"
+      ],
+      "certificateUrl": "https://app.diplomasafe.com/pl-PL/diploma/df68a2bb02091c195cb940e7428f3d98943f2a862",
+      "highlights": [
+        "Manual and automated testing",
+        "REST API testing and SQL",
+        "Agile methodologies and ISTQB exam preparation",
+        "Completed course confirmed with certificate"
+      ]
+    },
+    "dotneta": {
+      "title": "Szkoła Dotneta - ASP.NET Core Developer Program",
+      "school": "Szkoła Dotneta",
+      "date": "08/2025 - present",
+      "description": "A practical, comprehensive backend development course in C# and ASP.NET Core: from programming fundamentals and OOP, through unit testing and TDD, to building web applications using the MVC pattern, databases with Entity Framework Core and SQL Server, user management, REST API development, dependency injection, as well as security and deployment basics.",
+      "technologies": [
+        "C#",
+        "ASP.NET Core",
+        "SQL Server",
+        "Entity Framework",
+        "TDD"
+      ],
+      "highlights": [
+        "C# and ASP.NET Core from basics to advanced",
+        "Entity Framework Core and SQL Server",
+        "Unit testing and TDD",
+        "REST API, MVC, and user management"
+      ]
+    }
+  },
+
+  "EducationTabs": {
+    "aria": "Education categories",
+    "university": "University",
+    "course": "Courses"
+  },
+
+"featuredProjects": {
+    "title": "FEATURED PROJECTS",
+    "intro": "A selection of my recent web development and programming projects.",
+    "cta": "View my projects"
+  },
+  "projects": {
+    "status": {
+      "inProgress": "In Progress",
+      "completed": "Completed",
+      "paused": "Paused"
+    },
+    "viewProject": "View Project",
+    "movieDashboard": {
+      "title": "Movie Stream Dashboard",
+      "date": "October 2024 - present",
+      "shortDescription": "A personalized movie management and discovery dashboard with analytics and advanced filtering.",
+      "description": "A modern platform for managing and discovering movies with a focus on personalization and user engagement. It includes a tailored recommendation system powered by dynamic filtering and user history analysis. Advanced search capabilities allow users to find titles by genre, rating, or release date in seconds. Users can comment on movies, add or remove them from favorites, and manage their profiles through a personal dashboard. Built with Next.js for performance and Firebase for authentication and database storage, it delivers a secure and responsive experience. The UI is designed with Material UI and Styled-Components for a sleek, consistent look.",
+      "keyFeatures": [
+        "Secure user authentication and registration system",
+        "Advanced search and filtering system",
+        "Personalized movie recommendations",
+        "Add/remove movies from favorites",
+        "User comment system on movies",
+        "User profile management",
+        "Firebase-based authentication and database",
+        "Optimized performance with Next.js"
+      ]
+    },
+    "weatherApp": {
+      "title": "Weather App",
+      "date": "April 2024 - October 2024",
+      "shortDescription": "An interactive weather app with real-time forecasts, charts, and dark mode.",
+      "description": "An interactive weather application delivering real-time data and extended forecasts for cities worldwide. It provides detailed hourly and daily predictions, along with visually rich charts using Chart.js. Users can search for locations, view historical trends, and toggle between light and dark themes for better accessibility. Built with React and TypeScript, it features optimized API calls through caching to ensure fast performance. The application is fully tested with Jest, Playwright, and RTL to guarantee reliability across devices. Its responsive design ensures a seamless experience on both mobile and desktop.",
+      "keyFeatures": [
+        "Search for weather information by city name",
+        "View current weather including temperature, humidity, wind speed, etc.",
+        "Hourly weather forecast for selected location",
+        "3-day temperature graph using Chart.js",
+        "Map view of selected location",
+        "Detect current location for weather display",
+        "Add cities to favorites (stored in LocalStorage)",
+        "Comprehensive testing with Jest and RTL",
+        "End-to-end testing with Playwright"
+      ]
+    },
+    "urlShortener": {
+      "title": "URL Shortener",
+      "date": "January 2024 - April 2024",
+      "shortDescription": "A fast and secure tool for shortening links with real-time analytics.",
+      "description": "A fast and secure URL shortener designed to transform long, unwieldy links into compact, shareable URLs. The application includes analytics tools to track clicks, user locations, and referrers in real-time. Users can customize their shortened links, set expiration dates, and manage them via an intuitive interface. Built with Vite, it ensures minimal load times and smooth navigation. Cypress testing ensures stability and a bug-free user experience. Its minimalistic design focuses on functionality while remaining visually appealing.",
+      "keyFeatures": [
+        "Responsive layout for multiple screen sizes",
+        "Shorten any valid URL to a unique 8-character path",
+        "Store shortened URLs in local storage",
+        "Delete shortened links from storage",
+        "Copy shortened links to clipboard in one click",
+        "Validation with error messages for empty or invalid input"
+      ]
+    },
+    "portfolio": {
+      "title": "Personal Portfolio",
+      "date": "July 2025 – August 2025",
+      "shortDescription": "A modern personal portfolio showcasing projects, skills, and experience.",
+      "description": "A personal portfolio built with Next.js and React, designed to be fast, responsive, and easy to navigate. The website highlights projects, professional experience, and technical skills in a visually appealing and structured way. It includes a contact form powered by Resend for direct communication and leverages Aceternity UI for modern, elegant components. The project emphasizes performance, clarity, and aesthetics to stand out both technically and visually",
+      "keyFeatures": [
+        "Modern, responsive design optimized for all devices",
+        "Projects section with previews and links to GitHub/live demos",
+        "Contact form with email handling via Resend",
+        "Integration with Aceternity UI for sleek, reusable components",
+        "Fast performance with Next.js and optimized images",
+        "Easy to maintain and expand for future updates"
+      ]
+    },
+    "detailsProject": "View more details",
+    "labels": {
+      "description": "Description:",
+      "techStack": "Tech Stack:",
+      "keyFeatures": "Key Features:",
+      "similarProjects": "Similar Projects"
+    }
+  },
+  "allProjects": {
+    "title": "ALL PROJECTS",
+    "intro": "Explore a collection of my recent work across various technologies and domains.",
+    "input": "Search projects..",
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
+  "services": {
+    "title": "SERVICES",
+    "intro": "I offer a range of services to help you build and maintain your web applications!",
+    "technologiesTitle": "Technologies I’ve used in projects",
+    "contact": "Contact Me",
+    "items": {
+      "featuresTitle": "Key features:",
+      "webDevelopment": {
+        "title": "Web Development",
+        "description": "Building robust and scalable websites and applications.",
+        "details": "I specialize in building modern web applications that are fast, secure, and scalable. Using frameworks like Next.js and React, I create solutions tailored to your business needs, ensuring optimal performance and smooth user experience.",
+        "features": [
+          "Next.js & React",
+          "Server-Side Rendering (SSR)",
+          "API Integrations",
+          "Scalable Architecture",
+          "Performance Optimization"
+        ]
+      },
+      "responsiveDesign": {
+        "title": "Responsive Design",
+        "description": "Ensuring your website looks great on all devices.",
+        "details": "I design and build interfaces that adapt perfectly to any screen size, providing an excellent experience on mobile, tablet, and desktop. My approach ensures usability and accessibility are top priorities.",
+        "features": [
+          "Mobile-first approach",
+          "Tailwind CSS & Flex/Grid systems",
+          "Dark mode & accessibility",
+          "Pixel-perfect design",
+          "Cross-browser compatibility"
+        ]
+      },
+      "seoOptimization": {
+        "title": "SEO Optimization",
+        "description": "Improving your website visibility in search engines.",
+        "details": "I improve the visibility of your website by following modern SEO practices. From technical SEO and structured data to performance and keyword optimization, I ensure your site is well-prepared to rank higher.",
+        "features": [
+          "Technical SEO",
+          "Page speed optimization",
+          "Structured data & meta tags",
+          "Mobile-friendly testing",
+          "Core Web Vitals improvements"
+        ]
+      },
+      "performanceOptimization": {
+        "title": "Performance Optimization",
+        "description": "Improving load times, performance scores, and user experience.",
+        "details": "I help optimize your website’s performance by reducing bundle sizes, lazy-loading assets, and improving Core Web Vitals. Faster websites don’t just convert better — they rank better too.",
+        "features": [
+          "Lighthouse score 95+",
+          "Code splitting & lazy loading",
+          "Optimized images & fonts",
+          "Reduced TTFB and FCP",
+          "Next.js performance tweaks"
+        ]
+      },
+      "apiIntegration": {
+        "title": "API Integration",
+        "description": "Seamless integration with external APIs and services.",
+        "details": "I integrate your app with REST or GraphQL APIs, authentication providers, payment systems, CMSs, and any other third-party services you rely on. Clean, reusable code and error handling guaranteed.",
+        "features": [
+          "REST & GraphQL APIs",
+          "OAuth & Auth providers",
+          "Stripe / PayPal integration",
+          "CMS (Sanity, Contentful, etc.)",
+          "Axios, SWR, React Query, tRPC"
+        ]
+      },
+      "accessibility": {
+        "title": "Accessibility",
+        "description": "Auditing and fixing accessibility issues so your app works for everyone.",
+        "details": "I perform WCAG 2.2 AA audits and implement fixes: semantic HTML, proper ARIA, keyboard navigation, focus management, and color-contrast checks. You get a prioritized report, code changes, and a short guide for your team.",
+        "features": [
+          "WCAG 2.2 AA audit (Lighthouse / axe / WAVE)",
+          "Semantic HTML & correct ARIA roles",
+          "Keyboard navigation & visible focus states",
+          "Color contrast & scalable typography",
+          "Screen-reader testing (NVDA / VoiceOver) + handoff"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "title": "CONTACT",
+    "intro": "Have a project in mind? Let’s connect and build something great together!",
+    "subtitle": "Do You Have A Project? Let’s Talk.",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "subject": "Subject",
+      "email": "Email Address",
+      "message": "Your Message",
+      "messagePlaceholder": "Type your message here...",
+      "send": "Send Message",
+      "sending": "Sending..."
+    },
+    "toast": {
+      "success": "Message sent successfully",
+      "error": "Message not sent",
+      "fail": "Something went wrong"
+    }
+  },
+  "footer": {
+    "allRightsReserved": "All rights reserved.",
+    "menu": {
+      "home": "Home",
+      "about": "About me",
+      "services": "Services",
+      "projects": "Projects",
+      "contact": "Contact"
+    }
+  },
+  "collaboration": {
+    "title": "LET'S COLLABORATE",
+    "description": "Interested in working together? Whether you have a project idea, need help with web development, or just want to say hi, feel free to reach out. I’m always open to discussing new opportunities and collaborations.",
+    "contact": "Contact",
+    "services": "Services"
+  },
+  "notFound": {
+    "title": "404 - Page Not Found",
+    "backHome": "Back to Home",
+    "tryAgain": "Try again"
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

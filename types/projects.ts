@@ -1,4 +1,5 @@
 import {StaticImageData} from "next/image";
+import {FC, SVGProps} from "react";
 
 
 export type Img = string | StaticImageData;
@@ -10,6 +11,7 @@ export type ProjectSection = {
     description: string;
     src: string | StaticImageData;
 };
+export type TechnologyIcon = FC<SVGProps<SVGSVGElement>>;
 
 export interface Project {
     id: number;
@@ -19,12 +21,13 @@ export interface Project {
     technologies: string[];
     description: string;
     sections?: ProjectSection[];
-    image: StaticImageData[];
+    image: StaticImageData[]
     imageLaptop: StaticImageData[];
     github?: string;
     preview?: string;
-    keyFeatures: string[];
+    keyFeatures: string;
     shortDescription:string;
     status: ProjectStatus;
+    technologiesIcons?: TechnologyIcon[];
 
 }

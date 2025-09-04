@@ -104,6 +104,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/moving-border";
 import { Service } from "@/types/services";
 import clsx from "clsx";
+import {useTranslations} from "next-intl";
 
 type ServicesCardProps = {
     service: Service;
@@ -122,6 +123,7 @@ export const ServiceCard = ({
                             }: ServicesCardProps) => {
     const prefersReducedMotion = useReducedMotion();
     const Icon = service.icon;
+    const t = useTranslations("services.items")
 
     const open = React.useCallback(() => onSelect(service), [onSelect, service]);
 
@@ -183,9 +185,9 @@ export const ServiceCard = ({
                                 focusable="false"
                             />
                         )}
-                        <h3 className="text-lg font-semibold">{service.title}</h3>
+                        <h3>{t(`${service.key}.title`)}</h3>
                         <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-4">
-                            {service.description}
+                            {t(`${service.key}.description`)}
                         </p>
                     </div>
                 </div>

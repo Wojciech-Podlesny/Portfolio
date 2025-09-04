@@ -53,7 +53,7 @@ export const SectionUseTechnologies = () => {
             <div className="w-full max-w-6xl mx-auto h-[160px] sm:h-[180px] md:h-[200px]">
                 <div role="list" aria-label="Technologies I’ve used">
                     <InfiniteMovingCards
-                        speed={shouldReduceMotion ? "slow" : "fast"}
+                        speed="slow"
                         direction="right"
                         items={items}
                     />

@@ -1,7 +1,9 @@
 import {StaticImageData} from "next/image";
 
+export type ExperienceId = "devs" | "alan";
+
 export interface Experience {
-    id: number;
+    id: ExperienceId;
     icon: StaticImageData;
     img: StaticImageData;
     role: string;
@@ -9,6 +11,6 @@ export interface Experience {
     date: string;
     description: string;
     skills: string[];
-    highlights: string[];
+    highlights: string;
 }
 

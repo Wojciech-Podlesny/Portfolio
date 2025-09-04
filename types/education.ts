@@ -10,5 +10,6 @@ export type EducationItem = {
     date: string;
     description: string;
     certificateUrl?: string;
-    technologies?: { name: string }[];
+    technologies: string ;
+    highlights: string;
 };

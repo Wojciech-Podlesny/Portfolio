@@ -1,6 +1,5 @@
 export type NavItem = {
     id: number;
-    name: string;
+    key: string;
     route: string;
-    children?: NavItem[];
 };

@@ -128,7 +128,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import {
     DialogContent,
@@ -138,6 +137,9 @@ import {
     DialogFooter,
 } from "@/components/ui/dialog";
 import type { Project } from "@/types/projects";
+import {useTranslations} from "next-intl";
+import { Link } from "@/i18n/routing";
+import NextLink from "next/link";
 
 export const ProjectModal = ({
                                  title,
@@ -149,15 +151,16 @@ export const ProjectModal = ({
                                  preview,
                                  slug,
                              }: Project) => {
+    const t = useTranslations("projects")
     return (
         <DialogContent className="max-w-2xl sm:max-w-3xl bg-white dark:bg-[#0B0B12] text-gray-900 dark:text-white border border-gray-200 dark:border-white/10">
             <DialogHeader>
                 <DialogTitle className="text-2xl md:text-3xl font-semibold tracking-tight">
-                    {title}
+                    {t(title)}
                 </DialogTitle>
                 {date && (
                     <DialogDescription className="text-gray-600 dark:text-gray-400 text-sm">
-                        {date}
+                        {t(date)}
                     </DialogDescription>
                 )}
             </DialogHeader>
@@ -173,7 +176,7 @@ export const ProjectModal = ({
             </div>
 
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-[15px] md:text-base">
-                {description}
+                {t(description)}
             </p>
 
             <div className="flex flex-wrap gap-2">
@@ -189,10 +192,10 @@ export const ProjectModal = ({
 
             <DialogFooter className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3 pt-4">
                 <Link
-                    href={`/projects/${slug}`}
+                    href={{ pathname: "/projects/[slug]", params: { slug } }}
                     className="group inline-flex items-center gap-2 text-sm md:text-[15px] text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition"
                 >
-                    Read full case study
+                    {t("detailsProject")}
                     <svg
                         className="h-4 w-4 translate-x-0 group-hover:translate-x-0.5 transition-transform"
                         viewBox="0 0 24 24"
@@ -207,7 +210,7 @@ export const ProjectModal = ({
 
                 <div className="flex items-center gap-2 sm:gap-3">
                     {preview && (
-                        <Link
+                        <NextLink
                             href={preview}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -222,11 +225,11 @@ export const ProjectModal = ({
                                 <path d="M8 5v14l11-7-11-7z" />
                             </svg>
                             Live Demo
-                        </Link>
+                        </NextLink>
                     )}
 
                     {github && (
-                        <Link
+                        <NextLink
                             href={github}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -245,7 +248,7 @@ export const ProjectModal = ({
                                 />
                             </svg>
                             GitHub
-                        </Link>
+                        </NextLink>
                     )}
                 </div>
             </DialogFooter>

@@ -1,5 +1,5 @@
 'use client';
-import React, {useRef} from "react";
+import {useRef,useEffect,useMemo,useState,useCallback} from "react";
 import { animate, useMotionValue, useReducedMotion, useInView } from "framer-motion";
 
 type AnimatedCounterProps = {
@@ -31,11 +31,11 @@ export const AnimatedCounter = ({
                                 }: AnimatedCounterProps) => {
     const ref = useRef<HTMLSpanElement | null>(null);
     const mv = useMotionValue(0);
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = useState(0);
     const prefersReducedMotion = useReducedMotion();
     const isInView = useInView(ref, { amount: 0.3, once: true });
 
-    const formatter = React.useMemo(() => {
+    const formatter = useMemo(() => {
         const opts: Intl.NumberFormatOptions = {
             ...(decimals != null ? { minimumFractionDigits: decimals, maximumFractionDigits: decimals } : {}),
             ...formatOptions,
@@ -43,7 +43,7 @@ export const AnimatedCounter = ({
         return new Intl.NumberFormat(locale, opts);
     }, [locale, formatOptions, decimals]);
 
-    React.useEffect(() => {
+    useEffect(() => {
         const unsub = mv.on("change", (v) => {
             const rounded = decimals != null ? Number(v.toFixed(decimals)) : Math.round(v);
             setValue(rounded);
@@ -51,7 +51,7 @@ export const AnimatedCounter = ({
         return () => unsub();
     }, [mv, decimals]);
 
-    const start = React.useCallback(() => {
+    const start = useCallback(() => {
         if (prefersReducedMotion) {
             mv.set(to);
             setValue(decimals != null ? Number(to.toFixed(decimals)) : Math.round(to));
@@ -63,7 +63,7 @@ export const AnimatedCounter = ({
         return () => controls.stop();
     }, [to, duration, delay, prefersReducedMotion, mv, decimals, onComplete]);
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (startOnView) {
             if (isInView) start();
         } else {

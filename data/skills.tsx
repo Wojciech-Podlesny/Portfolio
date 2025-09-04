@@ -13,9 +13,9 @@ import {
     MongoDBIcon,
     DockerIcon,
     PostmanIcon,
-    ReduxIcon, GitIcon, GithubIcon, JestIcon,
+    ReduxIcon, GitIcon, JestIcon,
     CypressIcon,
-    PlaywrightIcon, FirebaseIcon, MaterialIcon, VitestIcon, NextJsIcon, WordpressIcon,
+    PlaywrightIcon, FirebaseIcon, MaterialIcon, VitestIcon, NextJsIcon, WordpressIcon, GithubIcon,
 } from "./icon";
 
 export const skills = [
@@ -33,6 +33,7 @@ export const skills = [
             { name: "Tailwind CSS", image: <TailwindIcon /> },
             { name: "Shadcn UI", image: <ShadCNIcon /> },
             { name: "Aceternity UI", image: <AceternityIcon /> },
+            // { name: "Styled Components", image: <StyledComponentsIcon /> },
             {name: "Wordpress", image: <WordpressIcon />}
 
         ],

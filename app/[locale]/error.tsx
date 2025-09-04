@@ -1,11 +1,13 @@
 "use client"
 
 import { useEffect } from "react"
+import {useTranslations} from "next-intl";
 
 const Error = ({error, reset}: {
     error: Error & { digest?: string },
     reset: () => void
 })=> {
+    const t  = useTranslations("tryAgain")
     useEffect(() => {
         console.error(error)
     }, [error])
@@ -17,7 +19,7 @@ const Error = ({error, reset}: {
                 onClick={reset}
                 className="bg-red-500 text-white px-5 py-2 text-base rounded-md transition-colors hover:bg-red-600"
             >
-                Try again
+                {t("tryAgain")}
             </button>
         </div>
     )
