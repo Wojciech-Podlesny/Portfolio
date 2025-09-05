@@ -237,25 +237,6 @@
         "Metodyki Agile i przygotowanie do ISTQB",
         "Ukończony kurs potwierdzony certyfikatem"
       ]
-    },
-    "dotneta": {
-      "title": "Szkoła Dotneta - Programista ASP.NET Core",
-      "school": "Szkoła Dotneta",
-      "date": "08/2025 - obecnie",
-      "description": "Praktyczny, kompleksowy kurs backendu w C# i ASP.NET Core: od podstaw języka i programowania obiektowego, przez testy jednostkowe i TDD, po tworzenie aplikacji webowych z wykorzystaniem wzorca MVC, baz danych (Entity Framework Core na SQL Server), zarządzania użytkownikami, tworzenia REST API, wstrzykiwania zależności oraz podstaw bezpieczeństwa i wdrożeń.",
-      "technologies": [
-        "C#",
-        "ASP.NET Core",
-        "SQL Server",
-        "Entity Framework",
-        "TDD"
-      ],
-      "highlights": [
-        "C# i ASP.NET Core od podstaw do zaawansowania",
-        "Entity Framework Core i SQL Server",
-        "Testy jednostkowe i TDD",
-        "REST API, MVC i zarządzanie użytkownikami"
-      ]
     }
   },
   "EducationTabs": {
@@ -471,7 +452,7 @@
   "collaboration": {
     "title": "WSPÓŁPRACA",
     "description": "Chcesz nawiązać współpracę? Niezależnie od tego, czy masz pomysł na projekt, potrzebujesz pomocy przy tworzeniu stron internetowych, czy po prostu chcesz się przywitać — śmiało odezwij się. Zawsze jestem otwarty na rozmowę o nowych możliwościach i wspólnych działaniach.",
-    "contact": "Konktakt",
+    "contact": "Kontakt",
     "services": "Usługi"
   },
   "notFound": {
