@@ -3,7 +3,6 @@ import logoWsiz from '@/assets/images/education/LogoWsiz.webp';
 import logoMegak from '@/assets/images/education/LogoFrontowcy.webp';
 import logoWebAmigos from '@/assets/images/education/LogoWebAmigos.webp';
 import logoSda from '@/assets/images/education/LogoSda.webp';
-import logoSchoolDotneta from '@/assets/images/education/LohoSzkołaDotneta.webp';
 import logoPolitechnika from "@/assets/images/education/logoPolitechnika.webp";
 
 export const education: EducationItem[] = [
@@ -70,16 +69,5 @@ export const education: EducationItem[] = [
         technologies: "sda.technologies",
         highlights:"sda.highlights",
         certificateUrl: "https://app.diplomasafe.com/pl-PL/diploma/df68a2bb02091c195cb940e7428f3d98943f2a862"
-    },
-    {
-        id: 7,
-        type: "course",
-        image: logoSchoolDotneta,
-        title: "dotneta.title",
-        school: "dotneta.school",
-        date: '08/2025 - present',
-        description: "dotneta.description",
-        technologies: "dotneta.technologies",
-        highlights:"dotneta.highlights",
     }
 ];

@@ -236,25 +236,6 @@
         "Agile methodologies and ISTQB exam preparation",
         "Completed course confirmed with certificate"
       ]
-    },
-    "dotneta": {
-      "title": "Szkoła Dotneta - ASP.NET Core Developer Program",
-      "school": "Szkoła Dotneta",
-      "date": "08/2025 - present",
-      "description": "A practical, comprehensive backend development course in C# and ASP.NET Core: from programming fundamentals and OOP, through unit testing and TDD, to building web applications using the MVC pattern, databases with Entity Framework Core and SQL Server, user management, REST API development, dependency injection, as well as security and deployment basics.",
-      "technologies": [
-        "C#",
-        "ASP.NET Core",
-        "SQL Server",
-        "Entity Framework",
-        "TDD"
-      ],
-      "highlights": [
-        "C# and ASP.NET Core from basics to advanced",
-        "Entity Framework Core and SQL Server",
-        "Unit testing and TDD",
-        "REST API, MVC, and user management"
-      ]
     }
   },
 
