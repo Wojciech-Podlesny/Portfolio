@@ -63,8 +63,8 @@
     "githubAria": "Profil GitHub"
   },
   "header": {
-    "hello": "Hello,",
-    "iam": "I am {name}",
+    "hello": "Hello, I am",
+    "iam": "{name}",
     "role": "<aurora>Frontend Developer</aurora> building clean, creative apps with <next>Next.js</next> and <react>React</react>",
     "contact": "Contact me",
     "projects": "View my projects",
@@ -158,7 +158,7 @@
       ]
     },
     "webamigosFullstack": {
-      "title": "Web Amigos - Modern and Efficient Web Applications (MEWA)",
+      "title": "Web Amigos - Modern and Efficient Web Applications",
       "date": "10/2024 - present",
       "description": "An advanced programming course covering eight thematic tracks: TypeScript, NX.dev, React, Next.js, NestJS, AI-powered automations, and deployment with Docker and Kubernetes. The program emphasizes best practices, clean code architecture, and the complete process of building modern web applications – from frontend to backend to deployment.",
       "technologies": [
@@ -199,7 +199,7 @@
       ]
     },
     "megak": {
-      "title": "MEGAK - Full-Stack Development Journey",
+      "title": "MEGAK – Intensive One-Year Full-Stack Bootcamp",
       "date": "05/2023 - 10/2024",
       "description": "A one-year full-stack bootcamp covering JavaScript, TypeScript, React, Node.js, Express, NestJS, and MongoDB. The program included building complete web applications with REST APIs, CRUD operations, authentication, design patterns, and testing fundamentals.",
       "technologies": [
@@ -236,228 +236,250 @@
         "Agile methodologies and ISTQB exam preparation",
         "Completed course confirmed with certificate"
       ]
+    },
+    "nextJsUltimate": {
+      "title": "JS Mastery - The Ultimate Next.js 15 Course",
+      "date": "09/2025 - present",
+      "description": "Comprehensive deep dive into Next.js 15, TypeScript, and Tailwind CSS. Building a full-stack social media platform inspired by Stack Overflow, covering authentication, databases, server actions, advanced caching, and deployment.",
+      "technologies": [
+        "TypeScript",
+        "Next.js 15",
+        "MongoDB",
+        "Tailwind CSS",
+        "Prisma",
+        "NextAuth",
+        "Shadcn/UI"
+      ],
+      "highlights": [
+        "Full-stack application development with Next.js 15",
+        "Implementing authentication & authorization with NextAuth",
+        "Database integration using Prisma and MongoDB",
+        "Building scalable and reusable UI with Tailwind & Shadcn",
+        "Optimizing performance with Next.js caching and server actions",
+        "Deploying production-ready applications"
+      ]
     }
   },
+    "EducationTabs": {
+      "aria": "Education categories",
+      "university": "University",
+      "course": "Courses"
+    },
 
-  "EducationTabs": {
-    "aria": "Education categories",
-    "university": "University",
-    "course": "Courses"
-  },
-
-"featuredProjects": {
-    "title": "FEATURED PROJECTS",
-    "intro": "A selection of my recent web development and programming projects.",
-    "cta": "View my projects"
-  },
-  "projects": {
-    "status": {
-      "inProgress": "In Progress",
-      "completed": "Completed",
-      "paused": "Paused"
+    "featuredProjects": {
+      "title": "FEATURED PROJECTS",
+      "intro": "A selection of my recent web development and programming projects.",
+      "cta": "View my projects"
     },
-    "viewProject": "View Project",
-    "movieDashboard": {
-      "title": "Movie Stream Dashboard",
-      "date": "October 2024 - present",
-      "shortDescription": "A personalized movie management and discovery dashboard with analytics and advanced filtering.",
-      "description": "A modern platform for managing and discovering movies with a focus on personalization and user engagement. It includes a tailored recommendation system powered by dynamic filtering and user history analysis. Advanced search capabilities allow users to find titles by genre, rating, or release date in seconds. Users can comment on movies, add or remove them from favorites, and manage their profiles through a personal dashboard. Built with Next.js for performance and Firebase for authentication and database storage, it delivers a secure and responsive experience. The UI is designed with Material UI and Styled-Components for a sleek, consistent look.",
-      "keyFeatures": [
-        "Secure user authentication and registration system",
-        "Advanced search and filtering system",
-        "Personalized movie recommendations",
-        "Add/remove movies from favorites",
-        "User comment system on movies",
-        "User profile management",
-        "Firebase-based authentication and database",
-        "Optimized performance with Next.js"
-      ]
-    },
-    "weatherApp": {
-      "title": "Weather App",
-      "date": "April 2024 - October 2024",
-      "shortDescription": "An interactive weather app with real-time forecasts, charts, and dark mode.",
-      "description": "An interactive weather application delivering real-time data and extended forecasts for cities worldwide. It provides detailed hourly and daily predictions, along with visually rich charts using Chart.js. Users can search for locations, view historical trends, and toggle between light and dark themes for better accessibility. Built with React and TypeScript, it features optimized API calls through caching to ensure fast performance. The application is fully tested with Jest, Playwright, and RTL to guarantee reliability across devices. Its responsive design ensures a seamless experience on both mobile and desktop.",
-      "keyFeatures": [
-        "Search for weather information by city name",
-        "View current weather including temperature, humidity, wind speed, etc.",
-        "Hourly weather forecast for selected location",
-        "3-day temperature graph using Chart.js",
-        "Map view of selected location",
-        "Detect current location for weather display",
-        "Add cities to favorites (stored in LocalStorage)",
-        "Comprehensive testing with Jest and RTL",
-        "End-to-end testing with Playwright"
-      ]
-    },
-    "urlShortener": {
-      "title": "URL Shortener",
-      "date": "January 2024 - April 2024",
-      "shortDescription": "A fast and secure tool for shortening links with real-time analytics.",
-      "description": "A fast and secure URL shortener designed to transform long, unwieldy links into compact, shareable URLs. The application includes analytics tools to track clicks, user locations, and referrers in real-time. Users can customize their shortened links, set expiration dates, and manage them via an intuitive interface. Built with Vite, it ensures minimal load times and smooth navigation. Cypress testing ensures stability and a bug-free user experience. Its minimalistic design focuses on functionality while remaining visually appealing.",
-      "keyFeatures": [
-        "Responsive layout for multiple screen sizes",
-        "Shorten any valid URL to a unique 8-character path",
-        "Store shortened URLs in local storage",
-        "Delete shortened links from storage",
-        "Copy shortened links to clipboard in one click",
-        "Validation with error messages for empty or invalid input"
-      ]
-    },
-    "portfolio": {
-      "title": "Personal Portfolio",
-      "date": "July 2025 – August 2025",
-      "shortDescription": "A modern personal portfolio showcasing projects, skills, and experience.",
-      "description": "A personal portfolio built with Next.js and React, designed to be fast, responsive, and easy to navigate. The website highlights projects, professional experience, and technical skills in a visually appealing and structured way. It includes a contact form powered by Resend for direct communication and leverages Aceternity UI for modern, elegant components. The project emphasizes performance, clarity, and aesthetics to stand out both technically and visually",
-      "keyFeatures": [
-        "Modern, responsive design optimized for all devices",
-        "Projects section with previews and links to GitHub/live demos",
-        "Contact form with email handling via Resend",
-        "Integration with Aceternity UI for sleek, reusable components",
-        "Fast performance with Next.js and optimized images",
-        "Easy to maintain and expand for future updates"
-      ]
-    },
-    "detailsProject": "View more details",
-    "labels": {
-      "description": "Description:",
-      "techStack": "Tech Stack:",
-      "keyFeatures": "Key Features:",
-      "similarProjects": "Similar Projects"
-    }
-  },
-  "allProjects": {
-    "title": "ALL PROJECTS",
-    "intro": "Explore a collection of my recent work across various technologies and domains.",
-    "input": "Search projects..",
-    "pagination": {
-      "previous": "Previous",
-      "next": "Next"
-    }
-  },
-  "services": {
-    "title": "SERVICES",
-    "intro": "I offer a range of services to help you build and maintain your web applications!",
-    "technologiesTitle": "Technologies I’ve used in projects",
-    "contact": "Contact Me",
-    "items": {
-      "featuresTitle": "Key features:",
-      "webDevelopment": {
-        "title": "Web Development",
-        "description": "Building robust and scalable websites and applications.",
-        "details": "I specialize in building modern web applications that are fast, secure, and scalable. Using frameworks like Next.js and React, I create solutions tailored to your business needs, ensuring optimal performance and smooth user experience.",
-        "features": [
-          "Next.js & React",
-          "Server-Side Rendering (SSR)",
-          "API Integrations",
-          "Scalable Architecture",
-          "Performance Optimization"
+    "projects": {
+      "status": {
+        "inProgress": "In Progress",
+        "completed": "Completed",
+        "paused": "Paused"
+      },
+      "viewProject": "View Project",
+      "movieDashboard": {
+        "title": "Movie Stream Dashboard",
+        "date": "October 2024 - present",
+        "shortDescription": "A personalized movie management and discovery dashboard with analytics and advanced filtering.",
+        "description": "A modern platform for managing and discovering movies with a focus on personalization and user engagement. It includes a tailored recommendation system powered by dynamic filtering and user history analysis. Advanced search capabilities allow users to find titles by genre, rating, or release date in seconds. Users can comment on movies, add or remove them from favorites, and manage their profiles through a personal dashboard. Built with Next.js for performance and Firebase for authentication and database storage, it delivers a secure and responsive experience. The UI is designed with Material UI and Styled-Components for a sleek, consistent look.",
+        "keyFeatures": [
+          "Secure user authentication and registration system",
+          "Advanced search and filtering system",
+          "Personalized movie recommendations",
+          "Add/remove movies from favorites",
+          "User comment system on movies",
+          "User profile management",
+          "Firebase-based authentication and database",
+          "Optimized performance with Next.js"
         ]
       },
-      "responsiveDesign": {
-        "title": "Responsive Design",
-        "description": "Ensuring your website looks great on all devices.",
-        "details": "I design and build interfaces that adapt perfectly to any screen size, providing an excellent experience on mobile, tablet, and desktop. My approach ensures usability and accessibility are top priorities.",
-        "features": [
-          "Mobile-first approach",
-          "Tailwind CSS & Flex/Grid systems",
-          "Dark mode & accessibility",
-          "Pixel-perfect design",
-          "Cross-browser compatibility"
+      "weatherApp": {
+        "title": "Weather App",
+        "date": "April 2024 - October 2024",
+        "shortDescription": "An interactive weather app with real-time forecasts, charts, and dark mode.",
+        "description": "An interactive weather application delivering real-time data and extended forecasts for cities worldwide. It provides detailed hourly and daily predictions, along with visually rich charts using Chart.js. Users can search for locations, view historical trends, and toggle between light and dark themes for better accessibility. Built with React and TypeScript, it features optimized API calls through caching to ensure fast performance. The application is fully tested with Jest, Playwright, and RTL to guarantee reliability across devices. Its responsive design ensures a seamless experience on both mobile and desktop.",
+        "keyFeatures": [
+          "Search for weather information by city name",
+          "View current weather including temperature, humidity, wind speed, etc.",
+          "Hourly weather forecast for selected location",
+          "3-day temperature graph using Chart.js",
+          "Map view of selected location",
+          "Detect current location for weather display",
+          "Add cities to favorites (stored in LocalStorage)",
+          "Comprehensive testing with Jest and RTL",
+          "End-to-end testing with Playwright"
         ]
       },
-      "seoOptimization": {
-        "title": "SEO Optimization",
-        "description": "Improving your website visibility in search engines.",
-        "details": "I improve the visibility of your website by following modern SEO practices. From technical SEO and structured data to performance and keyword optimization, I ensure your site is well-prepared to rank higher.",
-        "features": [
-          "Technical SEO",
-          "Page speed optimization",
-          "Structured data & meta tags",
-          "Mobile-friendly testing",
-          "Core Web Vitals improvements"
+      "urlShortener": {
+        "title": "URL Shortener",
+        "date": "January 2024 - April 2024",
+        "shortDescription": "A fast and secure tool for shortening links with real-time analytics.",
+        "description": "A fast and secure URL shortener designed to transform long, unwieldy links into compact, shareable URLs. The application includes analytics tools to track clicks, user locations, and referrers in real-time. Users can customize their shortened links, set expiration dates, and manage them via an intuitive interface. Built with Vite, it ensures minimal load times and smooth navigation. Cypress testing ensures stability and a bug-free user experience. Its minimalistic design focuses on functionality while remaining visually appealing.",
+        "keyFeatures": [
+          "Responsive layout for multiple screen sizes",
+          "Shorten any valid URL to a unique 8-character path",
+          "Store shortened URLs in local storage",
+          "Delete shortened links from storage",
+          "Copy shortened links to clipboard in one click",
+          "Validation with error messages for empty or invalid input"
         ]
       },
-      "performanceOptimization": {
-        "title": "Performance Optimization",
-        "description": "Improving load times, performance scores, and user experience.",
-        "details": "I help optimize your website’s performance by reducing bundle sizes, lazy-loading assets, and improving Core Web Vitals. Faster websites don’t just convert better — they rank better too.",
-        "features": [
-          "Lighthouse score 95+",
-          "Code splitting & lazy loading",
-          "Optimized images & fonts",
-          "Reduced TTFB and FCP",
-          "Next.js performance tweaks"
+      "portfolio": {
+        "title": "Personal Portfolio",
+        "date": "July 2025 – August 2025",
+        "shortDescription": "A modern personal portfolio showcasing projects, skills, and experience.",
+        "description": "A personal portfolio built with Next.js and React, designed to be fast, responsive, and easy to navigate. The website highlights projects, professional experience, and technical skills in a visually appealing and structured way. It includes a contact form powered by Resend for direct communication and leverages Aceternity UI for modern, elegant components. The project emphasizes performance, clarity, and aesthetics to stand out both technically and visually",
+        "keyFeatures": [
+          "Modern, responsive design optimized for all devices",
+          "Projects section with previews and links to GitHub/live demos",
+          "Contact form with email handling via Resend",
+          "Integration with Aceternity UI for sleek, reusable components",
+          "Fast performance with Next.js and optimized images",
+          "Easy to maintain and expand for future updates"
         ]
       },
-      "apiIntegration": {
-        "title": "API Integration",
-        "description": "Seamless integration with external APIs and services.",
-        "details": "I integrate your app with REST or GraphQL APIs, authentication providers, payment systems, CMSs, and any other third-party services you rely on. Clean, reusable code and error handling guaranteed.",
-        "features": [
-          "REST & GraphQL APIs",
-          "OAuth & Auth providers",
-          "Stripe / PayPal integration",
-          "CMS (Sanity, Contentful, etc.)",
-          "Axios, SWR, React Query, tRPC"
-        ]
-      },
-      "accessibility": {
-        "title": "Accessibility",
-        "description": "Auditing and fixing accessibility issues so your app works for everyone.",
-        "details": "I perform WCAG 2.2 AA audits and implement fixes: semantic HTML, proper ARIA, keyboard navigation, focus management, and color-contrast checks. You get a prioritized report, code changes, and a short guide for your team.",
-        "features": [
-          "WCAG 2.2 AA audit (Lighthouse / axe / WAVE)",
-          "Semantic HTML & correct ARIA roles",
-          "Keyboard navigation & visible focus states",
-          "Color contrast & scalable typography",
-          "Screen-reader testing (NVDA / VoiceOver) + handoff"
-        ]
+      "detailsProject": "View more details",
+      "labels": {
+        "description": "Description:",
+        "techStack": "Tech Stack:",
+        "keyFeatures": "Key Features:",
+        "similarProjects": "Similar Projects"
       }
-    }
-  },
-  "contact": {
-    "title": "CONTACT",
-    "intro": "Have a project in mind? Let’s connect and build something great together!",
-    "subtitle": "Do You Have A Project? Let’s Talk.",
-    "form": {
-      "firstName": "First Name",
-      "lastName": "Last Name",
-      "subject": "Subject",
-      "email": "Email Address",
-      "message": "Your Message",
-      "messagePlaceholder": "Type your message here...",
-      "send": "Send Message",
-      "sending": "Sending..."
     },
-    "toast": {
-      "success": "Message sent successfully",
-      "error": "Message not sent",
-      "fail": "Something went wrong"
+    "allProjects": {
+      "title": "ALL PROJECTS",
+      "intro": "Explore a collection of my recent work across various technologies and domains.",
+      "input": "Search projects..",
+      "pagination": {
+        "previous": "Previous",
+        "next": "Next"
+      }
+    },
+    "services": {
+      "title": "SERVICES",
+      "intro": "I offer a range of services to help you build and maintain your web applications!",
+      "technologiesTitle": "Technologies I’ve used in projects",
+      "contact": "Contact Me",
+      "items": {
+        "featuresTitle": "Key features:",
+        "webDevelopment": {
+          "title": "Web Development",
+          "description": "Building robust and scalable websites and applications.",
+          "details": "I specialize in building modern web applications that are fast, secure, and scalable. Using frameworks like Next.js and React, I create solutions tailored to your business needs, ensuring optimal performance and smooth user experience.",
+          "features": [
+            "Next.js & React",
+            "Server-Side Rendering (SSR)",
+            "API Integrations",
+            "Scalable Architecture",
+            "Performance Optimization"
+          ]
+        },
+        "responsiveDesign": {
+          "title": "Responsive Design",
+          "description": "Ensuring your website looks great on all devices.",
+          "details": "I design and build interfaces that adapt perfectly to any screen size, providing an excellent experience on mobile, tablet, and desktop. My approach ensures usability and accessibility are top priorities.",
+          "features": [
+            "Mobile-first approach",
+            "Tailwind CSS & Flex/Grid systems",
+            "Dark mode & accessibility",
+            "Pixel-perfect design",
+            "Cross-browser compatibility"
+          ]
+        },
+        "seoOptimization": {
+          "title": "SEO Optimization",
+          "description": "Improving your website visibility in search engines.",
+          "details": "I improve the visibility of your website by following modern SEO practices. From technical SEO and structured data to performance and keyword optimization, I ensure your site is well-prepared to rank higher.",
+          "features": [
+            "Technical SEO",
+            "Page speed optimization",
+            "Structured data & meta tags",
+            "Mobile-friendly testing",
+            "Core Web Vitals improvements"
+          ]
+        },
+        "performanceOptimization": {
+          "title": "Performance Optimization",
+          "description": "Improving load times, performance scores, and user experience.",
+          "details": "I help optimize your website’s performance by reducing bundle sizes, lazy-loading assets, and improving Core Web Vitals. Faster websites don’t just convert better — they rank better too.",
+          "features": [
+            "Lighthouse score 95+",
+            "Code splitting & lazy loading",
+            "Optimized images & fonts",
+            "Reduced TTFB and FCP",
+            "Next.js performance tweaks"
+          ]
+        },
+        "apiIntegration": {
+          "title": "API Integration",
+          "description": "Seamless integration with external APIs and services.",
+          "details": "I integrate your app with REST or GraphQL APIs, authentication providers, payment systems, CMSs, and any other third-party services you rely on. Clean, reusable code and error handling guaranteed.",
+          "features": [
+            "REST & GraphQL APIs",
+            "OAuth & Auth providers",
+            "Stripe / PayPal integration",
+            "CMS (Sanity, Contentful, etc.)",
+            "Axios, SWR, React Query, tRPC"
+          ]
+        },
+        "accessibility": {
+          "title": "Accessibility",
+          "description": "Auditing and fixing accessibility issues so your app works for everyone.",
+          "details": "I perform WCAG 2.2 AA audits and implement fixes: semantic HTML, proper ARIA, keyboard navigation, focus management, and color-contrast checks. You get a prioritized report, code changes, and a short guide for your team.",
+          "features": [
+            "WCAG 2.2 AA audit (Lighthouse / axe / WAVE)",
+            "Semantic HTML & correct ARIA roles",
+            "Keyboard navigation & visible focus states",
+            "Color contrast & scalable typography",
+            "Screen-reader testing (NVDA / VoiceOver) + handoff"
+          ]
+        }
+      }
+    },
+    "contact": {
+      "title": "CONTACT",
+      "intro": "Have a project in mind? Let’s connect and build something great together!",
+      "subtitle": "Do You Have A Project? Let’s Talk.",
+      "form": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "subject": "Subject",
+        "email": "Email Address",
+        "message": "Your Message",
+        "messagePlaceholder": "Type your message here...",
+        "send": "Send Message",
+        "sending": "Sending..."
+      },
+      "toast": {
+        "success": "Message sent successfully",
+        "error": "Message not sent",
+        "fail": "Something went wrong"
+      }
+    },
+    "footer": {
+      "allRightsReserved": "All rights reserved.",
+      "menu": {
+        "home": "Home",
+        "about": "About me",
+        "services": "Services",
+        "projects": "Projects",
+        "contact": "Contact"
+      }
+    },
+    "collaboration": {
+      "title": "LET'S COLLABORATE",
+      "description": "Interested in working together? Whether you have a project idea, need help with web development, or just want to say hi, feel free to reach out. I’m always open to discussing new opportunities and collaborations.",
+      "contact": "Contact",
+      "services": "Services"
+    },
+    "notFound": {
+      "title": "404 - Page Not Found",
+      "backHome": "Back to Home",
+      "tryAgain": "Try again"
     }
-  },
-  "footer": {
-    "allRightsReserved": "All rights reserved.",
-    "menu": {
-      "home": "Home",
-      "about": "About me",
-      "services": "Services",
-      "projects": "Projects",
-      "contact": "Contact"
-    }
-  },
-  "collaboration": {
-    "title": "LET'S COLLABORATE",
-    "description": "Interested in working together? Whether you have a project idea, need help with web development, or just want to say hi, feel free to reach out. I’m always open to discussing new opportunities and collaborations.",
-    "contact": "Contact",
-    "services": "Services"
-  },
-  "notFound": {
-    "title": "404 - Page Not Found",
-    "backHome": "Back to Home",
-    "tryAgain": "Try again"
   }
-}
+
 
 
 

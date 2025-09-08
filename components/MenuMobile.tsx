@@ -12,6 +12,7 @@ import {LanguageSwitcher} from "@/components/LanguageSwitcher";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import NextLink from "next/link";
 import {socialLinks} from "@/data/biography";
+import {FaInstagram} from "react-icons/fa6";
 
 export const MenuMobile = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -92,6 +93,14 @@ ${isActive
                             </NextLink>
                         </li>
                     ))}
+                    <NextLink
+                        href="https://www.instagram.com/wojciech.podlesny/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-transform hover:scale-110 focus:scale-110 focus:outline-none"
+                    >
+                        <FaInstagram size={35} className="transition-transform hover:scale-110 focus:scale-110 focus:outline-none" />
+                    </NextLink>
                 </ul>
             </SheetContent>
         </Sheet>

@@ -159,7 +159,7 @@
       ]
     },
     "webamigosFullstack": {
-      "title": "Web Amigos - Modern and Efficient Web Applications (MEWA)",
+      "title": "Web Amigos - Modern and Efficient Web Applications",
       "date": "10/2024 - obecnie",
       "description": "Zaawansowany kurs programistyczny obejmujący osiem ścieżek tematycznych: TypeScript, NX.dev, React, Next.js, NestJS, automatyzacje z AI oraz deployment w Docker i Kubernetes. Program koncentruje się na dobrych praktykach, architekturze czystego kodu i pełnym procesie tworzenia nowoczesnych aplikacji webowych – od frontendu, przez backend, aż po wdrożenie.",
       "technologies": [
@@ -200,7 +200,7 @@
       ]
     },
     "megak": {
-      "title": "MEGAK - Full-Stack Development Journey",
+      "title": "MEGAK – Roczny Intensywny Kurs Full-Stack",
       "date": "05/2023 - 10/2024",
       "description": "Roczny bootcamp Full-Stack obejmujący JavaScript, TypeScript, React, Node.js, Express, NestJS i MongoDB. Program obejmował budowę pełnych aplikacji webowych: REST API, operacje CRUD, uwierzytelnianie, wzorce projektowe i podstawy testowania.",
       "technologies": [
@@ -237,7 +237,30 @@
         "Metodyki Agile i przygotowanie do ISTQB",
         "Ukończony kurs potwierdzony certyfikatem"
       ]
+    },
+    "nextJsUltimate": {
+      "title": "JS Mastery - The Ultimate Next.js 15 Course",
+      "date": "09/2025 - obecnie",
+      "description": "Kompleksowe szkolenie z Next.js 15, TypeScript i Tailwind CSS. Budowa pełnoprawnej aplikacji społecznościowej inspirowanej Stack Overflow, obejmująca logowanie i rejestrację, integrację z bazą danych, server actions, zaawansowane cachowanie oraz wdrożenie do produkcji.",
+      "technologies": [
+        "TypeScript",
+        "Next.js 15",
+        "MongoDB",
+        "Tailwind CSS",
+        "Prisma",
+        "NextAuth",
+        "Shadcn/UI"
+      ],
+      "highlights": [
+        "Tworzenie aplikacji full-stack w Next.js 15",
+        "Implementacja logowania i autoryzacji z NextAuth",
+        "Integracja bazy danych z wykorzystaniem Prisma i MongoDB",
+        "Budowa skalowalnych i wielokrotnego użytku komponentów UI w Tailwind i Shadcn",
+        "Optymalizacja wydajności dzięki cachowaniu i server actions w Next.js",
+        "Wdrożenie aplikacji gotowej do produkcji"
+      ]
     }
+
   },
   "EducationTabs": {
     "aria": "Kategorie edukacji",
@@ -461,13 +484,3 @@
     "tryAgain": "Spróbuj ponownie"
   }
 }
-
-
-
-
-
-
-
-
-
-

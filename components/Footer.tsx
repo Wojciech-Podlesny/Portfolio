@@ -6,7 +6,7 @@ import { menuLinks } from "@/data/menuLinks";
 import { useTranslations } from "next-intl";
 import {Link} from "@/i18n/routing";
 import NextLink from "next/link";
-import {biography, socialLinks} from "@/data/biography";
+import {biography, socialLinks} from "@/data/biography"
 
 export const Footer = () => {
     const year = new Date().getFullYear();

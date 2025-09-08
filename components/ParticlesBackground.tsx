@@ -83,7 +83,7 @@ export const ParticlesBackground = () => {
     return (
         <Particles
             id="tsparticles"
-            className="fixed inset-0 -z-0"
+            className="fixed inset-0 -z-0 pointer-events-none"
             particlesLoaded={particlesLoaded}
             options={options}
         />

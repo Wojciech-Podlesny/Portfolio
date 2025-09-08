@@ -69,5 +69,16 @@ export const education: EducationItem[] = [
         technologies: "sda.technologies",
         highlights:"sda.highlights",
         certificateUrl: "https://app.diplomasafe.com/pl-PL/diploma/df68a2bb02091c195cb940e7428f3d98943f2a862"
+    },
+    {
+        id: 7,
+        type: "course",
+        image: logoSda,
+        title: "nextJsUltimate.title",
+        date: '09/2025 - present',
+        description: "nextJsUltimate.description",
+        technologies: "nextJsUltimate.technologies",
+        highlights:"nextJsUltimate.highlights",
+        // certificateUrl: "https://app.diplomasafe.com/pl-PL/diploma/df68a2bb02091c195cb940e7428f3d98943f2a862"
     }
 ];
