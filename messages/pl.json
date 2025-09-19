@@ -64,7 +64,7 @@
   },
 "header": {
     "hello": "Cześć,",
-    "iam": "Jestem {name}",
+    "iam": "{name}",
     "role": "<aurora>Frontend Developer</aurora> tworzący czyste, kreatywne aplikacje z <next>Next.js</next> i <react>React</react>",
     "contact": "Kontakt",
     "projects": "Projekty",

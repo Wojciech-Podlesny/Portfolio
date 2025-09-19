@@ -13,9 +13,20 @@ import {
     MongoDBIcon,
     DockerIcon,
     PostmanIcon,
-    ReduxIcon, GitIcon, JestIcon,
+    ReduxIcon,
+    GitIcon,
+    JestIcon,
     CypressIcon,
-    PlaywrightIcon, FirebaseIcon, MaterialIcon, VitestIcon, NextJsIcon, WordpressIcon, GithubIcon, PythonIcon,
+    PlaywrightIcon,
+    FirebaseIcon,
+    MaterialIcon,
+    VitestIcon,
+    NextJsIcon,
+    WordpressIcon,
+    GithubIcon,
+    PythonIcon,
+    GithubActionsIcon,
+    JenkinsIcon, TDDIcon, ReactTestingLibraryIcon,
 } from "./icon";
 
 export const skills = [
@@ -33,7 +44,6 @@ export const skills = [
             { name: "Tailwind CSS", image: <TailwindIcon /> },
             { name: "Shadcn UI", image: <ShadCNIcon /> },
             { name: "Aceternity UI", image: <AceternityIcon /> },
-            // { name: "Styled Components", image: <StyledComponentsIcon /> },
             {name: "Wordpress", image: <WordpressIcon />}
 
         ],
@@ -58,16 +68,20 @@ export const skills = [
             { name: "Cypress", image: <CypressIcon /> },
             { name: "Playwright", image: <PlaywrightIcon /> },
             { name: "Vitest", image: <VitestIcon /> },
+            { name: "TDD", image: <TDDIcon /> },
+            { name: "React Testing Library", image: <ReactTestingLibraryIcon /> },
 
         ],
     },
     {
-        title: "OTHERS",
+        title: "DEVOPS",
         skills: [
             { name: "Docker", image: <DockerIcon /> },
             { name: "Postman", image: <PostmanIcon /> },
             { name: "Git", image: <GitIcon /> },
             { name: "GitHub", image: <GithubIcon /> },
+            { name: "GitHub Actions", image: <GithubActionsIcon /> },
+            { name: "Jenkins", image: <JenkinsIcon /> },
 
         ],
     },
