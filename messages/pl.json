@@ -99,7 +99,7 @@
       "contributions": "Kluczowe osiągnięcia:",
       "technologies": "Technologie:",
       "devs": {
-        "role": "Praktykant Frontend Developer",
+        "role": "Frontend Developer",
         "date": "Lipiec 2023 - obecnie",
         "description": "Brałem udział w komercyjnych projektach wykorzystując HTML, CSS, JavaScript, TypeScript, React oraz Next.js. Skupiałem się na budowie nowoczesnych, responsywnych interfejsów z solidnym pokryciem testami. Ściśle współpracowałem z Senior Frontend Developerem i uczestniczyłem w ceremoniach Agile, w tym w code review i planowaniu sprintów.",
         "highlights": [
@@ -339,6 +339,22 @@
         "Integracja z Aceternity UI dla nowoczesnych komponentów",
         "Szybkość działania dzięki optymalizacji w Next.js i obrazom",
         "Łatwe utrzymanie i rozwój w przyszłości"
+      ]
+    },
+    "resumeAnalyzer": {
+      "title": "AI Resume Analyzer",
+      "date": "Wrzesień 2025 – Październik 2025",
+      "shortDescription": "Platforma do analizy CV zasilana AI – inteligentne dopasowywanie, bezpieczne przechowywanie i nowoczesny interfejs.",
+      "description": "Platforma do zarządzania CV i dopasowywania ofert pracy, stworzona w oparciu o Vite i React. Umożliwia bezpieczne przesyłanie i przechowywanie CV, a następnie wykorzystuje AI do porównywania ich z ofertami pracy, generując oceny w stylu ATS oraz spersonalizowaną informację zwrotną. Projekt korzysta z Puter.js do prostego logowania w przeglądarce, bez potrzeby tworzenia backendu, oraz oferuje elegancki, wielokrotnego użytku interfejs zbudowany w Tailwind CSS. Został zaprojektowany tak, aby był responsywny, skalowalny i łatwy w utrzymaniu, z naciskiem na wydajność, przejrzystość i profesjonalne doświadczenie użytkownika na wszystkich urządzeniach.",
+      "keyFeatures": [
+        "Logowanie w przeglądarce dzięki Puter.js – bez backendu",
+        "Bezpieczne przesyłanie i przechowywanie CV w jednym miejscu",
+        "AI dopasowujące CV do ofert pracy z oceną ATS i feedbackiem",
+        "Nowoczesny interfejs oparty na spójnych komponentach",
+        "Modularny kod i komponenty wielokrotnego użytku",
+        "Responsywny design działający na wszystkich urządzeniach",
+        "UI/UX w Tailwind CSS i shadcn/ui dla nowoczesnego wyglądu",
+        "Skalowalna architektura łatwa w utrzymaniu i rozwoju"
       ]
     },
     "detailsProject": "Zobacz więcej szczegółów",

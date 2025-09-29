@@ -98,7 +98,7 @@
       "contributions": "Key Contributions:",
       "technologies": "Technologies:",
       "devs": {
-        "role": "Frontend Developer Internship",
+        "role": "Frontend Developer",
         "date": "July 2023 - present",
         "description": "Contributed to hands-on commercial projects using HTML, CSS, JavaScript, TypeScript, React, and Next.js. Focused on building modern, responsive interfaces with robust test coverage. Collaborated closely with a Senior Frontend Developer and participated in Agile ceremonies including code reviews and sprint planning.",
         "highlights": [
@@ -337,6 +337,22 @@
           "Integration with Aceternity UI for sleek, reusable components",
           "Fast performance with Next.js and optimized images",
           "Easy to maintain and expand for future updates"
+        ]
+      },
+      "resumeAnalyzer": {
+        "title": "AI Resume Analyzer",
+        "date": "September 2025 – October 2025",
+        "shortDescription": "AI-powered resume platform with smart matching, secure storage, and a modern UI.",
+        "description": "A resume management and job-matching platform built with Vite and React. It allows users to securely upload and store resumes, then leverage AI to match them against job listings with ATS-style scoring and personalized feedback. The project uses Puter.js for simple, browser-based authentication with no backend setup, and provides a sleek, reusable interface built with Tailwind CSS. Designed to be responsive, scalable, and easy to maintain, it emphasizes performance, clarity, and a professional user experience across all devices.",
+        "keyFeatures": [
+          "Browser-based login with Puter.js – no backend needed",
+          "Secure CV upload and storage in one place",
+          "AI-powered CV matching with ATS scoring and feedback",
+          "Modern interface built with consistent components",
+          "Modular code and reusable components",
+          "Responsive design across all devices",
+          "UI/UX with Tailwind CSS and shadcn/ui for a sleek look",
+          "Scalable architecture, easy to maintain and extend"
         ]
       },
       "detailsProject": "View more details",

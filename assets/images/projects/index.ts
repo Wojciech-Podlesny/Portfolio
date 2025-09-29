@@ -19,11 +19,16 @@ import image5UrlShortener from "@/assets/images/projects/url-shortener/image5 .w
 
 import image1PersonalPortfolio from "@/assets/images/projects/personal-portfolio/image1.webp";
 
+import  image1ResumeAnalyzer from "@/assets/images/projects/resume-analyzer/image1.webp";
+import  image2ResumeAnalyzer from "@/assets/images/projects/resume-analyzer/image2.webp";
+
+
 
 import weatherApp from "@/assets/images/projects/weather-app/weatherApp.webp";
 import movieApp from "@/assets/images/projects/movie-stream-dashboard/movieApp.webp";
 import urlShortener from "@/assets/images/projects/url-shortener/UrlShortener.webp";
 import personalPortfolio from "@/assets/images/projects/personal-portfolio/personalPortfolio.webp";
+import resumeAnalyzer from "@/assets/images/projects/resume-analyzer/resumeAnalyzer.webp";
 
 export const projectImages = {
     weatherApp: [
@@ -52,11 +57,17 @@ export const projectImages = {
     personalPortfolio: [
         image1PersonalPortfolio
     ],
+
+    resumeAnalyzer: [
+        image1ResumeAnalyzer,
+        image2ResumeAnalyzer,
+    ],
 };
 
 export const mockupLaptopImages = {
     weatherApp,
     movieApp,
     urlShortener,
-    personalPortfolio
+    personalPortfolio,
+    resumeAnalyzer
 }

@@ -4,6 +4,7 @@ import logoMegak from '@/assets/images/education/LogoFrontowcy.webp';
 import logoWebAmigos from '@/assets/images/education/LogoWebAmigos.webp';
 import logoSda from '@/assets/images/education/LogoSda.webp';
 import logoPolitechnika from "@/assets/images/education/logoPolitechnika.webp";
+import logoJSMastery from "@/assets/images/education/JSMastery.webp";
 
 export const education: EducationItem[] = [
     {
@@ -73,7 +74,7 @@ export const education: EducationItem[] = [
     {
         id: 7,
         type: "course",
-        image: logoSda,
+        image: logoJSMastery,
         title: "nextJsUltimate.title",
         date: '09/2025 - present',
         description: "nextJsUltimate.description",

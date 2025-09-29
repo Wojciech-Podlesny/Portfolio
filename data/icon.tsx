@@ -1,5 +1,5 @@
-import TDDLogo from '../assets/tdd.png';
-import RTLLogo from '../assets/react-testing-library.png';
+import TDDLogo from '../assets/images/icons/tdd.webp';
+import RTLLogo from '../assets/images/icons/react-testing-library.webp';
 import Image from "next/image";
 
 export const HTMLIcon = () => {
