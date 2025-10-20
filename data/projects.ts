@@ -85,7 +85,7 @@ export const projects: Project[] = [
         github: "https://github.com/Wojciech-Podlesny/Portfolio",
         preview: "https://wojciechpodlesny.pl",
         technologies: [
-            "Next.js",
+            "NextJS",
             "React",
             "Typescript",
             "Tailwind CSS",
