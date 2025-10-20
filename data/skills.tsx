@@ -26,7 +26,8 @@ import {
     GithubIcon,
     PythonIcon,
     GithubActionsIcon,
-    JenkinsIcon, TDDIcon, ReactTestingLibraryIcon,
+    JenkinsIcon,
+    TDDIcon, ReactTestingLibraryIcon, CsharpIcon,
 } from "./icon";
 
 export const skills = [
@@ -53,10 +54,11 @@ export const skills = [
         skills: [
             { name: "Node.js", image: <NodeJsIcon /> },
             { name: "Express.js", image: <ExpressIcon /> },
-            { name: "Python", image: <PythonIcon/> },
             { name: "MySQL", image: <MySQLIcon /> },
             { name: "MongoDB", image: <MongoDBIcon /> },
             { name: "Firebase", image: <FirebaseIcon /> },
+            { name: "C#", image: <CsharpIcon /> },
+            { name: "Python", image: <PythonIcon /> },
 
 
         ],
